@@ -1,6 +1,7 @@
-<div class="row" id="bg">
-    <div class="col-md-1"></div>
-        <div class="col-md-2">
+<div class="flex-box">
+    <div class="row" id="bg">
+
+        <div class="col-md-3">
             <div class="card border-secondary mb-3 perfil" style="width: 18rem;">
                 <img class="profile-card" src="../../assets/image/perfil.jpg" alt="Card image cap" height="150"
                     width="150">
@@ -19,99 +20,102 @@
             </div>
         </div>
 
-        <div class="col-md-1">
 
-        </div>
-
-        <div class="col-md-4 ">
+        <div class="col-md-6 ">
             <div class="post">
                 <input class="text-area post border-secondary mb-1" type="text" id="post"
                     placeholder="o que você esta pensando?"><br>
                 <button type="button " class="btn btn-primary">Postar</button>
             </div>
             <!--if para saber se o buscador está vazio ou não-->
-            <div class="card post-1  border-secondary mb-3"  *ngIf="_feed != null">
+            <div class="card post-1 border-secondary mb-3" *ngIf="_feed != null">
+                <div class="card-header">
+                    <img src="{{_feed.linkimg}}" class="profile-post" alt="" > <strong>
+                        {{_feed.titulo}}</strong>
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <p>{{_feed.texto}}</p>
+                    </blockquote>
+                </div>
+                <div class="card-footer">
+                    <button class="icones">
+                        <img src="../../assets/image/lampada.jfif" alt="" width="30" height="30">
+                    </button>
+
+                    <button class="icones">
+                        <img src="../../assets/image/like.jfif" alt="" width="30" height="30">
+                    </button>
+                </div>
+                <!--<div class="divIcones">
+                        <button class="icones">
+                            <img src="../../assets/image/lampada.jfif" alt="" width="30" height="30">
+                        </button>
+
+                        <button class="icones">
+                            <img src="../../assets/image/like.jfif" alt="" width="30" height="30">
+                        </button>
+                </div>-->
+                
+
+            </div>
+            <!--e o buscador estiver com o seu campo vazio, então mostrar todos-->
+            <div *ngIf="_feed == null">
+                <div class="card post-1 border-secondary mb-3" *ngFor="let item of feed">
                     <div class="card-header">
-                        <img src="{{_feed.linkimg}}" class="profile-post" alt="" width="50" height="50"> <strong>
-                            {{_feed.titulo}}</strong>
+                        <img src="{{item.linkimg}}" class="profile-post" alt=""> <strong>
+                            {{item.titulo}}</strong>
                     </div>
                     <div class="card-body">
                         <blockquote class="blockquote mb-0">
-                            <p>{{_feed.texto}}</p>
+                            <p>{{item.texto}}</p>
                         </blockquote>
-    
-                        <div class="divIcones">
-                            <button class="icones">
-                                <img src="../../assets/image/lampada.jfif" alt="" width="30" height="30">
-                            </button>
-    
-                            <button class="icones">
-                                <img src="../../assets/image/like.jfif" alt="" width="30" height="30">
-                            </button>
-                        </div>
                     </div>
-    
+                    <div class="card-footer" id="botoes">
+                            <button class="icones pull-right">
+                                <img src="../../assets/image/lampada.jfif"  alt="" width="30" height="30">
+                            </button>
+        
+                            <button class="icones pull-right">
+                                <img src="../../assets/image/like.jfif"  alt="" width="30" height="30">
+                            </button>
+                    </div>
                 </div>
-                <!--e o buscador estiver com o seu campo vazio, então mostrar todos-->
-                <div *ngIf="_feed == null">
-                    <div class="card post-1  border-secondary mb-3" *ngFor="let item of feed">
-                            <div class="card-header">
-                                <img src="{{item.linkimg}}" class="profile-post" alt="" width="50" height="50"> <strong>
-                                    {{item.titulo}}</strong>
-                            </div>
-                            <div class="card-body">
-                                <blockquote class="blockquote mb-0">
-                                    <p>{{item.texto}}</p>
-                                </blockquote>
-            
-                                <div class="divIcones">
-                                    <button class="icones">
-                                        <img src="../../assets/image/lampada.jfif" alt="" width="30" height="30">
-                                    </button>
-            
-                                    <button class="icones">
-                                        <img src="../../assets/image/like.jfif" alt="" width="30" height="30">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-         
+                
+            </div>
+
 
 
 
         </div>
-        <div class="col-md-1">
+        
 
-            </div>
-
-        <div class="col-md-2">
+        <div class="col-md-3">
 
             <div class="card events">
                 <div class="card-header">
-                    Eventos Que Participou <img src="../../assets/image/trofeu.png" alt="" height="20" width="20">
+                     <img class="trofeu" src="../../assets/image/trofeu.png" alt="" height="50" width="50">Eventos Que Participou
                 </div>
-                <div class="card-body">
+                <div class="card-body" id="cardEventos">
                     <img src="../../assets/image/voluntario.jpg" alt="" height="30" width="30"> <img
                         src="../../assets/image/chepeu.png" alt="" width="30" height="30"> <img
                         src="../../assets/image/intercambiocheck.png" alt="" width="30" height="30">
                     <img src="../../assets/image/music.png" alt="" height="30" width="30">
                     <img src="../../assets/image/museu.png" alt="" height="30" width="30">
                     <img src="../../assets/image/teatro..jpg" alt="" width="30" height="30">
-                    <p class="card-text">Voce Ja visitou esses eventos Parabens, Click em "Ver mais" para aumentar sua
-                        taxa de "cultura"</p>
-                    <a href="#" class="btn btn-primary">Ver Mais</a>
+                    <p class="card-text">Voce Ja visitou esses eventos Parabens, Click em "Ver mais" para aumentar sua taxa de "cultura".</p>
+                    <a href="#" class="btn btn-primary pull-right" id="btnVMais">Ver Mais</a>
                 </div>
             </div>
 
-            <div class="form-inline my-2  mt-3">
+            <div class="form-inline my-2 justify-content-center">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" [(ngModel)]="buscar"
                     aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="findId()">Search</button>
             </div>
 
         </div>
-        <div class="col-md-1"></div>
 
 
+    </div>
 </div>

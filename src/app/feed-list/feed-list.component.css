@@ -14,8 +14,6 @@
 
 .post{
    margin-top: 2.5%;
-   
-   
 }
 input.post{
     height: 200px;
@@ -27,34 +25,47 @@ input.post{
     margin-top: 10%;
     margin-left: 10%;
 }
+blockquote {
+    text-justify: auto;
+}
 .post button{
     margin-top: 1%;
     display: flex;
     justify-content: end;
-    margin-left: 99%;
+    margin-left: 74%;
 }
 .post-1{
     height: 200px;
     width: 410px;
-    border-radius:15px ;
-   margin-left: 20%;
+    border-radius:15px;
+    margin-left: 20%;
+
 }
 
+.pull-right {
+    float: right !important;
+ }
 .divIcones{
-    display: inline;
+    display: flex;
     border-radius: 10px;
-    
-    margin-left:80%;
+    margin-left:82%;
+    margin-top: 25%;
 
 }
 .icones{
     
     box-shadow: 2px 2px 5px black;
+    margin: 5px;
+    
     
 }
 .profile-post{
     border-radius: 50%;
+    margin: 10px;
     border: 1px solid black;
+    width:50px; 
+    height:50px;
+   
 }
 .profile-card{
     border-radius: 50%;
@@ -64,6 +75,7 @@ input.post{
     margin-top: 3%;
     border: 1px black solid;
     margin-bottom: 2%;
+    
 }
 .card-name{
     color:white ;
@@ -74,4 +86,19 @@ input.post{
     margin-top: 5%;
     border-radius: 15px;
     margin-right: 5%;
+}
+.trofeu{
+    margin: 5%;
+}
+#cardEventos {
+    padding: 20px;
+}
+
+.card-body img{
+    margin: 2%;
+
+}
+
+#botoes{
+    margin: 10px;
 }
