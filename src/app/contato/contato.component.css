@@ -1,3 +1,5 @@
+/*style="background-color:#fffedd*/
+
 #pt1
 {
     background-color: rgba(0,0,0,.9); 
@@ -19,7 +21,12 @@ h1
     
 }
 
+.bg{
+    background-image: url(../../assets/image/fteste.jpg);
+}
+
 #form
 {
    /* padding: 5%;*/
 }
+
