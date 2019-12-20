@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Feed } from './../modal/feed';
 import { FeedService } from './../service/feed.service';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 
 @Component({
@@ -10,8 +11,13 @@ import { FeedService } from './../service/feed.service';
 })
 export class FeedListComponent implements OnInit {
 
+
+  private buscar: number;
+  private _feed: Feed =null;
+  private feed: Feed[];
+
   constructor(private FeedService: FeedService) { }
-  feed: Feed[];
+  
   ngOnInit() {
     this.findAll();
   }
@@ -21,4 +27,12 @@ export class FeedListComponent implements OnInit {
       this.feed = feedOut;
     })
   }
+
+  findId(){
+    this.FeedService.getOne(this.buscar).subscribe((feedOut: Feed) => {
+      this._feed = feedOut;
+      
+    })
+  }
+  
 }

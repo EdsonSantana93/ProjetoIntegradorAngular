@@ -8,6 +8,7 @@ import { FeedService } from '../service/feed.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+   
 
   private buscar: number;
   feedlist: Feed = null;
@@ -15,9 +16,8 @@ export class NavbarComponent implements OnInit {
   constructor(private FeedService: FeedService) { }
 
   ngOnInit() {
+  
   }
 
-  private findAll() {
-    this.FeedService.getOne(this.buscar).subscribe((res: Feed)=> {this.feedlist = res;})
-  }
+  
 }
