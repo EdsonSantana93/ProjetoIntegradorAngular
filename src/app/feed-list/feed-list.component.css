@@ -1,4 +1,4 @@
-#bg{
+/*#bg{
     background-color: rgb(240, 240, 240);
 }
 
@@ -101,4 +101,35 @@ blockquote {
 
 #botoes{
     margin: 10px;
+}*/
+
+.profile-post{
+    border-radius: 50%;
+    margin: 10px;
+    border: 1px solid black;
+    width:50px; 
+    height:50px;
 }
+
+.profile-card{
+    border-radius: 50%; 
+    border: 1px black solid;   
+}
+
+.card-esquerdo{
+    text-align: center;
+}
+
+p{
+    text-align: justify;
+}
+
+.bg{
+    background: url(../../assets/image/fundo-cinza.png) no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-siz: cover;
+    -o-bakground-size: cover;
+    background-size: cover;
+}
+
+

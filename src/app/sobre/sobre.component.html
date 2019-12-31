@@ -1,14 +1,14 @@
-<div class="bg">
-    
-    <div class="container pt-5 pl-5 pr-5 mt-5 mb-5" id="pt1">
+<div class="bg pt-5 pb-5">
+    <!--Breve descrição do grupo-->
+    <div class="container pt-5 pl-5 pr-5" id="pt1">
         <div class="row">
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
-                    <h1 id="titulo"><strong>Sobre Nós</strong></h1>
-                </div>
-                <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <h1 id="titulo"><strong>Sobre Nós</strong></h1>
+            </div>
+            <div class="col-md-4"></div>
             <div class="col-sm-12 ">
-                <p class="text-justify">Somos um grupo de jovens que acredita no poder da tecnologia para
+                <p class="text-justify mr-5 ml-3">Somos um grupo de jovens que acredita no poder da tecnologia para
                     transformar histórias. Tendo isso em mente criamos o, “Nome”. Nosso projeto é uma rede social
                     que une cultura e educação e tem como objetivo expandir a inclusão dos jovens moradores da
                     periferia no cenário cultural do estado de São Paulo. A nossa rede social foca na interação
@@ -17,124 +17,120 @@
                     aprender e os que podem ensinar.</p>
             </div>
         </div>
-    
 
-    <div class="container letrac pt-5" id="pt2">
+        <!--Fotos e Minibiografia dos Programadores desta rede social-->
+        <div class="container letrac pt-5" id="pt2">
+            <div class="accordion" id="accordionGroup"><!--Cria um grupo de botões para receber fechamento automaticamente de um collapse ao abrir outro-->
+                <div class="row">
+                    <!--Biografia da Laura-->
+                    <div class="col-sm-4">
+                        <div id="foto1">
+                            <img src="../../assets/image/laura.jfif" class="fotos" class="fotos img-thumbnail rounded"
+                                data-toggle="collapse" data-target="#laura"><!--Collapse: responsavel por abrir as descrições ao click do mousse-->
+                            <div id="laura" class="collapse" aria-labelledby="foto1" data-parent="#accordionGroup"><!--aria-labelledby e data-parent: são responsaveis por fechar automaticamente um collapse caso outro collapse seja aberto-->
+                                <div class="collapse-text">
+                                    <h5>Laura Oliveira Pedro</h5>
+                                    <p>Estudante de Análise e Desenvolvimento de Sistemas, apaixonada por tecnologia e
+                                        as transformações que ela pode proporcionar para a sociedade,
+                                        principalmente para os jovens. Sou movida pela constante vontade de aprender
+                                        coisas novas e sair da minha zona de conforto, ser constantemente desafiada é o
+                                        que me traz brilho aos olhos. Encontrei na tecnologia um meio de poder mudar a
+                                        minha história e a de muitos jovens como eu.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="d-flex justify-content-center">
-                    <img src="../../assets/image/laura.jfif" class="fotos">
-                </div>
-                <div class="d-flex justify-content-center">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Laura Oliveira Pedro</h5>
-                            <p class="card-text">Estudante de Análise e Desenvolvimento de Sistemas, apaixonada por
-                                tecnologia e as transformações que ela pode proporcionar para a sociedade,
-                                principalmente para os jovens. Sou movida pela constante vontade de aprender coisas
-                                novas e sair da minha zona de conforto, ser constantemente desafiada é o que me traz
-                                brilho aos olhos. Encontrei na tecnologia um meio de poder mudar a minha história e
-                                a de
-                                muitos jovens como eu. </p>
+                    <div class="col-sm-4">
+                        <!--Biografia do Edson--><!--Orientações sobre tag e atributos na bio da Laura-->
+                        <div id="foto2">
+                            <img src="../../assets/image/edson.jpg" class="fotos img-thumbnail rounded"
+                                data-toggle="collapse" data-target="#edson">
+                            <div class="collapse" id="edson" aria-labelledby="foto2" data-parent="#accordionGroup">
+                                <div class="collapse-text">
+                                    <h5>Edson Santana</h5>
+                                    <p>Estudante de Análise e desenvolvimento de Sistema, fascinado por tecnologia e
+                                        jogos desde criança, porém muito curioso para entender como tudo funciona.
+                                        Essa curiosidade o levou a amar ainda mais a tecnologia, buscar e aprender
+                                        coisas novas a cada dia. Acredita que a programação deve ser ensinada desde o
+                                        ensino fundamental, para que todos sejam privilegiados com o prazer do contato
+                                        diferenciado com a tecnologia desde cedo.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <!--Biografia da Ana--><!--Orientações sobre tag e atributos na bio da Laura-->
+                        <div id="foto3">
+                            <img src="../../assets/image/AnaB.jpg" class="fotos img-thumbnail rounded"
+                                data-toggle="collapse" data-target="#ana">
+
+                            <div class="collapse" id="ana" aria-labelledby="foto3" data-parent="#accordionGroup">
+                                <div class="collapse-text">
+                                    <h5 class="card-title text-center">Ana Beatriz</h5>
+                                    <p class="card-text">Uma jovem mulher apaixonada por aprender e ensinar que
+                                        encontrou na
+                                        tecnologia um mundo de oportunidades, conexões e desenvolvimento. Considero
+                                        minha
+                                        missão
+                                        criar projetos cada vez mais inovadores e inclusivos a fim de reforçar o papel
+                                        da
+                                        tecnologia como o principal agente transformador do mundo.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                <br>
+                <div class="row pb-4 mt-5 pb-5">
+                    <div class="col-sm-2">
 
-            <div class="col-sm-4">
-                <div class="d-flex justify-content-center">
-                    <img src="../../assets/image/edson.jpg" class="fotos">
-                </div>
-
-                <div class="d-flex justify-content-center">
-                    <div class="card" style="width: 18rem;">
-
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Edson Santana</h5>
-                            <p class="card-text">Estudante de Análise e desenvolvimento de Sistema, fascinado por
-                                tecnologia e jogos desde criança, porém muito curioso para entender como tudo
-                                funciona.
-                                Essa curiosidade o levou a amar ainda mais a tecnologia, buscar e aprender coisas
-                                novas
-                                a cada dia. Acredita que a programação deve ser ensinada desde o ensino fundamental,
-                                para que todos sejam privilegiados com o prazer do contato diferenciado com a
-                                tecnologia
-                                desde cedo.
-                            </p>
+                    </div>
+                    <div class="col-sm-4 ">
+                        <!--Biografia do Italo--><!--Orientações sobre tag e atributos na bio da Laura-->
+                        <div id="foto4">
+                            <img src="../../assets/image/italo.jpg" class="fotos img-thumbnail rounded"
+                                data-toggle="collapse" data-target="#italo">
+                            <div class="collapse" id="italo" aria-labelledby="foto4" data-parent="#accordionGroup">
+                                <div class="collapse-text">
+                                    <h5>Italo Andrew</h5>
+                                    <p>Uma pessoa com uma vontade enorme de aprender e conhecer coisas
+                                        novas,
+                                        me identifiquei com a área de tecnologia depois de experiencias anteriores e
+                                        descobri
+                                        minha vocação, fazendo sempre coisas novas e inovando para causar impacto no
+                                        mundo!
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="d-flex justify-content-center">
-                    <img src="../../assets/image/AnaB.jpg" class="fotos">
-                </div>
-                <div class="d-flex justify-content-center">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Ana Beatriz</h5>
-                            <p class="card-text">Uma jovem mulher apaixonada por aprender e ensinar que encontrou na
-                                tecnologia um mundo de oportunidades, conexões e desenvolvimento. Considero minha
-                                missão
-                                criar projetos cada vez mais inovadores e inclusivos a fim de reforçar o papel da
-                                tecnologia como o principal agente transformador do mundo.</p>
+
+                    <div class="col-sm-4">
+                        <!--Biografia do Wesley--><!--Orientações sobre tag e atributos na bio da Laura-->
+                        <div id="foto5">
+                            <img src="../../assets/image/wesley.jpeg" class="fotos img-thumbnail rounded"
+                                data-toggle="collapse" data-target="#wesley">
+                            <div class="collapse" id="wesley" aria-labelledby="foto5" data-parent="#accordionGroup">
+                                <div class="collapse-text">
+                                    <h5>Wesley Paulow</h5>
+                                    <p>Um sujeito periférico, 23 anos, há muito interessado por tecnologia, mas só há
+                                        pouco verdadeiramente enamorado por ela. Entre a cruz e a caldeirinha ao pensar
+                                        sobre a estrutura de classes com viés marxista ou orientado a objetos.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                    <div class="col-sm-2">
+
                     </div>
                 </div>
             </div>
         </div>
-        <br>
-        <div class="row pb-4">
-            <div class="col-sm-2">
-
-            </div>
-            <div class="col-sm-4 ">
-                <div class="d-flex justify-content-center">
-                    <img src="../../assets/image/italo.jpg" class="fotos">
-                </div>
-
-                <div class="d-flex justify-content-center">
-
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Italo Andrew</h5>
-                            <p class="card-text">Uma pessoa com uma vontade enorme de aprender e conhecer coisas
-                                novas,
-                                me identifiquei com a área de tecnologia depois de experiencias anteriores e
-                                descobri
-                                minha vocação, fazendo sempre coisas novas e inovando para causar impacto no mundo!
-                            </p>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="d-flex justify-content-center">
-                    <img src="../../assets/image/wesley.jpeg" class="fotos">
-                </div>
-                <div class="d-flex justify-content-center">
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Wesley Paulow</h5>
-                            <p class="card-text">Um sujeito periférico, 23 anos, há muito interessado por
-                                tecnologia,
-                                mas só há pouco verdadeiramente enamorado por ela. Entre a cruz e a caldeirinha ao
-                                pensar sobre a estrutura de classes com viés marxista ou orientado a objetos.
-                                Área de anexos
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-2">
-
-            </div>
-        </div>
-    </div>
 
     </div>
 </div>
-

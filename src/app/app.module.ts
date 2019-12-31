@@ -10,6 +10,7 @@ import { ContatoComponent } from './contato/contato.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FeedListComponent } from './feed-list/feed-list.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FeedListComponent } from './feed-list/feed-list.component';
     HomeComponent,
     ContatoComponent,
     SobreComponent,
-    FeedListComponent
+    FeedListComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

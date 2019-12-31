@@ -13,26 +13,32 @@ export class FeedListComponent implements OnInit {
 
 
   private buscar: number;
-  private _feed: Feed =null;
+  private _feed: Feed = null;
   private feed: Feed[];
 
   constructor(private FeedService: FeedService) { }
   
   ngOnInit() {
     this.findAll();
+    console.log(this._feed);
   }
 
   findAll(){
     this.FeedService.getAll().subscribe((feedOut: Feed[]) => {
       this.feed = feedOut;
+      console.log(this._feed)
     })
   }
 
   findId(){
+    if(this.buscar <= 0){
+      this._feed = null;
+    }else{
     this.FeedService.getOne(this.buscar).subscribe((feedOut: Feed) => {
       this._feed = feedOut;
-      
+      console.log(this._feed);
     })
+    }
   }
   
 }

@@ -1,0 +1,23 @@
+#erro{
+    width: 100%;
+    text-align: center;
+    margin: 200px;
+}
+
+h1{
+    color: #606060;
+    font-size: 100px;
+    text-shadow: 2px 2px 10px #101010;
+}
+
+h2{
+    color: #b0b0b0;
+}
+
+.bg{
+    background: url(../../assets/image/fundo-cinza.png) no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-siz: cover;
+    -o-bakground-size: cover;
+    background-size: cover;
+}
