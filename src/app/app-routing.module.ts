@@ -6,7 +6,6 @@ import { FeedListComponent } from './feed-list/feed-list.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 
-
 const routes: Routes = [
   {path: "sobre", component: SobreComponent},
   {path: "contato", component: ContatoComponent},

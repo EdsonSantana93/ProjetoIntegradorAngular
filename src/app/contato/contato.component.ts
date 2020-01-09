@@ -13,7 +13,7 @@ export class ContatoComponent implements OnInit {
   private telefone: string;
   private msg : string;
 
-  /*tecla(){
+tecla(){
     var evt = window.event;
     var tecla = evt.keyCode;
  
@@ -22,7 +22,7 @@ export class ContatoComponent implements OnInit {
       evt.preventDefault();
     }
 
-}*/
+}
 
 validaForm(){
   var i = 0;
