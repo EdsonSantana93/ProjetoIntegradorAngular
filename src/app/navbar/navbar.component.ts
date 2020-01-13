@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Feed } from '../modal/feed';
 import { FeedService } from '../service/feed.service';
-import * as $ from 'jquery';
 
 @Component({
   selector: 'app-navbar',
@@ -9,101 +8,157 @@ import * as $ from 'jquery';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-   
+
 
   private buscar: number;
   feedlist: Feed = null;
 
-  private nome : string;
-  private email : string;
-  private telefone : number;
-  private senha : string;
-  private senha2 : string;
-  private erroNome : string = null;
-  private erroEmail : string = null;
-  private erroTelefone : string = null;
-  private erroSenha : string = null;
-  private erroGeral : string = null;
+  private nome: string;
+  private email: string;
+  private telefone: number;
+  private senha: string;
+  private confirmacao: string;
+  private erroNome: string = null;
+  private erroEmail: string = null;
+  private erroTelefone: string = null;
+  private erroSenha: string = null;
+  private erroConfirmacao: string = null;
+  private erroStatus: string = null;
 
   constructor(private FeedService: FeedService) { }
 
   ngOnInit() {
-  
+
   }
 
+
+  // funcao para validar o formulario
   public validar() {
-    var contAcertos = 0;
+    var erros = 0;
+    var regex = /[0-9]/; // regex é usado pera verificar a existencia de algum caractere entre a sequencia
 
-    if (this.nome === null || this.telefone === null || this.email === null || this.senha === null || this.senha2 === null) {
-      alert("Preencha os campos corretamente!");
+
+    // validacao do campo nome
+    if (this.nome == "" || this.nome == null) {
+      this.erroNome = "Nome nao pode ficar vazio";
+      erros++;
     } else {
+      if (this.nome.length <= 5) {
+        this.erroNome = "Parece que seu nome esta errado";
+        erros++;
+      } else {
         if (this.nome.indexOf(" ") == -1) {
-          this.erroNome = "Digite o nome corretamente"
+          this.erroNome = "Informe nome e sobrenome";
+          erros++;
         } else {
-          contAcertos++;
-        }
-
-        if (this.telefone.toString().length < 10 || this.telefone.toString().length > 11) {
-          this.erroTelefone = "Informe um telefone válido";
-        } else {
-          contAcertos++;
-        }
-        if (this.email == null || this.email.indexOf('@') == 1 || this.email.indexOf('.') == 1) {
-          this.erroEmail = "Inform um e-mail válido"
-          
-        } else {
-          contAcertos++;
-        }
-        if (this.senha == null || this.senha.length < 10 || this.senha != this.senha2) { 
-          
-          this.erroSenha = "Confirme se as senhas são iguais";
-          
-          if(this.senha.indexOf('@') == 1 || this.senha.indexOf('#') == 1 || this.senha.indexOf('$') == 1 || this.senha.indexOf('%') == 1 || this.senha.indexOf('&') == 1){
-            alert('Senha forte');
-            contAcertos++;
+          if (regex.test(this.nome) == true) {
+            this.erroNome = "Nome nao pode conter numero";
+            erros++;
           } else {
-            alert('Senha fraca');
-            contAcertos++;
+            this.erroNome = "";
           }
-        } 
-          if (contAcertos >= 4){
-            alert('Cadastro realizado com sucesso!');
-          } else {
-            alert('Preencha os campos corretamente!');
-          }
+        }
       }
-  }
-
-  /*public forcaSenha () {
-    this.senha.complexify({}, function(valid, complexity));
-  }*/
-
-/*  $(function ()  {
-    $("#").complexify({}, function (valid, complexity) {
-        //exibir o nível da senha
-    });
-});*/
-
-
-  /*private tecla(){
-    var evt = window.event;
-    var tecla = evt.keyCode;
- 
-    if(tecla > 47 && tecla < 58){ 
-      alert('Não pressione teclas númericas');
-      evt.preventDefault();
     }
 
-}*/
+    // validacao do campo telefone
+    if (this.telefone == null) {
+      this.erroTelefone = "Telefone nao pode ficar vazio";
+      erros++;
+    } else {
+      if (this.telefone.toString().length < 10) {
+        this.erroTelefone = "Telefone muito curto";
+        erros++;
+      } else {
+        if (this.telefone.toString().length > 11) {
+          this.erroTelefone = "Telefone muito grande";
+          erros++;
+        } else {
+          this.erroTelefone = "";
+        }
+      }
+    }
 
-  /*validPhone (phone : any) {
-    var regex = new RegExp('^\\([0-9]{2}\\)((3[0-9]{3}-[0-9]{4})|(9[0-9]{3}-[0-9]{5}))$');
-    return regex.test(phone);
-}
-  isValidPhone = (phone : any) => {
-    const brazilianPhoneRegex = /^\(\d{2}\) \d{4,5}-\d{4}$/gi;
-    return brazilianPhoneRegex.test(phone);
-  };*/
+    // validacao do campo email
+    if (this.email == null || this.email == "") {
+      this.erroEmail = "E-mail nao pode ficar em vazio";
+      erros++;
+    } else {
+      if (this.email.indexOf("@") == -1) {
+        this.erroEmail = "O e-mail precisa de @";
+        erros++;
+      } else {
+        if (this.email.indexOf(".com") == -1 || this.email.indexOf(" ") != -1) {
+          this.erroEmail = "Formato de e-mail errado";
+          erros++;
+        } else {
+          this.erroEmail = "";
+        }
+      }
+    }
 
-  
+    // validacao do campo senha
+    if (this.senha == null || this.senha == "") {
+      this.erroSenha = "Senha nao pode ficar vazia";
+      this.erroStatus = "";
+      erros++;
+    } else {
+      if (this.senha.toString().length < 10) {
+        this.erroSenha = "Senha muito curta";
+        this.erroStatus = "Senha fraca";
+        erros++;
+      }if (this.senha.indexOf("@") == -1 && this.senha.indexOf("#") == -1 && this.senha.indexOf("&") == -1) {
+        this.erroSenha = "Senha deve conter ao menos um caractere especial (@, #, &)";
+        this.erroStatus = "Senha fraca";
+        erros++;
+      }else{
+        if (this.senha.length < 10 && this.senha.indexOf("@") != -1 || this.senha.indexOf("#") != -1 ||  this.senha.indexOf("&") != -1){
+          this.erroStatus = "Senha fraca";
+          erros++;
+        }else{
+        this.erroStatus = "Senha forte";
+        this.erroSenha = "";
+        }
+      }
+
+      /* verifica se a senha é faca ou forte
+      if (this.senha.length < 10 || this.senha.indexOf("@") == -1 && this.senha.indexOf("#") == -1 && this.senha.indexOf("&") == -1) {
+        this.erroStatus = "Senha fraca";
+        erros++;
+      } else {
+        this.erroStatus = "Senha forte";
+      }*/
+
+
+      // verifica se as senhas sao iguais
+      if (this.senha == this.confirmacao) {
+        this.erroConfirmacao = "";
+      } else {
+        this.erroConfirmacao = "senhas nao conferem";
+        erros++;
+      }
+
+      
+      if (erros > 0) {
+        alert("erro, os dados nao estao corretos");
+      } else {
+        alert("Cadastro realizado com sucesso");
+      }
+    }
+  }
+
+
+  /*
+    funcao para mostrar status da senha*/
+
+  /* public mostrarStatus() {
+     if (this.senha.indexOf("@") == -1 && this.senha.indexOf("#") == -1 && this.senha.indexOf("&") == -1) {
+       this.erroStatus = "Senha fraca";
+     }else{
+       if (this.senha == null || this.senha == ""){
+         this.erroStatus = "";
+       }
+       this.erroStatus = "Senha forte";
+     }
+   }*/
 }

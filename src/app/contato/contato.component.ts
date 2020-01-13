@@ -13,17 +13,6 @@ export class ContatoComponent implements OnInit {
   private telefone: string;
   private msg : string;
 
-tecla(){
-    var evt = window.event;
-    var tecla = evt.keyCode;
- 
-    if(tecla > 47 && tecla < 58){ 
-      alert('Não pressione teclas númericas');
-      evt.preventDefault();
-    }
-
-}
-
 validaForm(){
   var i = 0;
 

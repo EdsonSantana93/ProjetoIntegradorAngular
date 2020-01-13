@@ -58,11 +58,13 @@
 
                 <label for="senha">Senha</label>
                 <input type="password" class="form-control" id="senha" [(ngModel)]="senha"
-                [ngModelOptions]="{standalone: true}" placeholder="Digite sua Senha..." required>
-                
-                <label for="senha2">Confirme a Senha</label>
-                <input type="password" class="form-control" id="senha2" [(ngModel)]="senha2" [ngModelOptions]="{standalone: true}" placeholder="Confirme sua Senha" required>
+                [ngModelOptions]="{standalone: true}" placeholder="Digite sua Senha..." (keydown)="mostarStatus()"  required>
+                <span *ngIf = 'erroStatus'>{{erroStatus}}<br></span>
                 <span *ngIf='erroSenha'>{{erroSenha}}<br></span>
+                
+                <label for="confirmacao">Confirme a Senha</label>
+                <input type="password" class="form-control" id="confirmacao" [(ngModel)]="confirmacao" [ngModelOptions]="{standalone: true}" placeholder="Confirme sua Senha" required>
+                <span *ngIf='erroSenha'>{{erroConfirmacao}}<br></span>
                 
               </div>
 
