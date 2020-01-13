@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Feed } from '../modal/feed';
 import { FeedService } from '../service/feed.service';
+import { Usuario } from '../modal/Usuario';
+
 
 @Component({
   selector: 'app-navbar',
@@ -12,11 +14,13 @@ export class NavbarComponent implements OnInit {
 
   private buscar: number;
   feedlist: Feed = null;
+  
+  public usuario: Usuario = new Usuario();
 
-  private nome: string;
+  /*private nome: string;
   private email: string;
   private telefone: number;
-  private senha: string;
+  private senha: string;*/
   private confirmacao: string;
   private erroNome: string = null;
   private erroEmail: string = null;
@@ -39,19 +43,19 @@ export class NavbarComponent implements OnInit {
 
 
     // validacao do campo nome
-    if (this.nome == "" || this.nome == null) {
+    if (this.usuario.nome == "" || this.usuario.nome == null) {
       this.erroNome = "Nome nao pode ficar vazio";
       erros++;
     } else {
-      if (this.nome.length <= 5) {
+      if (this.usuario.nome.length <= 5) {
         this.erroNome = "Parece que seu nome esta errado";
         erros++;
       } else {
-        if (this.nome.indexOf(" ") == -1) {
+        if (this.usuario.nome.indexOf(" ") == -1) {
           this.erroNome = "Informe nome e sobrenome";
           erros++;
         } else {
-          if (regex.test(this.nome) == true) {
+          if (regex.test(this.usuario.nome) == true) {
             this.erroNome = "Nome nao pode conter numero";
             erros++;
           } else {
@@ -62,15 +66,15 @@ export class NavbarComponent implements OnInit {
     }
 
     // validacao do campo telefone
-    if (this.telefone == null) {
+    if (this.usuario.telefone == null) {
       this.erroTelefone = "Telefone nao pode ficar vazio";
       erros++;
     } else {
-      if (this.telefone.toString().length < 10) {
+      if (this.usuario.telefone.toString().length < 10) {
         this.erroTelefone = "Telefone muito curto";
         erros++;
       } else {
-        if (this.telefone.toString().length > 11) {
+        if (this.usuario.telefone.toString().length > 11) {
           this.erroTelefone = "Telefone muito grande";
           erros++;
         } else {
@@ -80,15 +84,15 @@ export class NavbarComponent implements OnInit {
     }
 
     // validacao do campo email
-    if (this.email == null || this.email == "") {
+    if (this.usuario.email == null || this.usuario.email == "") {
       this.erroEmail = "E-mail nao pode ficar em vazio";
       erros++;
     } else {
-      if (this.email.indexOf("@") == -1) {
+      if (this.usuario.email.indexOf("@") == -1) {
         this.erroEmail = "O e-mail precisa de @";
         erros++;
       } else {
-        if (this.email.indexOf(".com") == -1 || this.email.indexOf(" ") != -1) {
+        if (this.usuario.email.indexOf(".com") == -1 || this.usuario.email.indexOf(" ") != -1) {
           this.erroEmail = "Formato de e-mail errado";
           erros++;
         } else {
@@ -98,21 +102,21 @@ export class NavbarComponent implements OnInit {
     }
 
     // validacao do campo senha
-    if (this.senha == null || this.senha == "") {
+    if (this.usuario.senha == null || this.usuario.senha == "") {
       this.erroSenha = "Senha nao pode ficar vazia";
       this.erroStatus = "";
       erros++;
     } else {
-      if (this.senha.toString().length < 10) {
+      if (this.usuario.senha.toString().length < 10) {
         this.erroSenha = "Senha muito curta";
         this.erroStatus = "Senha fraca";
         erros++;
-      }if (this.senha.indexOf("@") == -1 && this.senha.indexOf("#") == -1 && this.senha.indexOf("&") == -1) {
+      }if (this.usuario.senha.indexOf("@") == -1 && this.usuario.senha.indexOf("#") == -1 && this.usuario.senha.indexOf("&") == -1) {
         this.erroSenha = "Senha deve conter ao menos um caractere especial (@, #, &)";
         this.erroStatus = "Senha fraca";
         erros++;
       }else{
-        if (this.senha.length < 10 && this.senha.indexOf("@") != -1 || this.senha.indexOf("#") != -1 ||  this.senha.indexOf("&") != -1){
+        if (this.usuario.senha.length < 10 && this.usuario.senha.indexOf("@") != -1 || this.usuario.senha.indexOf("#") != -1 ||  this.usuario.senha.indexOf("&") != -1){
           this.erroStatus = "Senha fraca";
           erros++;
         }else{
@@ -131,7 +135,7 @@ export class NavbarComponent implements OnInit {
 
 
       // verifica se as senhas sao iguais
-      if (this.senha == this.confirmacao) {
+      if (this.usuario.senha == this.confirmacao) {
         this.erroConfirmacao = "";
       } else {
         this.erroConfirmacao = "senhas nao conferem";
@@ -142,7 +146,8 @@ export class NavbarComponent implements OnInit {
       if (erros > 0) {
         alert("erro, os dados nao estao corretos");
       } else {
-        alert("Cadastro realizado com sucesso");
+       // alert("Cadastro realizado com sucesso");
+        this.enviarDados();
       }
     }
   }
@@ -161,4 +166,17 @@ export class NavbarComponent implements OnInit {
        this.erroStatus = "Senha forte";
      }
    }*/
+
+   enviarDados(){
+      console.log(this.usuario)
+      this.FeedService.atualiza(this.usuario).subscribe(
+        (res)=>{
+          alert("Dados atualizados com sucesso")
+        }, 
+        (err)=>{
+          console.log(err); 
+          alert("Falha na atualização dos dados"); 
+        });
+    }
 }
+

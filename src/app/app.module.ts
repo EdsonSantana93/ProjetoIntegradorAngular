@@ -11,6 +11,8 @@ import { SobreComponent } from './sobre/sobre.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FeedListComponent } from './feed-list/feed-list.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AdministradorComponent } from './administrador/administrador.component';
+import { DetalheComponent } from './detalhe/detalhe.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     ContatoComponent,
     SobreComponent,
     FeedListComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AdministradorComponent,
+    DetalheComponent
   ],
   imports: [
     BrowserModule,
