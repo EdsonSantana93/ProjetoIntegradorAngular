@@ -1,0 +1,43 @@
+*{
+    margin: 0%;
+    padding: 0%;
+  }
+  
+  
+  #login.card{
+  
+    margin-top: 5%;
+    width: 250px;
+    
+  }
+  
+  #imglogin{
+  
+    width: 25%;
+    height: 25%;
+    padding: 0%;
+  }
+  #backgroundlogin{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+   
+  
+  }
+  #login1{
+    margin-left: 5%;
+    width: 70%;
+    height: 70%;
+  }
+  .card{
+    background-color: rgba(134, 132, 132, 0.1);
+    
+  
+  }
+  #cardheader{
+    background-color:rgba(134, 132, 132, 0.2);
+  }
+  .btn{
+    color: white;
+  }

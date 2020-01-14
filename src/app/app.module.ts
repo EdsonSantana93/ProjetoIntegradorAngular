@@ -13,6 +13,7 @@ import { FeedListComponent } from './feed-list/feed-list.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AdministradorComponent } from './administrador/administrador.component';
 import { DetalheComponent } from './detalhe/detalhe.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DetalheComponent } from './detalhe/detalhe.component';
     FeedListComponent,
     NotFoundComponent,
     AdministradorComponent,
-    DetalheComponent
+    DetalheComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
