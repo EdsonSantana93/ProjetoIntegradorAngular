@@ -11,22 +11,27 @@
         id="login1">
     </div>
     <div class="card-body">
-      <form>
+      <div>
         <div class="form-group">
           <label for="exampleInputEmail1">Email</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="usuario.email"
             placeholder="Email">
 
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Senha</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+          <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="usuario.senha"
+           placeholder="Senha">
         </div>
 
+<<<<<<< HEAD
         <button type="submit" class="btn btn-outline-purple">Entrar</button>
+=======
+        <button type="submit" class="btn btn-outline-light" style="background-color: #7a297a;" (click)="login()">Entrar</button>
+>>>>>>> aa494d84ed5ac3ba8cfef454d1d0998c375d5fe0
         <!--    <h6>Não é cadastrado? Cadastre-se aqui!</h6>
                             <button type="submit" class="btn btn-outline-light" style="background-color: #7a297a;">Cadastre-se</button>-->
-      </form>
+        </div>
     </div>
   </div>
 </div>

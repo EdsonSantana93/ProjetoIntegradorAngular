@@ -20,5 +20,4 @@ export class AdministradorComponent implements OnInit {
       this.listaUser = res;
     });
   }
-
 }
