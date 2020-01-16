@@ -1,0 +1,25 @@
+form{
+    margin: 5%;
+}
+#detalheimg{
+    width: 200px;
+    height: 200px;
+    margin-left: 41%;
+    
+}
+#bg{
+    position: absolute;
+    z-index: -1;
+    margin-left: 78.5%;
+   
+}
+.btn-outline-purple{
+    border-color: #7a297a;
+    color: #7a297a;
+    background-color: transparent;
+}
+
+.btn-outline-purple:hover{
+    background-color: #7a297a;
+    color: white;
+}

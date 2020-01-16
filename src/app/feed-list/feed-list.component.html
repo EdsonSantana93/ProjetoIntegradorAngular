@@ -1,4 +1,5 @@
-<div class="bg">
+
+<div class=" container-fluid bg">
 <div class="row pb-5">
      <!--Card lado esquerdo-->
     <div class="col-md-3">
@@ -29,7 +30,7 @@
             </div>
             <div class="btn-toolbar justify-content-end mb-5">
                 <div class="btn-group">
-                    <button type="submit" class="btn btn-primary">Publicar</button>
+                    <button type="submit" class=" btn btn-outline-purple">Publicar</button>
                 </div>
             </div>
         </div>
@@ -87,16 +88,18 @@
                         <img class="trofeu" src="../../assets/image/trofeu.png" alt="" height="50" width="50">Eventos Que Participou
                 </div>
                 <div class="card-body" id="cardEventos">
-                    <img src="../../assets/image/voluntario.jpg" alt="" height="30" width="30"> <img
-                        src="../../assets/image/chepeu.png" alt="" width="30" height="30"> <img
-                        src="../../assets/image/intercambiocheck.png" alt="" width="30" height="30">
-                    <img src="../../assets/image/music.png" alt="" height="30" width="30">
-                    <img src="../../assets/image/museu.png" alt="" height="30" width="30">
-                    <img src="../../assets/image/teatro..jpg" alt="" width="30" height="30">
+                    <div class="container-fluid badges">
+                    <img src="../../assets/image/voluntario.jpg" alt="" height="30" width="30" title="Este(a) usuario(a) realizou trabalhos voluntarios"> 
+                    <img src="../../assets/image/chepeu.png" alt="" width="30" height="30" title=" Este(a) Usuario(a) ja ajudou com uma Pergunta!"> 
+                    <img src="../../assets/image/intercambiocheck.png" alt="" width="30" height="30" title="Este(a) Usuario(a) Ja fez um Intercambio">
+                    <img src="../../assets/image/music.png" alt="" height="30" width="30" title="Este(a) Usuario(a) Sabe tocar algum Instrumento">
+                    <img src="../../assets/image/museu.png" alt="" height="30" width="30" title="Este(a) Usuario(a) ja visitou um museu">
+                    <img src="../../assets/image/teatro..jpg" alt="" width="30" height="30" title="Este(a) Usuario(a) ja visitou o teatro">
+                     </div>
                     <p class="card-text">Voce Ja visitou esses eventos Parabens, Click em "Ver mais" para aumentar sua taxa de "cultura".</p>
                     <div class="btn-toolbar justify-content-end">
                         <div class="btn-group">
-                    <button href="#" class="btn btn-primary" id="btnVMais">Ver Mais</button>
+                    <button href="#" class=" btn btn-outline-purple" id="btnVMais">Ver Mais</button>
                     </div>
                     </div>
                 </div>
@@ -105,7 +108,7 @@
             <div class="form-inline my-3">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" [(ngModel)]="buscar"
                     aria-label="Search">
-                <button class="btn btn-primary my-2 my-sm-0" type="submit" (click)="findId()">Search</button>
+                <button class=" btn btn-outline-purple" type="submit" (click)="findId()">Search</button>
             </div>
         </div>
     </div> 
