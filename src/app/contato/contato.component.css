@@ -1,6 +1,64 @@
 /*style="background-color:#fffedd*/
 
-#pt1
+/*#pt1
+{
+    background-color: rgba(0, 0, 0, .3); 
+    color:#7a297a;
+    padding-top: 20px;
+}*/
+
+#caixatxt
+{
+    border-radius: 5px;
+}
+
+
+h1
+{
+    text-align: center;
+    font-family: 'Indie Flower', cursive;
+    color: white;
+    font-size: 60px;
+    
+}
+
+.bg{
+    background-image: url(../../assets/image/fundogeo1.jpg);
+    margin-left: 30%;
+    
+}
+
+#form
+{
+   /* padding: 5%;*/
+}
+
+h1{
+    color:#7a297a;
+}
+
+.btn-outline-purple{
+    border-color: #7a297a;
+    color: #7a297a;
+    background-color: transparent;
+}
+
+.btn-outline-purple:hover{
+    background-color: #7a297a;
+    color: white;
+}
+
+#fundo{
+    padding: 0%;
+}
+
+
+
+
+
+/*style="background-color:#fffedd*/
+
+/*#pt1
 {
     background-color: rgba(0,0,0,.9); 
     color: white;
@@ -23,10 +81,10 @@ h1
 
 .bg{
     background-image: url(../../assets/image/fteste.jpg);
-}
+}*/
 
-#form
+/*#form
 {
-   /* padding: 5%;*/
-}
+    padding: 5%;
+}*/
 

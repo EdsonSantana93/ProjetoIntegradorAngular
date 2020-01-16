@@ -41,4 +41,15 @@
   .btn{
     color: white;
   }
+
+  .btn-outline-purple{
+    border-color: #7a297a;
+    color: #7a297a;
+    background-color: transparent;
+}
+
+.btn-outline-purple:hover{
+    background-color: #7a297a;
+    color: white;
+}
   

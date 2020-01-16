@@ -1,5 +1,6 @@
 #navtitile{
     color: black;
+    width: 100%;
 }
 
 input[type=number]::-webkit-inner-spin-button { 
