@@ -43,12 +43,8 @@ export class LoginComponent implements OnInit {
     this.FeedService.login(this.usuario).subscribe(
       (res:Usuario)=>{
         console.log("Conectado!");
-<<<<<<< HEAD
         
-        //Globals.usuario = res;
-=======
         Globals.usuario = res;
->>>>>>> cc503cecb9091c6499632776019f3aa86644e34a
         this.router.navigate(['Feed']);
         /*alert("Usuário logado com sucesso.")*/
 

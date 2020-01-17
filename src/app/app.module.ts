@@ -28,11 +28,7 @@ import { AjudaComponent } from './ajuda/ajuda.component';
     NotFoundComponent,
     AdministradorComponent,
     DetalheComponent,
-<<<<<<< HEAD
     LoginComponent, 
-=======
-    LoginComponent,
->>>>>>> cc503cecb9091c6499632776019f3aa86644e34a
     AjudaComponent
   ],
   imports: [
