@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FeedService } from '../service/feed.service';
-
+import { Router } from '@angular/router';
 import { Usuario } from '../modal/Usuario';
 
 @Component({
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   
   public usuario: Usuario = new Usuario();
 
-  constructor(private FeedService: FeedService) { }
+  constructor(private FeedService: FeedService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -24,10 +24,13 @@ export class LoginComponent implements OnInit {
     console.log(this.usuario)
     this.FeedService.login(this.usuario).subscribe(
       (res)=>{
-        alert("Usuário logado com sucesso.")
+        console.log("Conectado!");
+        this.router.navigate(['Feed']);
+        /*alert("Usuário logado com sucesso.")*/
+
       }, 
       (err)=>{
-        console.log(err); 
+        console.log("ERRO - Não Conectado! Erro: " + err); 
         alert("Usuário e/ou senha inválidos."); 
       });
   }
