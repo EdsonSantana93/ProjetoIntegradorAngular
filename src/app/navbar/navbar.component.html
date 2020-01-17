@@ -1,5 +1,4 @@
-
-<nav class=" container-fluid navbar navbar-expand-lg"  width="100%" style="background-color: #7a297a;" id="navtitile">
+<nav class=" container-fluid navbar navbar-expand-lg" width="100%" style="background-color: #7a297a;" id="navtitile">
   <a class="navbar-brand" href="#"><img src="../../assets/image/iconLampp.png" width="40px"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
     aria-expanded="false" aria-label="Toggle navigation">
@@ -20,68 +19,9 @@
         <a class="nav-link" style="color:white" [routerLink]="'/administrador'">Administrador</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" style="color:white" [routerLink]="'/ajuda'">Ajuda</a>
-        </li>
+        <a class="nav-link" style="color:white" [routerLink]="'/ajuda'">Ajuda</a>
+      </li>
 
     </ul>
-    <!-- Botão para acionar modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ExemploModalCentralizado">
-      Cadastre-se
-    </button>
-    
-
-    <!-- Modal -->
-    <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog"
-      aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="TituloModalCentralizado">Cadastro</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="mt-3 pb-3">
-              <div class="form-group">
-                <label for="nome">Nome Completo</label>
-                <input type="text" class="form-control" id="nome" [(ngModel)]="usuario.nome"
-                  [ngModelOptions]="{standalone: true}" aria-describedby="nome" placeholder="Digite seu nome..." 
-                  autofocus required>
-                <span *ngIf='erroNome'>{{erroNome}}<br></span>
-
-                <label for="telefone">Telefone</label>
-                <input type="number" class="form-control" id="telefone" [(ngModel)]="usuario.telefone"
-                  [ngModelOptions]="{standalone: true}" aria-describedby="telefone" placeholder="Digite seu telefone..."
-                  required>
-                <span *ngIf='erroTelefone'>{{erroTelefone}}<br></span>
-
-                <label for="email">E-mail</label>
-                <input type="email" class="form-control" id="email" [(ngModel)]="usuario.email"
-                  [ngModelOptions]="{standalone: true}" aria-describedby="emailHelp" placeholder="Digite seu e-mail..."
-                  required>
-                <span *ngIf='erroEmail'>{{erroEmail}}<br></span>
-
-                <label for="senha">Senha</label>
-                <input type="password" class="form-control" id="senha" [(ngModel)]="usuario.senha"
-                [ngModelOptions]="{standalone: true}" placeholder="Digite sua Senha..." required>
-                <span *ngIf = 'erroStatus'>{{erroStatus}}<br></span>
-                <span *ngIf='erroSenha'>{{erroSenha}}<br></span>
-                
-                <label for="confirmacao">Confirme a Senha</label>
-                <input type="password" class="form-control" id="confirmacao" [(ngModel)]="confirmacao" [ngModelOptions]="{standalone: true}" placeholder="Confirme sua Senha" required>
-                <span *ngIf='erroSenha'>{{erroConfirmacao}}<br></span>
-                
-              </div>
-
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-            <button type="button" class="btn btn-primary" (click)="validar()">Cadastrar</button>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </nav>

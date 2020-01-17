@@ -52,4 +52,23 @@
     background-color: #7a297a;
     color: white;
 }
+
+#navtitile{
+  color: black;
+  width: 100%;
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+  -webkit-appearance: none;
+  
+}
+input[type=number] { 
+ -moz-appearance: textfield;
+ appearance: textfield;
+
+}
+
+#cadastrar{
+  margin-left: 14%;
+}
   
