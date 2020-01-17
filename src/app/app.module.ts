@@ -14,7 +14,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AdministradorComponent } from './administrador/administrador.component';
 import { DetalheComponent } from './detalhe/detalhe.component';
 import { LoginComponent } from './login/login.component';
-import { AjudaComponent } from './ajuda/ajuda.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +27,7 @@ import { AjudaComponent } from './ajuda/ajuda.component';
     NotFoundComponent,
     AdministradorComponent,
     DetalheComponent,
-    LoginComponent,
-    AjudaComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,

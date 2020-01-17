@@ -7,8 +7,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AdministradorComponent } from './administrador/administrador.component';
 import { DetalheComponent } from './detalhe/detalhe.component';
 import { LoginComponent} from './login/login.component';
-import { AjudaComponent } from './ajuda/ajuda.component';
-
 
 const routes: Routes = [
   {path: "sobre", component: SobreComponent},
@@ -17,7 +15,6 @@ const routes: Routes = [
   {path: "Feed", component: FeedListComponent},
   {path: "administrador", component: AdministradorComponent},
   {path: "detalhe/:id", component: DetalheComponent},
-  {path: "ajuda", component: AjudaComponent},
   {path: "**", component: NotFoundComponent}
 ];
 
