@@ -3,6 +3,8 @@ import { Feed } from './../modal/feed';
 import { FeedService } from './../service/feed.service';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { Globals } from "../modal/Globals";
+import { Usuario } from '../modal/Usuario';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,23 +14,29 @@ import { Globals } from "../modal/Globals";
   providers: [ Globals]
 })
 export class FeedListComponent implements OnInit {
-
-
+  usuario: Usuario;
   private buscar: number;
-  private _feed: Feed = null;
+  private _feed: Feed;
   private feed: Feed[];
 
-  constructor(private FeedService: FeedService) { }
+  constructor(private FeedService: FeedService, private router: Router) { }
   
   ngOnInit() {
+
+    this.usuario = Globals.usuario;
     this.findAll();
-    console.log(this._feed);
+    console.log(this.feed);
+    if(!this.usuario){
+      this.router.navigate(['/']);
+    } else{
+      this.usuario = Globals.usuario;
+    }
   }
 
   findAll(){
     this.FeedService.getAll().subscribe((feedOut: Feed[]) => {
       this.feed = feedOut;
-      console.log(this._feed)
+      console.log(this.feed)
     })
   }
 

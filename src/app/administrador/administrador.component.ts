@@ -3,6 +3,7 @@ import { FeedService } from '../service/feed.service';
 import { Usuario } from '../modal/Usuario';
 
 
+
 @Component({
   selector: 'app-administrador',
   templateUrl: './administrador.component.html',
