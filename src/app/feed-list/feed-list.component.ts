@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Feed } from './../modal/feed';
 import { FeedService } from './../service/feed.service';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { Globals } from "../modal/Globals";
 
 
 @Component({
   selector: 'app-feed-list',
   templateUrl: './feed-list.component.html',
-  styleUrls: ['./feed-list.component.css']
+  styleUrls: ['./feed-list.component.css'],
+  providers: [ Globals]
 })
 export class FeedListComponent implements OnInit {
 
