@@ -1,6 +1,6 @@
 /* data-toggle="collapse" data-target="#laura"><!--Collapse: responsavel por abrir as descrições ao click do mousse-->
 <div id="laura" class="collapse" aria-labelledby="foto1" data-parent="#accordionGroup"><!--aria-labelledby e data-parent: são responsaveis por fechar automaticamente um collapse caso outro collapse seja aberto-->*/
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif&display=swap');
 
 @-webkit-keyframes swing
 {
@@ -69,12 +69,22 @@
     }
 }
 
+
+
 #titulo
 {
 text-align: center;
-font-family: 'Indie Flower', cursive;
-font-size: 70px;
+font-family: 'Noto Serif', serif;
+font-size: 60px;
 color:#7a297a;
+}
+
+h3{
+    text-align: center;
+font-family: 'Noto Serif', serif;
+font-size: 40px;
+color:#7a297a;
+margin-top: 4%;
 }
 
 /*#pt1
@@ -177,6 +187,17 @@ height: 300px;
     animation-iteration-count: 1;
 }
 
+.valores
+{
+    width:120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-top: 3%;
+}
+
+#subtitulo{
+    margin-bottom: 10%;
+}
 
 /*@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Lobster&display=swap');
 

@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       (res)=>{
         console.log("Conectado!");
         
-        Globals.usuario = res;
+        //Globals.usuario = res;
         this.router.navigate(['Feed']);
         /*alert("Usuário logado com sucesso.")*/
 
