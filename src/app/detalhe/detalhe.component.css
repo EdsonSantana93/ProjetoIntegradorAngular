@@ -1,17 +1,19 @@
 form{
-    margin: 10%;
+    margin: 10% 10% 0 10%;
+    padding-bottom: 10%;
 }
+
+
 #detalheimg{
     width: 200px;
     height: 200px;
-    margin-left: 41%;
+    margin-left: 35%;
     
 }
-#bg{
-    position: absolute;
-    z-index: -1;
-    margin-left: 78.5%;
-   height: 100%;
+.bg{
+    background-image: url(../../assets/image/fundogeo.jpg);
+    background-position: right top;
+    background-repeat: repeat-y;
 }
 .btn-outline-purple{
     border-color: #7a297a;

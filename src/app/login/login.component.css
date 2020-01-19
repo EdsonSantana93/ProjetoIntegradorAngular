@@ -71,4 +71,10 @@ input[type=number] {
 #cadastrar{
   margin-left: 14%;
 }
+
+.erro{
+  font-size: 12px;
+  color: red;
+  text-indent: 50px;
+}
   

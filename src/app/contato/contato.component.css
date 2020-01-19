@@ -23,14 +23,9 @@ h1
 }
 
 .bg{
-    background-image: url(../../assets/image/fundogeo1.jpg);
-    margin-left: 30%;
-    
-}
-
-#form
-{
-   /* padding: 5%;*/
+    background-image: url(../../assets/image/fundogeo.jpg);
+    background-position: right top;
+    background-repeat: repeat-y;   
 }
 
 h1{
@@ -47,44 +42,3 @@ h1{
     background-color: #7a297a;
     color: white;
 }
-
-#fundo{
-    padding: 0%;
-}
-
-
-
-
-
-/*style="background-color:#fffedd*/
-
-/*#pt1
-{
-    background-color: rgba(0,0,0,.9); 
-    color: white;
-    padding-top: 20px;;
-}
-
-#caixatxt
-{
-    border-radius: 5px;
-}
-
-h1
-{
-    text-align: center;
-    font-family: 'Indie Flower', cursive;
-    color: white;
-    font-size: 60px;
-    
-}
-
-.bg{
-    background-image: url(../../assets/image/fteste.jpg);
-}*/
-
-/*#form
-{
-    padding: 5%;
-}*/
-

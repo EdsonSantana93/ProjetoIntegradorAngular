@@ -1,32 +1,32 @@
+<div class="bg">
+  <div class="container">
+    <img id="detalheimg" src="../../assets/image/perfil-de-avatar-de-homem-no-icone-redondo_24640-14044.jpg" alt="">
 
-<div class="container">
-  <img  id="bg" src="../../assets/image/fundogeo1.jpg" alt="">
-<img id="detalheimg" src="../../assets/image/perfil-de-avatar-de-homem-no-icone-redondo_24640-14044.jpg" alt="">
-
-<form>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="inputUser">Usuario</label>
-        <input  [(ngModel)]="usuario.nome" [ngModelOptions] = "{standalone: true}" type="email" class="form-control" id="inputEmail4" placeholder="Usuario">
-      </div>
-      <div class="form-group col-md-6">
-        <label for="inputPassword4">Email</label>
-        <input  [(ngModel)] ="usuario.email" [ngModelOptions] = "{standalone: true}" type="text" class="form-control" id="inputPassword4" placeholder="Senha">
-      </div>
-    </div>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-          <label for="inputEmail4">Telefone</label>
-          <input [(ngModel)] = "usuario.telefone" [ngModelOptions] = "{standalone: true}"  type="email" class="form-control" id="inputEmail4" placeholder="Email">
+  <form>
+      <div class="form-row">
+        <div class="form-group col-md-5">
+          <label for="inputUser">Usuario</label>
+          <input  [(ngModel)]="usuario.nome" [ngModelOptions] = "{standalone: true}" type="email" class="form-control" id="inputEmail4" placeholder="Usuario">
         </div>
-        <div class="form-group col-md-6">
-          <label for="inputPassword4">Senha</label>
-          <input  [(ngModel)] = "usuario.senha" [ngModelOptions] = "{standalone: true}" type="text" class="form-control" id="inputPassword4" placeholder="Senha">
+        <div class="form-group col-md-5">
+          <label for="inputPassword4">Email</label>
+          <input  [(ngModel)] ="usuario.email" [ngModelOptions] = "{standalone: true}" type="text" class="form-control" id="inputPassword4" placeholder="Senha">
         </div>
       </div>
-    
-    <button type="submit" class=" btn btn-outline-purple" >Enviar</button>
-  </form>
+      <div class="form-row">
+          <div class="form-group col-md-5">
+            <label for="inputEmail4">Telefone</label>
+            <input [(ngModel)] = "usuario.telefone" [ngModelOptions] = "{standalone: true}"  type="email" class="form-control" id="inputEmail4" placeholder="Email">
+          </div>
+          <div class="form-group col-md-5">
+            <label for="inputPassword4">Senha</label>
+            <input  [(ngModel)] = "usuario.senha" [ngModelOptions] = "{standalone: true}" type="text" class="form-control" id="inputPassword4" placeholder="Senha">
+          </div>
+        </div>
+      
+      <button type="submit" class=" btn btn-outline-purple" >Enviar</button>
+    </form>
+  </div>
 </div>
 <app-rodape></app-rodape>
    

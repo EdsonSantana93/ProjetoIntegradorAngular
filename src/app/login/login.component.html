@@ -51,30 +51,30 @@
                     <input type="text" class="form-control" id="nome" [(ngModel)]="usuario.nome"
                       [ngModelOptions]="{standalone: true}" aria-describedby="nome" placeholder="Digite seu nome..."
                       autofocus required>
-                    <span *ngIf='erroNome'>{{erroNome}}<br></span>
+                    <span class="erro" *ngIf='erroNome'>{{erroNome}}<br></span>
 
                     <label for="telefone">Telefone</label>
                     <input type="number" class="form-control" id="telefone" [(ngModel)]="usuario.telefone"
                       [ngModelOptions]="{standalone: true}" aria-describedby="telefone"
                       placeholder="Digite seu telefone..." required>
-                    <span *ngIf='erroTelefone'>{{erroTelefone}}<br></span>
+                    <span class="erro" *ngIf='erroTelefone'>{{erroTelefone}}<br></span>
 
                     <label for="email">E-mail</label>
                     <input type="email" class="form-control" id="email" [(ngModel)]="usuario.email"
                       [ngModelOptions]="{standalone: true}" aria-describedby="emailHelp"
                       placeholder="Digite seu e-mail..." required>
-                    <span *ngIf='erroEmail'>{{erroEmail}}<br></span>
+                    <span class="erro" *ngIf='erroEmail'>{{erroEmail}}<br></span>
 
                     <label for="senha">Senha</label>
                     <input type="password" class="form-control" id="senha" [(ngModel)]="usuario.senha"
                       [ngModelOptions]="{standalone: true}" placeholder="Digite sua Senha..." required>
-                    <span *ngIf='erroStatus'>{{erroStatus}}<br></span>
-                    <span *ngIf='erroSenha'>{{erroSenha}}<br></span>
+                    <span class="erro" *ngIf='erroStatus'>{{erroStatus}}<br></span>
+                    <span class="erro" *ngIf='erroSenha'>{{erroSenha}}<br></span>
 
                     <label for="confirmacao">Confirme a Senha</label>
                     <input type="password" class="form-control" id="confirmacao" [(ngModel)]="confirmacao"
                       [ngModelOptions]="{standalone: true}" placeholder="Confirme sua Senha" required>
-                    <span *ngIf='erroSenha'>{{erroConfirmacao}}<br></span>
+                    <span class="erro" *ngIf='erroSenha'>{{erroConfirmacao}}<br></span>
 
                   </div>
 

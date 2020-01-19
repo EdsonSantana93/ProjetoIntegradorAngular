@@ -118,9 +118,10 @@ height: 300px;
     height: 250px;
 }*/
 
-#bg{
-    background: url(../../assets/image/fundogeo.jpg);
-    
+.bg{
+    background-image: url(../../assets/image/fundogeo.jpg);
+    background-position: right top;
+    background-repeat: repeat-y;
 }
 
 #fundo{

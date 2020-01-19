@@ -17,3 +17,9 @@
     background-color: #7a297a;
     color: white;
 }
+
+.bg{
+    background-image: url(../../assets/image/fundogeo.jpg);
+    background-position: right top;
+    background-repeat: repeat-y;
+}
