@@ -75,6 +75,18 @@ input[type=number] {
 .erro{
   font-size: 12px;
   color: red;
-  text-indent: 50px;
+  padding-left: 10px;
+}
+
+.forte{
+  font-size: 12px;
+  color: green;
+  padding-left: 10px;
+}
+
+.fraca{
+  font-size: 12px;
+  color:orange;
+  padding-left: 10px;
 }
   

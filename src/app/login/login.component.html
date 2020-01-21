@@ -47,12 +47,14 @@
               <div class="modal-body">
                 <div class="mt-3 pb-3">
                   <div class="form-group">
+                    <!-- Input nome -->
                     <label for="nome">Nome Completo</label>
                     <input type="text" class="form-control" id="nome" [(ngModel)]="usuario.nome"
                       [ngModelOptions]="{standalone: true}" aria-describedby="nome" placeholder="Digite seu nome..."
                       autofocus required>
                     <span class="erro" *ngIf='erroNome'>{{erroNome}}<br></span>
 
+                    <!-- Input telefone -->
                     <label for="telefone">Telefone</label>
                     <input type="number" class="form-control" id="telefone" [(ngModel)]="usuario.telefone"
                       [ngModelOptions]="{standalone: true}" aria-describedby="telefone"
@@ -67,14 +69,15 @@
 
                     <label for="senha">Senha</label>
                     <input type="password" class="form-control" id="senha" [(ngModel)]="usuario.senha"
-                      [ngModelOptions]="{standalone: true}" placeholder="Digite sua Senha..." required>
-                    <span class="erro" *ngIf='erroStatus'>{{erroStatus}}<br></span>
+                      [ngModelOptions]="{standalone: true}" placeholder="Digite sua Senha..." (keyup) = "mostrarStatus()" required>
+                    <span class="forte" *ngIf='senhaForte'>{{senhaForte}}<br></span>
+                    <span class="fraca" *ngIf='senhaFraca'>{{senhaFraca}}<br></span>
                     <span class="erro" *ngIf='erroSenha'>{{erroSenha}}<br></span>
 
                     <label for="confirmacao">Confirme a Senha</label>
                     <input type="password" class="form-control" id="confirmacao" [(ngModel)]="confirmacao"
                       [ngModelOptions]="{standalone: true}" placeholder="Confirme sua Senha" required>
-                    <span class="erro" *ngIf='erroSenha'>{{erroConfirmacao}}<br></span>
+                    <span class="erro" *ngIf='erroConfirmacao'>{{erroConfirmacao}}<br></span>
 
                   </div>
 
@@ -87,8 +90,6 @@
             </div>
           </div>
         </div>
-        <!--<h6>Não é cadastrado? Cadastre-se aqui!</h6>
-                            <button type="submit" class="btn btn-outline-light" style="background-color: #7a297a;">Cadastre-se</button>-->
       </div>
     </div>
   </div>

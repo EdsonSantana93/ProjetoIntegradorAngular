@@ -29,6 +29,8 @@ export class LoginComponent implements OnInit {
   private erroSenha: string = null;
   private erroConfirmacao: string = null;
   private erroStatus: string = null;
+  private senhaForte: string = null;
+  private senhaFraca: string = null;
   
   
   
@@ -123,36 +125,21 @@ export class LoginComponent implements OnInit {
     // validacao do campo senha
     if (this.usuario.senha == null || this.usuario.senha == "") {
       this.erroSenha = "Senha nao pode ficar vazia";
-      this.erroStatus = "";
       erros++;
     } else {
       if (this.usuario.senha.toString().length < 10) {
         this.erroSenha = "Senha muito curta";
-        this.erroStatus = "Senha fraca";
         erros++;
       }if (this.usuario.senha.indexOf("@") == -1 && this.usuario.senha.indexOf("#") == -1 && this.usuario.senha.indexOf("&") == -1) {
         this.erroSenha = "Senha deve conter ao menos um caractere especial (@, #, &)";
-        this.erroStatus = "Senha fraca";
         erros++;
       }else{
         if (this.usuario.senha.length < 10 && this.usuario.senha.indexOf("@") != -1 || this.usuario.senha.indexOf("#") != -1 ||  this.usuario.senha.indexOf("&") != -1){
-          this.erroStatus = "Senha fraca";
           erros++;
         }else{
-        this.erroStatus = "Senha forte";
         this.erroSenha = "";
         }
       }
-
-      /* verifica se a senha é faca ou forte
-      if (this.senha.length < 10 || this.senha.indexOf("@") == -1 && this.senha.indexOf("#") == -1 && this.senha.indexOf("&") == -1) {
-        this.erroStatus = "Senha fraca";
-        erros++;
-      } else {
-        this.erroStatus = "Senha forte";
-      }*/
-
-
       // verifica se as senhas sao iguais
       if (this.usuario.senha == this.confirmacao) {
         this.erroConfirmacao = "";
@@ -171,20 +158,21 @@ export class LoginComponent implements OnInit {
     }
   }
 
-
-  /*
-    funcao para mostrar status da senha*/
-
-  /* public mostrarStatus() {
-     if (this.senha.indexOf("@") == -1 && this.senha.indexOf("#") == -1 && this.senha.indexOf("&") == -1) {
-       this.erroStatus = "Senha fraca";
-     }else{
-       if (this.senha == null || this.senha == ""){
-         this.erroStatus = "";
-       }
-       this.erroStatus = "Senha forte";
-     }
-   }*/
+    // verifica se a senha é faca ou forte
+    public mostrarStatus(){
+      if (this.usuario.senha == null || this.usuario.senha == ""){
+        this.senhaForte = "";
+        this.senhaFraca = "";
+      }else{ 
+        if (this.usuario.senha.length < 10 || this.usuario.senha.indexOf("@") == -1 && this.usuario.senha.indexOf("#") == -1 && this.usuario.senha.indexOf("&") == -1) {
+          this.senhaFraca = "Senha fraca";
+          this.senhaForte = "";
+        }else{
+        this.senhaForte = "Senha forte";
+        this.senhaFraca = "";
+        }
+      }
+    }
 
    enviarDados(){
       console.log(this.usuario)
