@@ -1,11 +1,4 @@
-/*style="background-color:#fffedd*/
-
-/*#pt1
-{
-    background-color: rgba(0, 0, 0, .3); 
-    color:#7a297a;
-    padding-top: 20px;
-}*/
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif&display=swap');
 
 #caixatxt
 {
@@ -16,9 +9,10 @@
 h1
 {
     text-align: center;
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Noto Serif', serif;
     color: white;
     font-size: 60px;
+    
     
 }
 
@@ -41,4 +35,7 @@ h1{
 .btn-outline-purple:hover{
     background-color: #7a297a;
     color: white;
+}
+label{
+    color: #7a297a
 }

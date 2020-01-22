@@ -52,27 +52,27 @@
                     <input type="text" class="form-control" id="nome" [(ngModel)]="usuario.nome"
                       [ngModelOptions]="{standalone: true}" aria-describedby="nome" placeholder="Digite seu nome..."
                       autofocus required>
-                    <span class="erro" *ngIf='erroNome'>{{erroNome}}<br></span>
+                    <span class="erro" *ngIf='erroNome'>{{erroNome}}<br></span><br>
 
                     <!-- Input telefone -->
                     <label for="telefone">Telefone</label>
                     <input type="number" class="form-control" id="telefone" [(ngModel)]="usuario.telefone"
                       [ngModelOptions]="{standalone: true}" aria-describedby="telefone"
                       placeholder="Digite seu telefone..." required>
-                    <span class="erro" *ngIf='erroTelefone'>{{erroTelefone}}<br></span>
+                    <span class="erro" *ngIf='erroTelefone'>{{erroTelefone}}<br></span><br>
 
                     <label for="email">E-mail</label>
                     <input type="email" class="form-control" id="email" [(ngModel)]="usuario.email"
                       [ngModelOptions]="{standalone: true}" aria-describedby="emailHelp"
                       placeholder="Digite seu e-mail..." required>
-                    <span class="erro" *ngIf='erroEmail'>{{erroEmail}}<br></span>
+                    <span class="erro" *ngIf='erroEmail'>{{erroEmail}}<br></span><br>
 
                     <label for="senha">Senha</label>
                     <input type="password" class="form-control" id="senha" [(ngModel)]="usuario.senha"
                       [ngModelOptions]="{standalone: true}" placeholder="Digite sua Senha..." (keyup) = "mostrarStatus()" required>
                     <span class="forte" *ngIf='senhaForte'>{{senhaForte}}<br></span>
                     <span class="fraca" *ngIf='senhaFraca'>{{senhaFraca}}<br></span>
-                    <span class="erro" *ngIf='erroSenha'>{{erroSenha}}<br></span>
+                    <span class="erro" *ngIf='erroSenha'>{{erroSenha}}<br></span><br>
 
                     <label for="confirmacao">Confirme a Senha</label>
                     <input type="password" class="form-control" id="confirmacao" [(ngModel)]="confirmacao"
@@ -85,7 +85,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-primary" (click)="validar()">Cadastrar</button>
+                <button type="button" class="btn btn-outline-purple" (click)="validar()">Cadastrar</button>
               </div>
             </div>
           </div>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif&display=swap');
+
 #box-ajuda{
     margin-top: 25px;
     margin-bottom: 40px;
@@ -33,4 +35,10 @@
     background-image: url(../../assets/image/fundogeo.jpg);
     background-position: right top;
     background-repeat: repeat-y;
+}
+
+h1{
+    font-family: 'Noto Serif', serif;
+    color: #7a297a; 
+    font-size: 50px;
 }

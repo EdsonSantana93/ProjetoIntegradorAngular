@@ -65,11 +65,11 @@ export class LoginComponent implements OnInit {
 
     // validacao do campo nome
     if (this.usuario.nome == "" || this.usuario.nome == null) {
-      this.erroNome = "Nome nao pode ficar vazio";
+      this.erroNome = "Nome não pode ficar vazio";
       erros++;
     } else {
       if (this.usuario.nome.length <= 5) {
-        this.erroNome = "Parece que seu nome esta errado";
+        this.erroNome = "Parece que seu nome está errado";
         erros++;
       } else {
         if (this.usuario.nome.indexOf(" ") == -1) {
@@ -77,7 +77,7 @@ export class LoginComponent implements OnInit {
           erros++;
         } else {
           if (regex.test(this.usuario.nome) == true) {
-            this.erroNome = "Nome nao pode conter numero";
+            this.erroNome = "Nome não pode conter número";
             erros++;
           } else {
             this.erroNome = "";
@@ -88,7 +88,7 @@ export class LoginComponent implements OnInit {
 
     // validacao do campo telefone
     if (this.usuario.telefone == null) {
-      this.erroTelefone = "Telefone nao pode ficar vazio";
+      this.erroTelefone = "Telefone não pode ficar vazio";
       erros++;
     } else {
       if (this.usuario.telefone.toString().length < 10) {
@@ -106,7 +106,7 @@ export class LoginComponent implements OnInit {
 
     // validacao do campo email
     if (this.usuario.email == null || this.usuario.email == "") {
-      this.erroEmail = "E-mail nao pode ficar em vazio";
+      this.erroEmail = "E-mail não pode ficar em vazio";
       erros++;
     } else {
       if (this.usuario.email.indexOf("@") == -1) {
@@ -124,7 +124,7 @@ export class LoginComponent implements OnInit {
 
     // validacao do campo senha
     if (this.usuario.senha == null || this.usuario.senha == "") {
-      this.erroSenha = "Senha nao pode ficar vazia";
+      this.erroSenha = "Senha não pode ficar vazia";
       erros++;
     } else {
       if (this.usuario.senha.toString().length < 10) {
@@ -144,13 +144,13 @@ export class LoginComponent implements OnInit {
       if (this.usuario.senha == this.confirmacao) {
         this.erroConfirmacao = "";
       } else {
-        this.erroConfirmacao = "senhas nao conferem";
+        this.erroConfirmacao = "senhas não conferem";
         erros++;
       }
 
       
       if (erros > 0) {
-        alert("erro, os dados nao estao corretos");
+        alert("erro, os dados não estão corretos");
       } else {
        // alert("Cadastro realizado com sucesso");
         this.enviarDados();
