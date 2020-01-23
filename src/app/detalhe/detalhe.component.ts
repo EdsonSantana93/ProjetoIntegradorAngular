@@ -28,18 +28,6 @@ export class DetalheComponent implements OnInit {
 
   }
 
-    /*enviarDados(){
-      console.log(this.usuario)
-      this.srv.atualiza(this.usuario).subscribe(
-        (res)=>{
-          console.log("Dados atualizados com sucesso")
-        }, 
-        (err)=>{
-          console.log(err); 
-          console.log("Falha na atualização dos dados"); 
-        });
-    }*/
-
     enviarAlteracoes(){
       this.srv.atualiza(this.usuario).subscribe(
         (res)=>{

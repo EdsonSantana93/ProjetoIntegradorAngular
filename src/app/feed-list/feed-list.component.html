@@ -24,13 +24,13 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
                     <div class="form-group">
-                        <textarea class="form-control" id="message" rows="4"  placeholder="No que voçê está pensando?"></textarea>
+                        <textarea class="form-control" id="message" rows="4"  placeholder="No que voçê está pensando?"[(ngModel)]="publicacao"></textarea>
                     </div>
                 </div>
             </div>
             <div class="btn-toolbar justify-content-end mb-5">
                 <div class="btn-group">
-                    <button type="submit" class=" btn btn-outline-purple">Publicar</button>
+                    <button type="submit" (click)="novaPubli()" class=" btn btn-outline-purple">Publicar</button>
                 </div>
             </div>
         </div>
@@ -61,8 +61,8 @@
         <div bg-light *ngIf="_feed == null">
             <div class="card post-1  mb-3 ml-3 mr-3" *ngFor="let item of feed">
                 <!--Cabeçalho do Fedd de noticias-->
-                <div class="card-header"><img src="{{item.linkimg}}" class="profile-post" alt=""> 
-                    <strong>{{item.titulo}}</strong>
+                <div class="card-header"><img src="{{item.linkImg}}" class="profile-post" alt=""> 
+                    <strong>{{usuario.nome}}</strong>
                 </div>
                 <!--Noticias recuperadas da API-->
                 <div class="card-body">

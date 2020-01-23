@@ -5,6 +5,7 @@ import { NavbarComponent } from '../navbar/navbar.component';
 import { Globals } from "../modal/Globals";
 import { Usuario } from '../modal/Usuario';
 import { Router } from '@angular/router';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 
 @Component({
@@ -16,9 +17,12 @@ import { Router } from '@angular/router';
 export class FeedListComponent implements OnInit {
   usuario: Usuario;
   private buscar: number;
-  private _feed: Feed;
+  private feedao: Feed = new Feed();
   private feed: Feed[];
-
+  private i : number = 1;
+  private publicacao: string;
+  private _feed : Feed;
+  
   constructor(private FeedService: FeedService, private router: Router) { }
   
   ngOnInit() {
@@ -42,12 +46,35 @@ export class FeedListComponent implements OnInit {
 
   findId(){
     if(this.buscar <= 0){
-      this._feed = null;
+      this.feedao = null;
     }else{
     this.FeedService.getOne(this.buscar).subscribe((feedOut: Feed) => {
-      this._feed = feedOut;
-      console.log(this._feed);
+      this.feedao = feedOut;
+      console.log(this.feedao);
     })
+    }
+  }
+
+  /*função de criar uma nova publicação ultilizando metodo post*/
+
+  novaPubli(){
+    if(this.publicacao != null || this.publicacao != ""){
+      this.feedao.setIdPostagem(this.i++);
+      this.feedao.setTexto(this.publicacao);
+      this.feedao.setDatainclusao("23/01/2020");
+      this.FeedService.novaPubli(this.feedao).subscribe(
+
+        res=>{
+          this.findAll();
+        },
+      err =>{
+        console.log(err);
+        alert("erro ao inserir");
+      }
+      )
+    }
+    else{
+      alert ("nao é possivel incluir um post branco")
     }
   }
   

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from '../modal/Usuario';
+import { Feed } from '../modal/feed';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,16 +11,22 @@ export class FeedService {
 
   constructor(private http: HttpClient) { }
 
+  // serviço para criar uma nova publicação
+  novaPubli(feed: Feed){
+    return this.http.post("http://localhost:8080/feed",feed);
+
+  }
+
   // Serviço para alimentar o Feed de noticia
   getAll(){
-    return this.http.get("http://cloud.professorisidro.com.br:8088/postagens");
+    return this.http.get("http://localhost:8080/feed/todos");
   }
 
   getOne(id: number){
-    return this.http.get(`http://cloud.professorisidro.com.br:8088/postagens/${id}`);
+    return this.http.get("http://localhost:8080/feed/"+id);
   }
 
-
+  
   // Serviços para o crud
   //puxando informações do banco do bando de dados (todas as informações)
   public recuperaTodos(){
