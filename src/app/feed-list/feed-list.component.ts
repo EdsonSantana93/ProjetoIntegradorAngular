@@ -55,6 +55,16 @@ export class FeedListComponent implements OnInit {
     }
   }
 
+  enviarAlteracoes(feed: Feed){
+    
+    this.FeedService.editar(this.feedao).subscribe((res) =>{
+      alert("Postagem atualizada");
+    },
+    (erro) => {
+      alert("Não foi possivel atualizar a postagem");
+    });
+  }
+
   /*função de criar uma nova publicação ultilizando metodo post*/
 
   novaPubli(){

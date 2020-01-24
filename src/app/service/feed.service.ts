@@ -25,6 +25,10 @@ export class FeedService {
   getOne(id: number){
     return this.http.get("http://localhost:8080/feed/"+id);
   }
+  editar(feed: Feed){
+    return this.http.put("http://localhost:8080/feed/",feed);
+  }
+
 
   
   // Serviços para o crud
@@ -33,6 +37,7 @@ export class FeedService {
     return this.http.get("http://cloud.professorisidro.com.br:8088/usuario/all");
   }
 
+  
   // Serviços para o crud
   //puxando informações do banco do bando de dados (puxando informações por ID)
   public recuperaDetalhe(id: number){
@@ -44,6 +49,7 @@ export class FeedService {
   public insere(usuario: Usuario){
     return this.http.post("http://cloud.professorisidro.com.br:8088/usuario/new", usuario);
   }
+
 
   //alterar informações dos usuários
   //método http, via put 

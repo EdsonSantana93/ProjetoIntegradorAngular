@@ -24,7 +24,7 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
                     <div class="form-group">
-                        <textarea class="form-control" id="message" rows="4"  placeholder="No que voçê está pensando?"[(ngModel)]="publicacao"></textarea>
+                        <textarea class="form-control" id="message" rows="4"  placeholder="No que você está pensando?"[(ngModel)]="publicacao"></textarea>
                     </div>
                 </div>
             </div>
@@ -75,8 +75,32 @@
                 <div class="card-footer">
                     <a href="#" class="card-link"><i class="fa fa-gittip"></i> Gostei</a>
                     <a href="#" class="card-link"><i class="fa fa-comment"></i> Comentário</a>
-                    <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Compartilhar</a>
+                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#modalEditarPubli" >Editar</button>
+                    <!--<a href="Feed" class="card-link"><i class="fa fa-mail-forward" data-toggle="modal" data-target=""></i> Editar</a>-->
                 </div>
+
+                <div class="modal fade" id="modalEditarPubli" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="tituloModal">Editar</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <textarea class="form-control" id="msg" rows="4" [(ngModel)]="item.texto" value ="ola">
+                                </textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                          <button type="button" class="btn btn-primary" (click)="enviarAlteracoes(feed.id)">Salvar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </div>
         </div>            
      </div>
