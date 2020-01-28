@@ -25,11 +25,13 @@ export class FeedService {
   getOne(id: number){
     return this.http.get("http://localhost:8080/feed/"+id);
   }
-  editar(feed: Feed){
-    return this.http.put("http://localhost:8080/feed/",feed);
+  editar(feed : Feed){
+    return this.http.put("http://localhost:8080/feed/", feed);
   }
 
-
+  recuperarFeed(id: number){
+    return this.http.get("http://localhost:8080/feed/" + id);
+  }
   
   // Serviços para o crud
   //puxando informações do banco do bando de dados (todas as informações)

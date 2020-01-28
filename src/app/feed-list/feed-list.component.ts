@@ -46,18 +46,18 @@ export class FeedListComponent implements OnInit {
 
   findId(){
     if(this.buscar <= 0){
-      this.feedao = null;
+      this._feed = null;
     }else{
     this.FeedService.getOne(this.buscar).subscribe((feedOut: Feed) => {
-      this.feedao = feedOut;
+      this._feed= feedOut;
       console.log(this.feedao);
     })
     }
   }
 
-  enviarAlteracoes(feed: Feed){
+  /*enviarAlteracoes(feed: Feed){
     
-    this.FeedService.editar(this.feedao).subscribe((res) =>{
+    this.FeedService.editar(this.feed).subscribe((res) =>{
       alert("Postagem atualizada");
     },
     (erro) => {

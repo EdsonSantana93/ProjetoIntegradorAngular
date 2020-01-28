@@ -40,7 +40,7 @@
         <div class="card post-1 mb-3 ml-3 mr-3" *ngIf="_feed != null">
             <!--Cabeçalho do Fedd de noticias-->
             <div class="card-header"><img src="{{_feed.linkimg}}" class="profile-post" alt=""> 
-                <strong>{{_feed.titulo}}</strong>
+                <strong>{{usuario.nome}}</strong>
             </div>
             <!--Noticias recuperadas da API-->
             <div class="card-body">
@@ -53,7 +53,8 @@
             <div class="card-footer">
                 <a href="#" class="card-link"><i class="fa fa-gittip"></i> Gostei</a>
                 <a href="#" class="card-link"><i class="fa fa-comment"></i> Comentário</a>
-                <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Compartilhar</a>
+                <a href="#" class=" btn btn-outline-purple"
+                [routerLink]="['/editar', _feed.idPostagem]">Editar</a>
             </div>
         </div>
 
@@ -75,32 +76,11 @@
                 <div class="card-footer">
                     <a href="#" class="card-link"><i class="fa fa-gittip"></i> Gostei</a>
                     <a href="#" class="card-link"><i class="fa fa-comment"></i> Comentário</a>
-                    <button type="button" class="btn btn-link" data-toggle="modal" data-target="#modalEditarPubli" >Editar</button>
+                    <a href="#" class=" btn btn-outline-purple"
+                    [routerLink]="['/editar', item.idPostagem]">Editar</a>
                     <!--<a href="Feed" class="card-link"><i class="fa fa-mail-forward" data-toggle="modal" data-target=""></i> Editar</a>-->
                 </div>
 
-                <div class="modal fade" id="modalEditarPubli" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="tituloModal">Editar</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <textarea class="form-control" id="msg" rows="4" [(ngModel)]="item.texto" value ="ola">
-                                </textarea>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                          <button type="button" class="btn btn-primary" (click)="enviarAlteracoes(feed.id)">Salvar</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
             </div>
         </div>            
      </div>

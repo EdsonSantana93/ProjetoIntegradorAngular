@@ -15,6 +15,7 @@ import { AdministradorComponent } from './administrador/administrador.component'
 import { DetalheComponent } from './detalhe/detalhe.component';
 import { LoginComponent } from './login/login.component';
 import { AjudaComponent } from './ajuda/ajuda.component';
+import { EditarComponent } from './editar/editar.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { AjudaComponent } from './ajuda/ajuda.component';
     AdministradorComponent,
     DetalheComponent,
     LoginComponent, 
-    AjudaComponent
+    AjudaComponent, EditarComponent
   ],
   imports: [
     BrowserModule,
