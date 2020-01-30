@@ -12,46 +12,46 @@ import { Message } from '@angular/compiler/src/i18n/i18n_ast';
   selector: 'app-feed-list',
   templateUrl: './feed-list.component.html',
   styleUrls: ['./feed-list.component.css'],
-  providers: [ Globals]
+  providers: [Globals]
 })
 export class FeedListComponent implements OnInit {
   usuario: Usuario;
   private buscar: number;
   private feedao: Feed = new Feed();
   private feed: Feed[];
-  private i : number = 1;
+  private i: number = 1;
   private publicacao: string;
-  private _feed : Feed;
-  
+  private _feed: Feed;
+
   constructor(private FeedService: FeedService, private router: Router) { }
-  
+
   ngOnInit() {
 
     this.usuario = Globals.usuario;
     this.findAll();
     console.log(this.feed);
-    if(!this.usuario){
+    if (!this.usuario) {
       this.router.navigate(['/']);
-    } else{
+    } else {
       this.usuario = Globals.usuario;
     }
   }
 
-  findAll(){
+  findAll() {
     this.FeedService.getAll().subscribe((feedOut: Feed[]) => {
       this.feed = feedOut;
       console.log(this.feed)
     })
   }
 
-  findId(){
-    if(this.buscar <= 0){
+  findId() {
+    if (this.buscar <= 0) {
       this._feed = null;
-    }else{
-    this.FeedService.getOne(this.buscar).subscribe((feedOut: Feed) => {
-      this._feed= feedOut;
-      console.log(this.feedao);
-    })
+    } else {
+      this.FeedService.getOne(this.buscar).subscribe((feedOut: Feed) => {
+        this._feed = feedOut;
+        console.log(this.feedao);
+      })
     }
   }
 
@@ -67,25 +67,24 @@ export class FeedListComponent implements OnInit {
 
   /*função de criar uma nova publicação ultilizando metodo post*/
 
-  novaPubli(){
-    if(this.publicacao != null || this.publicacao != ""){
+  novaPubli() {
+    if (this.publicacao != null || this.publicacao != "") {
       this.feedao.setIdPostagem(this.i++);
       this.feedao.setTexto(this.publicacao);
       this.feedao.setDatainclusao("23/01/2020");
       this.FeedService.novaPubli(this.feedao).subscribe(
 
-        res=>{
+        res => {
           this.findAll();
         },
-      err =>{
-        console.log(err);
-        alert("erro ao inserir");
-      }
+        err => {
+          console.log(err);
+          alert("erro ao inserir");
+        }
       )
     }
-    else{
-      alert ("nao é possivel incluir um post branco")
+    else {
+      alert("nao é possivel incluir um post branco")
     }
   }
-  
 }

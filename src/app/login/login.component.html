@@ -28,10 +28,10 @@
               <div class="form-group">
                 <label for="exampleInputPassword1">Senha</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="usuario.senha"
-                  placeholder="Senha">
+                  placeholder="Senha" onKeyPress="submitenter(this,event)">
               </div>
               
-              <button type="submit" class="btn btn-outline-purple" (click)="login()">Entrar</button>
+              <button type="submit" class="btn btn-outline-purple" (click)="login()" onKeyPress="submitenter(this,event)">Entrar</button>
       
               <!-- Botão para acionar modal -->
               <button type="button" class="btn btn-outline-purple" id="cadastrar" data-toggle="modal"
@@ -67,7 +67,8 @@
                             [ngModelOptions]="{standalone: true}" aria-describedby="telefone"
                             placeholder="Digite seu telefone..." required>
                           <span class="erro" *ngIf='erroTelefone'>{{erroTelefone}}<br></span><br>
-      
+                          
+                          <!--Input email-->
                           <label for="email">E-mail</label>
                           <input type="email" class="form-control" id="email" [(ngModel)]="usuario.email"
                             [ngModelOptions]="{standalone: true}" aria-describedby="emailHelp"

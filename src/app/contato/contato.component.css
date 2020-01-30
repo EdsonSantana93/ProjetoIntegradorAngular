@@ -39,3 +39,9 @@ h1{
 label{
     color: #7a297a
 }
+
+.erro{
+    font-size: 12px;
+    color: red;
+    padding-left: 10px;
+  }

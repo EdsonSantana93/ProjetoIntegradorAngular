@@ -6,35 +6,36 @@
                     <h1 id="titulo "><strong>Fale Conosco</strong></h1>
                     <div class="mt-3 pb-3">
                         <div class="form-group">
-                            <label for="nome"><strong>Nome</strong></label>
+                            
+                            <!--Nome Completo-->
+                            <label for="nome"><strong>Nome Completo</strong></label>
                             <input type="text" class="form-control" id="nome" [(ngModel)]="nome"
                                 [ngModelOptions]="{standalone: true}" aria-describedby="nome"
-                                placeholder="Digite seu nome..." autofocus required><br>
+                                placeholder="Digite seu nome..." autofocus required>
+                                <span class="erro" *ngIf='erroNome'>{{erroNome}}<br></span><br><!--Mensagem de erro caso aja falha no preenchimento-->
 
-
-                            <label for="sobNome"><strong>Sobrenome</strong></label>
-                            <input type="text" class="form-control" id="sobNome" [(ngModel)]="sobNome"
-                                [ngModelOptions]="{standalone: true}" aria-describedby="sobrenome"
-                                placeholder="Digite seu sobrenome..." required><br>
-
-
+                            <!--Email-->
                             <label for="email"><strong>E-mail</strong></label>
                             <input type="email" class="form-control" id="email" [(ngModel)]="email"
                                 [ngModelOptions]="{standalone: true}" aria-describedby="emailHelp"
-                                placeholder="Digite seu e-mail..." required><br>
+                                placeholder="Digite seu e-mail..." required>
+                                <span class="erro" *ngIf='erroEmail'>{{erroEmail}}<br></span><br>
 
-
+                            <!--Telefone-->
                             <label for="telefone"><strong>Telefone</strong></label>
                             <input for="text" class="form-control" id="telefone" [(ngModel)]="telefone"
                                 [ngModelOptions]="{standalone: true}" aria-describedby="telefone"
-                                placeholder="Digite seu telefone..." required><br>
+                                placeholder="Digite seu telefone..." required>
+                                <span class="erro" *ngIf='erroTelefone'>{{erroTelefone}}<br></span><br>
 
-
+                            <!--Mensagem-->
                             <label for="caixatxt"><strong>Mensagem</strong></label>
-                            <textarea [(ngModel)]="caixatxt" id="caixatxt" [ngModelOptions]="{standalone: true}"
+                            <textarea [(ngModel)]="msg" id="msg" [ngModelOptions]="{standalone: true}"
                                 rows="10" cols="77" maxlength="500" placeholder="Digite sua mensagem..."
                                 required></textarea>
+                                <span class="erro" *ngIf="erroMensagem">{{erroMensagem}}<br></span><br>
 
+                            <!--Enviar-->
                             <button type="button" class="btn btn-outline-purple" (click)="validaForm()">Enviar</button>
 
                         </div>
@@ -45,69 +46,3 @@
         </div>
     </div>
 <app-rodape></app-rodape>
-
-
-
-
-    <!--<div class="bg">
-
-<div class="row">
-<div class="container pt-br mt-5 mb-5" id="pt1">
-    <div class="row" id="form">
-        <div class="col-md-1"></div>
-        <div class="col-md-5">
-
-
-            <div class="mt-3 pb-3">
-                <div class="form-group">
-                    <label for="nome">Nome</label>
-                    <input type="text" class="form-control" id="nome" [(ngModel)]="nome"
-                        [ngModelOptions]="{standalone: true}" aria-describedby="nome" placeholder="Digite seu nome..."
-                        autofocus required>
-
-
-                    <label for="sobNome">Sobrenome</label>
-                    <input type="text" class="form-control" id="sobNome" [(ngModel)]="sobNome"
-                        [ngModelOptions]="{standalone: true}" aria-describedby="sobrenome"
-                        placeholder="Digite seu sobrenome..." required>
-
-
-                    <label for="email">E-mail</label>
-                    <input type="email" class="form-control" id="email" [(ngModel)]="email"
-                        [ngModelOptions]="{standalone: true}" aria-describedby="emailHelp"
-                        placeholder="Digite seu e-mail..." required>
-
-
-                    <label for="telefone">Telefone</label>
-                    <input for="text" class="form-control" id="telefone" [(ngModel)]="telefone"
-                        [ngModelOptions]="{standalone: true}" aria-describedby="telefone"
-                        placeholder="Digite seu telefone..." required>
-
-
-                    <label for="caixatxt">Mensagem</label>
-                    <textarea [(ngModel)]="caixatxt" id="caixatxt" [ngModelOptions]="{standalone: true}" rows="10"
-                        cols="60" maxlength="500" placeholder="Digite sua mensagem..." required></textarea>
-
-                    <button type="button" class="btn btn-primary" (click)="validaForm()">Enviar</button>
-
-                </div>
-
-            </div>
-        </div>
-        <div class="col-md-5">
-            <div class="col-md-12">
-                <div class="col-md-1"></div>
-                <div class="col-md-1"></div>
-                <div class="-col-md-9">
-                    <h1 class="text-center">Contato</h1>
-                </div>
-                <div class="col-md-1"></div>
-
-            </div>
-        </div>
-        <div class="col-md-1"></div>
-    </div>
-</div>
-</div>
-
-</div>-->
