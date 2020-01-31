@@ -1,0 +1,53 @@
+*{
+    margin:0%;
+    padding:0%;
+}
+
+#ananinhaPerfil{
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    margin-left: 5%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+#capaPerfil{
+    height: 10%;
+    width: 70%;
+    margin-top: 4%;
+}
+
+.capaP{
+    background-image: url(../../assets/image/capaaop1.jpg);
+}
+
+#tituloA{
+    margin-top: 5%;
+}
+
+#cardAtividades{
+    margin-left: 7%;
+}
+
+#atividades{
+border-color: lightgray;
+}
+
+.minitrofeus{
+margin-left: 5%;
+margin-bottom: 2%;
+}
+
+#ativ{
+    margin-left: 8%;
+}
+
+
+#eventos{
+    margin-left: 3%;
+}
+
+.tm{
+    width: 450px;
+}
