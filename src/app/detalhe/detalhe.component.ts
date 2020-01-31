@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Usuario} from '../modal/Usuario'; 
 import {ActivatedRoute} from '@angular/router'; // recupera o parâmetro passado na rota
-import {FeedService} from '../service/feed.service'; 
+import { UsuarioService } from '../service/usuario.service'
 
 
 @Component({
@@ -14,7 +14,7 @@ export class DetalheComponent implements OnInit {
   public usuario: Usuario = new Usuario();
   private id: number; 
 
-  constructor(private rota: ActivatedRoute, private srv: FeedService) { }
+  constructor(private rota: ActivatedRoute, private srv: UsuarioService) { }
 
   ngOnInit() {
     this.id=this.rota.snapshot.params["id"]; // declaração do arquivo App-routing.ts

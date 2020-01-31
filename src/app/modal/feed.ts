@@ -1,22 +1,25 @@
 export class Feed{
-    private idPostagem: number;
-    private titulo: string;
+
+    
+    private idPostagem: number; 
+    private idUsuario: number; //id que deve ser setado com o id que vier do usuario.ts
+    private titulo: string; //titulo inexistente.
     private texto: string;
-    private linkimg: string = "https://www.google.com/search?rlz=1C1GCEA_enBR868BR874&biw=1366&bih=625&tbm=isch&sa=1&ei=gP4pXpHNFL6g5OUPjMujOA&q=imagem+de+perfil+sem+foto&oq=imagem+de+perfil+sem+foto&gs_l=img.3...8737.9661..10201...0.0..0.92.644.8......0....1..gws-wiz-img.fstPO5a-xQM&ved=0ahUKEwiRjYe9xJrnAhU-ELkGHYzlCAcQ4dUDCAc&uact=5#imgrc=3EbDfOoL4rYWhM:";
+    private linkimg: string = "https://www.google.com/search?rlz=1C1GCEA_enBR868BR874&biw=1366&bih=625&tbm=isch&sa=1&ei=gP4pXpHNFL6g5OUPjMujOA&q=imagem+de+perfil+sem+foto&oq=imagem+de+perfil+sem+foto&gs_l=img.3...8737.9661..10201...0.0..0.92.644.8......0....1..gws-wiz-img.fstPO5a-xQM&ved=0ahUKEwiRjYe9xJrnAhU-ELkGHYzlCAcQ4dUDCAc&uact=5#imgrc=3EbDfOoL4rYWhM:"; //essa imagem da classe feed não tem funcionalidade
     private datainclusao: string;
     private comentario : string;
-    private like: number;
-
-
-
-
-
+    private like: number; //sem uso
+    
 
     public getIdPostagem(): number{
         return this.idPostagem;
     }
     public setIdPostagem(idPostagem: number): void{
         this.idPostagem = idPostagem;
+    }
+
+    public getIdUsuario(): number{
+        return this.idPostagem;
     }
 
     public getTitulo(): string{

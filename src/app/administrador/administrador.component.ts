@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FeedService } from '../service/feed.service';
+import { UsuarioService } from '../service/usuario.service'
 import { Usuario } from '../modal/Usuario';
 
 
@@ -14,10 +14,10 @@ export class AdministradorComponent implements OnInit {
   //vetor criado para puxar a lista de informações
   public listaUser: Usuario[];
 
-  constructor(private srv: FeedService) { }
+  constructor(private srv: UsuarioService) { }
 
   ngOnInit() {
-    this.srv.recuperaTodos().subscribe((res: Usuario[])=>{
+      this.srv.recuperaTodos().subscribe((res: Usuario[])=>{
       this.listaUser = res;
     });
   }

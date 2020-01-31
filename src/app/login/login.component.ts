@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FeedService } from '../service/feed.service';
 import { Router } from '@angular/router';
 import { Usuario } from '../modal/Usuario';
 import { Globals } from "../modal/Globals";
 import { Feed } from '../modal/feed';
+import { UsuarioService } from '../service/usuario.service'
 
 @Component({
   selector: 'app-login',
@@ -35,14 +35,14 @@ export class LoginComponent implements OnInit {
   
   
 
-  constructor(private FeedService: FeedService, private router: Router) { }
+  constructor(private srv: UsuarioService, private router: Router) { }
 
   ngOnInit() {
   }
 
   login(){
     console.log(this.usuario)
-    this.FeedService.login(this.usuario).subscribe(
+    this.srv.login(this.usuario).subscribe(
       (res:Usuario)=>{
         console.log("Conectado!");
         
@@ -64,19 +64,19 @@ export class LoginComponent implements OnInit {
 
 
     // validacao do campo nome
-    if (this.usuario.nome == "" || this.usuario.nome == null) {
+    if (this.usuario.getNome() == "" || this.usuario.getNome() == null) {
       this.erroNome = "Nome não pode ficar vazio";
       erros++;
     } else {
-      if (this.usuario.nome.length <= 5) {
+      if (this.usuario.getNome().length <= 5) {
         this.erroNome = "Parece que seu nome está errado";
         erros++;
       } else {
-        if (this.usuario.nome.indexOf(" ") == -1) {
+        if (this.usuario.getNome().indexOf(" ") == -1) {
           this.erroNome = "Informe nome e sobrenome";
           erros++;
         } else {
-          if (regex.test(this.usuario.nome) == true) {
+          if (regex.test(this.usuario.getNome()) == true) {
             this.erroNome = "Nome não pode conter número";
             erros++;
           } else {
@@ -87,15 +87,15 @@ export class LoginComponent implements OnInit {
     }
 
     // validacao do campo telefone
-    if (this.usuario.telefone == null) {
+    if (this.usuario.getTelefone() == null) {
       this.erroTelefone = "Telefone não pode ficar vazio";
       erros++;
     } else {
-      if (this.usuario.telefone.toString().length < 10) {
+      if (this.usuario.getTelefone().toString().length < 10) {
         this.erroTelefone = "Telefone muito curto";
         erros++;
       } else {
-        if (this.usuario.telefone.toString().length > 11) {
+        if (this.usuario.getTelefone().toString().length > 11) {
           this.erroTelefone = "Telefone muito grande";
           erros++;
         } else {
@@ -105,15 +105,15 @@ export class LoginComponent implements OnInit {
     }
 
     // validacao do campo email
-    if (this.usuario.email == null || this.usuario.email == "") {
+    if (this.usuario.getEmail() == null || this.usuario.getEmail() == "") {
       this.erroEmail = "E-mail não pode ficar em vazio";
       erros++;
     } else {
-      if (this.usuario.email.indexOf("@") == -1) {
+      if (this.usuario.getEmail().indexOf("@") == -1) {
         this.erroEmail = "O e-mail precisa de @";
         erros++;
       } else {
-        if (this.usuario.email.indexOf(".com") == -1 || this.usuario.email.indexOf(" ") != -1) {
+        if (this.usuario.getEmail().indexOf(".com") == -1 || this.usuario.getEmail().indexOf(" ") != -1) {
           this.erroEmail = "Formato de e-mail errado";
           erros++;
         } else {
@@ -123,25 +123,25 @@ export class LoginComponent implements OnInit {
     }
 
     // validacao do campo senha
-    if (this.usuario.senha == null || this.usuario.senha == "") {
+    if (this.usuario.getSenha() == null || this.usuario.getSenha() == "") {
       this.erroSenha = "Senha não pode ficar vazia";
       erros++;
     } else {
-      if (this.usuario.senha.toString().length < 10) {
+      if (this.usuario.getSenha().toString().length < 10) {
         this.erroSenha = "Senha muito curta";
         erros++;
-      }if (this.usuario.senha.indexOf("@") == -1 && this.usuario.senha.indexOf("#") == -1 && this.usuario.senha.indexOf("&") == -1) {
+      }if (this.usuario.getSenha().indexOf("@") == -1 && this.usuario.getSenha().indexOf("#") == -1 && this.usuario.getSenha().indexOf("&") == -1) {
         this.erroSenha = "Senha deve conter ao menos um caractere especial (@, #, &)";
         erros++;
       }else{
-        if (this.usuario.senha.length < 10 && this.usuario.senha.indexOf("@") != -1 || this.usuario.senha.indexOf("#") != -1 ||  this.usuario.senha.indexOf("&") != -1){
+        if (this.usuario.getSenha().length < 10 && this.usuario.getSenha().indexOf("@") != -1 || this.usuario.getSenha().indexOf("#") != -1 ||  this.usuario.getSenha().indexOf("&") != -1){
           erros++;
         }else{
         this.erroSenha = "";
         }
       }
       // verifica se as senhas sao iguais
-      if (this.usuario.senha == this.confirmacao) {
+      if (this.usuario.getSenha() == this.confirmacao) {
         this.erroConfirmacao = "";
       } else {
         this.erroConfirmacao = "senhas não conferem";
@@ -160,11 +160,11 @@ export class LoginComponent implements OnInit {
 
     // verifica se a senha é faca ou forte
     public mostrarStatus(){
-      if (this.usuario.senha == null || this.usuario.senha == ""){
+      if (this.usuario.getSenha() == null || this.usuario.getSenha() == ""){
         this.senhaForte = "";
         this.senhaFraca = "";
       }else{ 
-        if (this.usuario.senha.length < 10 || this.usuario.senha.indexOf("@") == -1 && this.usuario.senha.indexOf("#") == -1 && this.usuario.senha.indexOf("&") == -1) {
+        if (this.usuario.getSenha().length < 10 || this.usuario.getSenha().indexOf("@") == -1 && this.usuario.getSenha().indexOf("#") == -1 && this.usuario.getSenha().indexOf("&") == -1) {
           this.senhaFraca = "Senha fraca";
           this.senhaForte = "";
         }else{
@@ -176,7 +176,7 @@ export class LoginComponent implements OnInit {
 
    enviarDados(){
       console.log(this.usuario)
-      this.FeedService.atualiza(this.usuario).subscribe(
+      this.srv.atualiza(this.usuario).subscribe(
         (res)=>{
           alert("Dados atualizados com sucesso")
         }, 
