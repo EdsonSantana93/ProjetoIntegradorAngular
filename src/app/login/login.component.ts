@@ -176,7 +176,7 @@ export class LoginComponent implements OnInit {
 
    enviarDados(){
       console.log(this.usuario)
-      this.srv.login(this.usuario).subscribe(
+      this.srv.insere(this.usuario).subscribe(
         (res)=>{
           alert("Dados atualizados com sucesso")
         }, 

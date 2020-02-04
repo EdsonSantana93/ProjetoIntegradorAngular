@@ -29,7 +29,7 @@ export class DetalheComponent implements OnInit {
   }
 
     enviarAlteracoes(){
-      this.srv.atualiza(this.usuario).subscribe(
+      this.srv.insere(this.usuario).subscribe(
         (res)=>{
           alert("Atualizado com sucesso");
         },

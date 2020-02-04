@@ -12,24 +12,24 @@ export class FeedService {
 
   // serviço para criar uma nova publicação
   novaPubli(feed: Feed){
-    return this.http.post("http://localhost:8080/feed",feed);
+    return this.http.post("http://localhost:8080/postagem",feed);
 
   }
 
   // Serviço para alimentar o Feed de noticia
   getAll(){
-    return this.http.get("http://localhost:8080/feed/todos");
+    return this.http.get("http://localhost:8080/postagem/todos");
   }
 
   getOne(id: number){
-    return this.http.get("http://localhost:8080/feed/"+id);
+    return this.http.get("http://localhost:8080/postagem/"+id);
   }
   editar(feed : Feed){
-    return this.http.put("http://localhost:8080/feed/", feed);
+    return this.http.put("http://localhost:8080/postagem/", feed);
   }
 
   recuperarFeed(id: number){
-    return this.http.get("http://localhost:8080/feed/" + id);//faz o mesmo que o getOne(). escolher um pra deixar
+    return this.http.get("http://localhost:8080/postagem/" + id);//faz o mesmo que o getOne(). escolher um pra deixar
   }
   /*
   //recuperando informações da api de usuários do Isidro (todas as informações), que a partir de agora virá do Usuario

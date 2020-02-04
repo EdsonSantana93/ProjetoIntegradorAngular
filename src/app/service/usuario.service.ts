@@ -29,7 +29,7 @@ export class UsuarioService {
   //alterar informações dos usuários
   //método http, via put 
   public atualiza(usuario: Usuario){
-    return this.http.put("http://localhost:8080/cadastro/", usuario);
+    return this.http.put("http://localhost:8080/cadastro/novo", usuario);
   }
 
   public login(usuario: Usuario){
