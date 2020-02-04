@@ -14,7 +14,7 @@ import { UsuarioService } from '../service/usuario.service'
 export class LoginComponent implements OnInit {
 
   private buscar: number;
-  feedlist: Feed = null;
+  usuarios: Usuario = null;
   
   public usuario: Usuario = new Usuario();
 
@@ -176,7 +176,7 @@ export class LoginComponent implements OnInit {
 
    enviarDados(){
       console.log(this.usuario)
-      this.srv.atualiza(this.usuario).subscribe(
+      this.srv.login(this.usuario).subscribe(
         (res)=>{
           alert("Dados atualizados com sucesso")
         }, 

@@ -2,7 +2,6 @@ export class FaleConosco {
     
     private idFaleConosco: number;
     private nome: string;
-    private sobrenome: string;
     private telefone: string;
     private mensagem: string;
 
@@ -18,13 +17,6 @@ export class FaleConosco {
     }
     public setNome(nome: string): void{
         this.nome = nome;
-    }
-
-    public getSobrenome(): string{
-        return this.sobrenome;
-    }
-    public setSobrenome(sobrenome: string): void{
-        this.sobrenome = sobrenome;
     }
 
     public getTelefone(): string{

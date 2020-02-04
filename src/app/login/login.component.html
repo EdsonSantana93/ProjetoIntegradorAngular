@@ -28,10 +28,10 @@
               <div class="form-group">
                 <label for="exampleInputPassword1">Senha</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="usuario.senha"
-                  placeholder="Senha" onKeyPress="submitenter(this,event)">
+                  placeholder="Senha">
               </div>
               
-              <button type="submit" class="btn btn-outline-purple" (click)="login()" onKeyPress="submitenter(this,event)">Entrar</button>
+              <button type="submit" class="btn btn-outline-purple" (click)="login()">Entrar</button>
       
               <!-- Botão para acionar modal -->
               <button type="button" class="btn btn-outline-purple" id="cadastrar" data-toggle="modal"

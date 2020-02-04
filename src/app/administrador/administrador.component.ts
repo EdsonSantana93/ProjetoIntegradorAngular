@@ -19,6 +19,7 @@ export class AdministradorComponent implements OnInit {
   ngOnInit() {
       this.srv.recuperaTodos().subscribe((res: Usuario[])=>{
       this.listaUser = res;
+      console.log(this.listaUser);
     });
   }
 }
