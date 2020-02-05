@@ -18,7 +18,8 @@ export class FeedService {
 
   // Serviço para alimentar o Feed de noticia
   getAll(){
-    return this.http.get("http://localhost:8080/postagem/todos/");
+    let token = localStorage.getItem("isiToken");
+    return this.http.get("http://localhost:8080/postagem/todos/?token=" + token);
   }
 
   getOne(id: number){
