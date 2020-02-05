@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from '../modal/Usuario';
 import { Globals } from "../modal/Globals";
-import { Feed } from '../modal/feed';
 import { UsuarioService } from '../service/usuario.service'
 
 @Component({
@@ -13,7 +12,7 @@ import { UsuarioService } from '../service/usuario.service'
 })
 export class LoginComponent implements OnInit {
 
-  private buscar: number;
+  
   usuarios: Usuario = null;
   
   public usuario: Usuario = new Usuario();

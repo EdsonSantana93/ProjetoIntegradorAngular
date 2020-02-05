@@ -9,7 +9,7 @@ export class FaleconoscoService {
 
   constructor(private http: HttpClient) { }
 
-  novoFAQ(faq: FaleConosco){
-    return this.http.post("",faq);
+  insere(faleConosco: FaleConosco){
+    return this.http.post("http://localhost:8080/faleconosco/novo/", faleConosco);
   }
 }

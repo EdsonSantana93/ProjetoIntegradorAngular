@@ -1,9 +1,11 @@
 export class FaleConosco {
     
-    private idFaleConosco: number;
-    private nome: string;
-    private telefone: string;
-    private mensagem: string;
+    public idFaleConosco: number;
+    public nome: string;
+    public email: String;
+    public telefone: string;
+    public msg: string;
+    
 
     public getIdFaleConosco(): number{
         return this.idFaleConosco;
@@ -27,11 +29,11 @@ export class FaleConosco {
     }
 
     public getMensagem(): string{
-        return this.mensagem;
+        return this.msg;
     }
     public setMensagem(mensagem: string): void{
-        this.mensagem = mensagem;
+        this.msg = mensagem;
     }
 
-
+    
 }

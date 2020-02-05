@@ -22,6 +22,7 @@ export class FeedListComponent implements OnInit {
   private i: number = 1;
   private publicacao: string;
   private _feed: Feed;
+  
 
   constructor(private FeedService: FeedService, private router: Router) { }
 
@@ -70,7 +71,6 @@ export class FeedListComponent implements OnInit {
   novaPubli() {
     if (this.publicacao != null || this.publicacao != "") {
       this.feedao = new Feed();
-      //this.feedao.setIdPostagem(this.i++);
       this.feedao.setTexto(this.publicacao);
       this.feedao.setDatainclusao("23/01/2020");
       this.feedao.usuario = new Usuario();

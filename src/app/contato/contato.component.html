@@ -9,28 +9,28 @@
                             
                             <!--Nome Completo-->
                             <label for="nome"><strong>Nome Completo</strong></label>
-                            <input type="text" class="form-control" id="nome" [(ngModel)]="nome"
+                            <input type="text" class="form-control" id="nome" [(ngModel)]="faleConosco.nome"
                                 [ngModelOptions]="{standalone: true}" aria-describedby="nome"
                                 placeholder="Digite seu nome..." autofocus required>
                                 <span class="erro" *ngIf='erroNome'>{{erroNome}}<br></span><br><!--Mensagem de erro caso aja falha no preenchimento-->
 
                             <!--Email-->
                             <label for="email"><strong>E-mail</strong></label>
-                            <input type="email" class="form-control" id="email" [(ngModel)]="email"
+                            <input type="email" class="form-control" id="email" [(ngModel)]="faleConosco.email"
                                 [ngModelOptions]="{standalone: true}" aria-describedby="emailHelp"
                                 placeholder="Digite seu e-mail..." required>
                                 <span class="erro" *ngIf='erroEmail'>{{erroEmail}}<br></span><br>
 
                             <!--Telefone-->
                             <label for="telefone"><strong>Telefone</strong></label>
-                            <input for="text" class="form-control" id="telefone" [(ngModel)]="telefone"
+                            <input for="text" class="form-control" id="telefone" [(ngModel)]="faleConosco.telefone"
                                 [ngModelOptions]="{standalone: true}" aria-describedby="telefone"
                                 placeholder="Digite seu telefone..." required>
                                 <span class="erro" *ngIf='erroTelefone'>{{erroTelefone}}<br></span><br>
 
                             <!--Mensagem-->
                             <label for="caixatxt"><strong>Mensagem</strong></label>
-                            <textarea [(ngModel)]="msg" id="msg" [ngModelOptions]="{standalone: true}"
+                            <textarea [(ngModel)]="faleConosco.msg" id="msg" [ngModelOptions]="{standalone: true}"
                                 rows="10" cols="77" maxlength="500" placeholder="Digite sua mensagem..."
                                 required></textarea>
                                 <span class="erro" *ngIf="erroMensagem">{{erroMensagem}}<br></span><br>
