@@ -4,6 +4,8 @@ export class Usuario{
     public telefone: string;
     public email: string;
     public senha: string;
+    public fotoPerfil: string;
+    public descricao: string;
 
     public getIdUsuario(): number{
         return this.idUsuario;
