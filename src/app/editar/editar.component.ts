@@ -27,7 +27,7 @@ export class EditarComponent implements OnInit {
   }
 
   mudarPostagem(){
-    this.srv.editar(this.feed).subscribe(
+    this.srv.novaPubli(this.feed).subscribe(
       (res)=>{
         alert("Atualizado com sucesso");
       },

@@ -55,9 +55,9 @@ export class FeedListComponent implements OnInit {
     }
   }
 
-  /*enviarAlteracoes(feed: Feed){
+  enviarAlteracoes(feed: Feed){
     
-    this.FeedService.editar(this.feed).subscribe((res) =>{
+    this.FeedService.editar(this.i).subscribe((res) =>{
       alert("Postagem atualizada");
     },
     (erro) => {
@@ -69,11 +69,13 @@ export class FeedListComponent implements OnInit {
 
   novaPubli() {
     if (this.publicacao != null || this.publicacao != "") {
-      this.feedao.setIdPostagem(this.i++);
+      this.feedao = new Feed();
+      //this.feedao.setIdPostagem(this.i++);
       this.feedao.setTexto(this.publicacao);
       this.feedao.setDatainclusao("23/01/2020");
+      this.feedao.usuario = new Usuario();
+      this.feedao.usuario.idUsuario = 1;
       this.FeedService.novaPubli(this.feedao).subscribe(
-
         res => {
           this.findAll();
         },

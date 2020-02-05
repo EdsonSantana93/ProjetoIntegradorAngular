@@ -12,20 +12,20 @@ export class FeedService {
 
   // serviço para criar uma nova publicação
   novaPubli(feed: Feed){
-    return this.http.post("http://localhost:8080/postagem",feed);
-
+    console.log(feed);
+    return this.http.post("http://localhost:8080/postagem/novo/",feed);
   }
 
   // Serviço para alimentar o Feed de noticia
   getAll(){
-    return this.http.get("http://localhost:8080/postagem/todos");
+    return this.http.get("http://localhost:8080/postagem/todos/");
   }
 
   getOne(id: number){
     return this.http.get("http://localhost:8080/postagem/"+id);
   }
-  editar(feed : Feed){
-    return this.http.put("http://localhost:8080/postagem/", feed);
+  editar(id : number){
+    return this.http.put("http://localhost:8080/postagem/", id);
   }
 
   recuperarFeed(id: number){

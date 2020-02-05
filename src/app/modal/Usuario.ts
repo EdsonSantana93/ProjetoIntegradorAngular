@@ -1,9 +1,9 @@
 export class Usuario{
-    private idUsuario: number; 
-    private nome: string;
-    private telefone: string;
-    private email: string;
-    private senha: string;
+    public idUsuario: number; 
+    public nome: string;
+    public telefone: string;
+    public email: string;
+    public senha: string;
 
     public getIdUsuario(): number{
         return this.idUsuario;
