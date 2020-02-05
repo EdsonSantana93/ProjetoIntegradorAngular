@@ -1,7 +1,9 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 <div class="container-fluid">
     <!--Foto do perfil e capa-->
     <div class="row">
-        <div class="card border-0 col-md-12" style="width: 18rem;">
+        <div class="card border-0 col-md-12 p-0" style="width: 18rem;">
             <div class="capaP">
                 <img class="card-img-top" src="../../assets/image/AnaB.jpg" id="ananinhaPerfil" alt="Card image cap">
             </div>
@@ -14,14 +16,52 @@
                         <div class="row mt-3">
                             <div class="col-md-12 d-flex justify-content-center">
                                 <div class="card" style="width: 18rem;">
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center mt-2 textoTitulo"><strong>Ana Beatriz Pires</strong></h5>
-                                        <p class="card-text mt-2 text-center">Uma jovem mulher apaixonada por aprender e ensinar que encontrou na tecnologia um mundo de oportunidades, conexões e desenvolvimento.</p>
+                                    <div class="card-body p-0">
+                                    
+                                    
+                                        <!--Teste Modal-->
+
+                                     <!--Botão que irá chamar o modal (cinza)-->
+                                     
+                                    <button type="button" class="btn" data-toggle="modal" data-target="#editarperfil" id="btnEditar">
+                                     <img src="../../assets/image/editarPerfil.png" width="30px" alt="">
+                                    </button>
+                                        <h5 class="card-title text-center textoTitulo"><strong>Ana Beatriz Pires</strong></h5>
+                                        <p class="card-text mt-2 mb-4 text-center">Uma jovem mulher apaixonada por aprender e ensinar que encontrou na tecnologia um mundo de oportunidades, conexões e desenvolvimento.</p>
+                                        
                                     </div>
                                 </div>
-                            </div>    
+                            </div>                    
                         </div>
             
+<!--Modal Editar Perfil-->
+<div class="modal fade" id="editarperfil" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title ml-80" id="tituloEditarPerfil">Editar Meu Perfil</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label class="ml-3 mb-1">Nome</label><br>
+                    <textarea style="resize: none" rows="1" cols="60" placeholder="Digite seu nome..." class="ml-3"></textarea><br>
+    
+                    <label class="ml-3 mb-1">Biografia</label><br>
+                    <textarea style="resize: none" rows="5" cols="60" placeholder="Digite sua biografia..." class="ml-3"></textarea>
+                
+                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-outline-purple">Salvar mudanças</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+ <!--/Modal Editar Perfil-->   
+
+
                         <div class="row">
                             <div class="col-md-12 d-flex justify-content-center">
                                     <div class="card mt-3" style="width: 18rem;">
