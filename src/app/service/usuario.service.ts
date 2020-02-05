@@ -15,6 +15,10 @@ export class UsuarioService {
     return this.http.get("http://localhost:8080/cadastro/todos/");
   }
 
+
+  public recuperaPorToken(token:String){
+    return this.http.get("http://localhost:8080/cadastro/detalhes?token="+token);
+  }
   //puxando informações da api de usuários do Isidro (puxando informações por ID)
   public recuperaDetalhe(id: number){
     return this.http.get("http://localhost:8080/cadastro/" + id);
@@ -33,7 +37,7 @@ export class UsuarioService {
   }
 
   public login(usuario: Usuario){
-    return this.http.post("http://localhost:8080/cadastro/login/", usuario);
+    return this.http.post("http://localhost:8080/login/", usuario);
   }
   
 }

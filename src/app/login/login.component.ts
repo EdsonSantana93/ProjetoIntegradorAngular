@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Usuario } from '../modal/Usuario';
 import { Globals } from "../modal/Globals";
 import { UsuarioService } from '../service/usuario.service'
+import { Token } from '../modal/token';
 
 @Component({
   selector: 'app-login',
@@ -30,9 +31,6 @@ export class LoginComponent implements OnInit {
   private erroStatus: string = null;
   private senhaForte: string = null;
   private senhaFraca: string = null;
-  
-  
-  
 
   constructor(private srv: UsuarioService, private router: Router) { }
 
@@ -42,11 +40,19 @@ export class LoginComponent implements OnInit {
   login(){
     console.log(this.usuario)
     this.srv.login(this.usuario).subscribe(
-      (res:Usuario)=>{
+      (res:Token)=>{
         console.log("Conectado!");
+        console.log(res);
+        localStorage.setItem("eurekaToken", res.strToken);
         
-        Globals.usuario = res;
-        this.router.navigate(['Feed']);
+        // vou ter que buscar info de um servico do meu usuario a partir do token
+        this.srv.recuperaPorToken(res.strToken).subscribe(
+          (res:Usuario)=>{
+            console.log("Info do usuario ");
+            console.log(res);
+            Globals.usuario = res;
+            this.router.navigate(['Feed']);
+          });
         /*alert("Usuário logado com sucesso.")*/
 
       }, 

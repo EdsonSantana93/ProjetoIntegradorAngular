@@ -30,7 +30,7 @@ export class FeedListComponent implements OnInit {
 
     this.usuario = Globals.usuario;
     this.findAll();
-    console.log(this.feed);
+    console.log(this.feedao);
     if (!this.usuario) {
       this.router.navigate(['/']);
     } else {
