@@ -40,4 +40,7 @@ export class UsuarioService {
     return this.http.post("http://localhost:8080/login/", usuario);
   }
   
+  public recuperarPorToken(token: string){
+    return this.http.get("http://localhost:8080/cadastro/detalhes?token="+token);
+  }
 }

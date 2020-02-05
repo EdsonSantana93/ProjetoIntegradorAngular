@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Usuario} from '../modal/Usuario'; 
-import {ActivatedRoute} from '@angular/router'; // recupera o parâmetro passado na rota
+import {Router} from '@angular/router'; // recupera o parâmetro passado na rota
 import { UsuarioService } from '../service/usuario.service'
 
 
@@ -14,9 +14,23 @@ export class DetalheComponent implements OnInit {
   public usuario: Usuario = new Usuario();
   private id: number; 
 
-  constructor(private rota: ActivatedRoute, private srv: UsuarioService) { }
+  constructor(private rota: Router, private srv: UsuarioService) { }
 
   ngOnInit() {
+	  
+	  let token:string = localStorage.getItem("eurekaToken");
+	  if (token){
+		  
+	     this.srv.recuperarPorToken(token).subscribe(
+		    (res:Usuario)=>{
+				this.usuario = res;
+			}
+		 );
+	  }
+	  else{
+		  this.rota.navigate(['']);
+	  }
+	/*  
     this.id=this.rota.snapshot.params["id"]; // declaração do arquivo App-routing.ts
     console.log("Número do ID: " + this.id);
 
@@ -25,7 +39,7 @@ export class DetalheComponent implements OnInit {
       console.log("Itens recuperados"); 
       console.log(this.usuario); 
     });
-
+*/
   }
 
     enviarAlteracoes(){
