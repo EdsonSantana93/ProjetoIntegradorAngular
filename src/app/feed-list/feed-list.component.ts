@@ -6,6 +6,7 @@ import { Globals } from "../modal/Globals";
 import { CadastroUsuario } from '../modal/CadastroUsuario';
 import { Router } from '@angular/router';
 import { UsuarioService } from '../service/usuario.service';
+import { Token } from '../modal/token';
 
 
 
@@ -21,6 +22,7 @@ export class FeedListComponent implements OnInit {
   feedao: Postagem = new Postagem();
   feed: Postagem[];
   publicacao: string;
+  now: Date = new Date();
   _feed: Postagem;
 
 
@@ -96,10 +98,8 @@ export class FeedListComponent implements OnInit {
     if (this.publicacao != null || this.publicacao != "") {
       this.feedao = new Postagem();
       this.feedao.texto = this.publicacao;
-      this.feedao.datainclusao = "23/01/2020";
+      this.feedao.datainclusao = this.now.toLocaleDateString();
       this.feedao.cadastro = this.usuario;
-      
-
       //this.feedao.usuario = this.usuario;
       // this.feedao.usuario.idUsuario = 1;
       console.log(this.feedao);
@@ -118,3 +118,6 @@ export class FeedListComponent implements OnInit {
     }
   }
 }
+
+
+  

@@ -62,6 +62,7 @@ export class LoginComponent implements OnInit {
       });
   }
 
+
   // funcao para validar o formulario
   public validar() {
     var erros = 0;
