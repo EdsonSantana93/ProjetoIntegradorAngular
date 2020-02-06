@@ -1,14 +1,14 @@
 <div class=" container-fluid bg">
 <div class="row pb-5">
      <!--Card lado esquerdo-->
-    <div class="col-md-3" *ngIf="feed != null">
-        <div class="card mt-5 ml-4" *ngFor="let item of feed">
+    <div class="col-md-3">
+        <div class="card mt-5 ml-4">
             <!--Cabeçalho do card esquerdo com a foto de perfil-->
             <div class="card-header card-esquerdo"><img class="profile-card" src="../../assets/image/perfil.jpg" alt="Card image cap" height="150"
                 width="150"></div>
             <div class="card-body">
                 <!--Nome do usuário-->
-                <h5 class="card-title"><strong>{{item.cadastro.nome}}</strong></h5>
+                <h5 class="card-title"><strong>{{usuario.nome}}</strong></h5>
                 <!--Parte da descrição do perfil-->
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos facere at accusantium? Eius voluptatibus molestiae, porro voluptatem magnam eos, tenetur officiis adipisci sunt repellat iusto, consequatur odit asperiores totam minus?Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero enim ut autem officia? Earum fugit ulla asperiores rem similique hic sed. Laborum nam architecto necessitatibus quibusdam quis aepe impedit sint.
                 </p>
