@@ -19,15 +19,15 @@
                                     <div class="card-body p-0">
                                     
                                     
-                                        <!--Teste Modal-->
-
+                                        
+                                     <!--Modal-->
                                      <!--Botão que irá chamar o modal (cinza)-->
                                      
                                     <button type="button" class="btn" data-toggle="modal" data-target="#editarperfil" id="btnEditar">
                                      <img src="../../assets/image/editarPerfil.png" width="30px" alt="">
                                     </button>
-                                        <h5 class="card-title text-center textoTitulo"><strong>Ana Beatriz Pires</strong></h5>
-                                        <p class="card-text mt-2 mb-4 text-center">Uma jovem mulher apaixonada por aprender e ensinar que encontrou na tecnologia um mundo de oportunidades, conexões e desenvolvimento.</p>
+                                        <h5 class="card-title text-center textoTitulo"><strong>{{usuario.nome}}</strong></h5>
+                                        <p class="card-text mt-2 mb-4 text-center">{{usuario.descricao}}</p>
                                         
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@
                 </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <button type="button" class="btn btn-outline-purple">Salvar mudanças</button>
+                        <button type="button" class="btn btn-outline-purple" (click)="salvarAlteracoes()">Salvar mudanças</button>
                     </div>
             </div>
         </div>
