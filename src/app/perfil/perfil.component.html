@@ -5,7 +5,7 @@
     <div class="row">
         <div class="card border-0 col-md-12 p-0" style="width: 18rem;">
             <div class="capaP">
-                <img class="card-img-top" src="../../assets/image/AnaB.jpg" id="ananinhaPerfil" alt="Card image cap">
+                <img class="card-img-top" src = "{{usuario.foto}}" id="ananinhaPerfil" alt="Card image cap">
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
                                      <!--Modal-->
                                      <!--Botão que irá chamar o modal (cinza)-->
                                      
-                                    <button type="button" class="btn" data-toggle="modal" data-target="#editarperfil" id="btnEditar">
+                                    <button type="button" class="btn" data-toggle="modal" data-target="#editarperfil" id="btnEditar" [routerLink]="['/detalhe']">
                                      <img src="../../assets/image/editarPerfil.png" width="30px" alt="">
                                     </button>
                                         <h5 class="card-title text-center textoTitulo"><strong>{{usuario.nome}}</strong></h5>
@@ -35,7 +35,7 @@
                         </div>
             
 <!--Modal Editar Perfil-->
-<div class="modal fade" id="editarperfil" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!--<div class="modal fade" id="editarperfil" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -58,7 +58,7 @@
                     </div>
             </div>
         </div>
-    </div>
+    </div>-->
  <!--/Modal Editar Perfil-->   
 
 

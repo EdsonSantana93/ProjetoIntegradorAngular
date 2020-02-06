@@ -1,20 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif&display=swap');
+
 form{
-    margin: 10% 10% 0 10%;
+   margin-left: 10%;
+   margin-top: 2%;
     padding-bottom: 10%;
 }
 
-
-#detalheimg{
-    width: 200px;
-    height: 200px;
-    margin-left: 35%;
-    
-}
-.bg{
-    background-image: url(../../assets/image/fundogeo.jpg);
-    background-position: right top;
-    background-repeat: repeat-y;
-}
 .btn-outline-purple{
     border-color: #7a297a;
     color: #7a297a;
@@ -26,6 +17,28 @@ form{
     color: white;
 }
 
-#detalhes{
-    width: 100%;
+
+.capaP{
+    background-image: url(../../assets/image/capaaop1.jpg);
+}
+
+#ananinhaPerfil{
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    margin-left: 5%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    
+    border: 2px solid white;
+}
+
+#tituloEditarPerfil{
+text-align: center;
+font-family: 'Noto Serif', serif;
+font-size: 50px;
+color:#7a297a;
+margin-top: 3%;
+margin-bottom: 2%;
+
 }

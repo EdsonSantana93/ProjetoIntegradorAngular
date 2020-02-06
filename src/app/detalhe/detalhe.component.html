@@ -1,15 +1,26 @@
-<div class="bg">
-  <div class="container">
-    <img id="detalheimg" src="../../assets/image/perfil-de-avatar-de-homem-no-icone-redondo_24640-14044.jpg" alt="">
+<!--<div class="bg">-->
+  <div class="container-fluid">
+
+      <div class="row">
+          <div class="card border-0 col-md-12 p-0" style="width: 18rem;">
+              <div class="capaP">
+                  <img class="card-img-top" src = "{{usuario.foto}}" id="ananinhaPerfil" alt="Card image cap">
+              </div>
+          </div>
+      </div>
+    <!--<img id="detalheimg" src="../../assets/image/perfil-de-avatar-de-homem-no-icone-redondo_24640-14044.jpg" alt="">-->
+
+    <h3 id="tituloEditarPerfil">Editar Perfil</h3>
+    
 
   <form>
       <div class="form-row">
         <div class="form-group col-md-5">
-          <label for="inputUser">Usuario</label>
+          <label for="inputUser">Nome</label>
           <input  [(ngModel)]="usuario.nome" [ngModelOptions] = "{standalone: true}" type="email" class="form-control" id="inputEmail4" placeholder="Usuario">
         </div>
         <div class="form-group col-md-5">
-          <label for="inputPassword4">Email</label>
+          <label for="inputPassword4">E-mail</label>
           <input  [(ngModel)] ="usuario.email" [ngModelOptions] = "{standalone: true}" type="text" class="form-control" id="inputPassword4" placeholder="Senha">
         </div>
       </div>
@@ -22,11 +33,22 @@
             <label for="inputPassword4">Senha</label>
             <input  [(ngModel)] = "usuario.senha" [ngModelOptions] = "{standalone: true}" type="text" class="form-control" id="inputPassword4" placeholder="Senha">
           </div>
+
+          <!--campo descrição-->
+          <div class="form-group col-md-5">
+              <label for="inputPassword4">Biografia</label>
+              <textarea  rows="8" style="resize: none" [(ngModel)] = "usuario.descricao" [ngModelOptions] = "{standalone: true}" type="text" class="form-control" placeholder="Escreva um pouco sobre você..."></textarea>
+            </div>
+            <div class="form-group col-md-5">
+                <label for="inputPassword4">Foto</label>
+                <input  [(ngModel)] ="usuario.foto" [ngModelOptions] = "{standalone: true}" type="text" class="form-control" id="inputPassword4" placeholder="URL da sua foto">
+              </div>
+
         </div>
       
-      <button type="submit" class=" btn btn-outline-purple" [routerLink]="['/administrador/']" (click) = "enviarAlteracoes();">Enviar</button>
+      <button type="submit" class=" btn btn-outline-purple" [routerLink]="['/perfil/']" (click) = "enviarAlteracoes();">Salvar Alterações</button>
     </form>
   </div>
-</div>
+<!--</div>-->
 <app-rodape></app-rodape>
    
