@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Feed } from './../modal/feed';
+import { Postagem } from '../modal/Postagem';
 import { FeedService } from './../service/feed.service';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { Globals } from "../modal/Globals";
-import { Usuario } from '../modal/Usuario';
+import { CadastroUsuario } from '../modal/CadastroUsuario';
 import { Router } from '@angular/router';
+import { UsuarioService } from '../service/usuario.service';
 
 
 
@@ -15,33 +16,54 @@ import { Router } from '@angular/router';
   providers: [Globals]
 })
 export class FeedListComponent implements OnInit {
-  usuario: Usuario;
-  private buscar: number;
-  private feedao: Feed = new Feed();
-  private feed: Feed[];
-  private i: number = 1;
-  private publicacao: string;
-  private _feed: Feed;
-  
+  usuario: CadastroUsuario;
+  buscar: number;
+  feedao: Postagem = new Postagem();
+  feed: Postagem[];
+  publicacao: string;
+  _feed: Postagem;
 
-  constructor(private FeedService: FeedService, private router: Router) { }
+
+  constructor(private FeedService: FeedService, private router: Router, private srv: UsuarioService) { }
 
   ngOnInit() {
+    let token: string = localStorage.getItem("eurekaToken");
 
-    this.usuario = Globals.usuario;
+    if (token) {
+
+      this.srv.recuperaPorToken(token).subscribe(
+        (res: CadastroUsuario) => {
+          //this.usuario = Globals.usuario;
+          this.usuario = res;
+          /*this.usuario.nome = res.nome;
+          this.usuario.idUsuario = res.idUsuario;*/
+          this.findAll();
+        },
+        err => {
+          console.log(err);
+          alert("Erro ao Inserir")
+        });
+    } else {
+      alert("Conecte-se a página!");
+      this.router.navigate(['/']);
+      console.log(localStorage.getItem);
+    }
+    /*this.usuario = Globals.usuario;
     this.findAll();
     console.log(this.feedao);
     if (!this.usuario) {
       this.router.navigate(['/']);
     } else {
       this.usuario = Globals.usuario;
-    }
+    }*/
   }
 
   findAll() {
-    this.FeedService.getAll().subscribe((feedOut: Feed[]) => {
+    /*this._feed = null;
+    this.FeedService.recuperarFeed(this.usuario.idUsuario).subscribe((feedOut: Usuario) => this.usuario = feedOut);*/
+    this.FeedService.getAll().subscribe((feedOut: Postagem[]) => {
       this.feed = feedOut;
-      console.log(this.feed)
+      console.log(this.feed);
     })
   }
 
@@ -49,32 +71,38 @@ export class FeedListComponent implements OnInit {
     if (this.buscar <= 0) {
       this._feed = null;
     } else {
-      this.FeedService.getOne(this.buscar).subscribe((feedOut: Feed) => {
+      this.FeedService.getOne(this.buscar).subscribe((feedOut: Postagem) => {
         this._feed = feedOut;
         console.log(this.feedao);
       })
     }
   }
 
-  enviarAlteracoes(feed: Feed){
-    
-    this.FeedService.editar(this.i).subscribe((res) =>{
+  enviarAlteracoes(feed: Postagem) {
+
+    /*
+    this.FeedService.editar(this.i).subscribe((res) => {
       alert("Postagem atualizada");
     },
-    (erro) => {
-      alert("Não foi possivel atualizar a postagem");
-    });
+      (erro) => {
+        alert("Não foi possivel atualizar a postagem");
+      });
+      */
   }
 
   /*função de criar uma nova publicação ultilizando metodo post*/
 
   novaPubli() {
     if (this.publicacao != null || this.publicacao != "") {
-      this.feedao = new Feed();
-      this.feedao.setTexto(this.publicacao);
-      this.feedao.setDatainclusao("23/01/2020");
-      this.feedao.usuario = new Usuario();
-      this.feedao.usuario.idUsuario = 1;
+      this.feedao = new Postagem();
+      this.feedao.texto = this.publicacao;
+      this.feedao.datainclusao = "23/01/2020";
+      this.feedao.cadastro = this.usuario;
+      
+
+      //this.feedao.usuario = this.usuario;
+      // this.feedao.usuario.idUsuario = 1;
+      console.log(this.feedao);
       this.FeedService.novaPubli(this.feedao).subscribe(
         res => {
           this.findAll();

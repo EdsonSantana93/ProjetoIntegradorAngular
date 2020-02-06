@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: "", component: LoginComponent},
   {path: "Feed", component: FeedListComponent},
   {path: "administrador", component: AdministradorComponent},
-  {path: "detalhe/:id", component: DetalheComponent},
+  {path: "detalhe", component: DetalheComponent},
   {path: "editar/:id", component: EditarComponent},
   {path: "ajuda", component: AjudaComponent},
   {path: "perfil", component: PerfilComponent},

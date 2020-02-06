@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Usuario } from '../modal/Usuario';
+import { CadastroUsuario } from '../modal/CadastroUsuario';
 
 
 @Injectable({
@@ -26,17 +26,17 @@ export class UsuarioService {
 
   //inserir novo usuario
   //metodo http, via post
-  public insere(usuario: Usuario){
+  public insere(usuario: CadastroUsuario){
     return this.http.post("http://localhost:8080/cadastro/novo/", usuario);
   }
 
   //alterar informações dos usuários
   //método http, via put 
-  public atualiza(usuario: Usuario){
+  public atualiza(usuario: CadastroUsuario){
     return this.http.put("http://localhost:8080/cadastro/novo", usuario);
   }
 
-  public login(usuario: Usuario){
+  public login(usuario: CadastroUsuario){
     return this.http.post("http://localhost:8080/login/", usuario);
   }
   

@@ -9,8 +9,6 @@ export class PerfilusuarioService {
 
   constructor(private http: HttpClient) { }
 
-  getOne(id: number){
-    return this.http.get("http://localhost:8080/usuario/"+id);
-  }
+  
 
 }

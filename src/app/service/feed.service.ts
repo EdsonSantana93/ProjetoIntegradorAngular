@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Feed } from '../modal/feed';
+import { Postagem } from '../modal/Postagem';
 
 
 @Injectable({
@@ -11,14 +11,14 @@ export class FeedService {
   constructor(private http: HttpClient) { }
 
   // serviço para criar uma nova publicação
-  novaPubli(feed: Feed){
-    console.log(feed);
+  novaPubli(feed: Postagem){
+    console.log("teste do feed.service:\ ",feed);
     return this.http.post("http://localhost:8080/postagem/novo/",feed);
   }
 
   // Serviço para alimentar o Feed de noticia
   getAll(){
-    let token = localStorage.getItem("isiToken");
+    let token = localStorage.getItem("eurekaToken");
     return this.http.get("http://localhost:8080/postagem/todos/?token=" + token);
   }
 
@@ -26,12 +26,12 @@ export class FeedService {
     return this.http.get("http://localhost:8080/postagem/"+id);
   }
   editar(id : number){
-    return this.http.put("http://localhost:8080/postagem/", id);
+    return this.http.put("http://localhost:8080/postagem/" , id);
   }
 
-  recuperarFeed(id: number){
+ /* recuperarFeed(id: number){
     return this.http.get("http://localhost:8080/postagem/" + id);//faz o mesmo que o getOne(). escolher um pra deixar
-  }
+  }*/
   /*
   //recuperando informações da api de usuários do Isidro (todas as informações), que a partir de agora virá do Usuario
   public recuperaTodos(){

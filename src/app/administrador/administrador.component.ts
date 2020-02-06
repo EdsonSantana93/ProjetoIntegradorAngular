@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../service/usuario.service'
-import { Usuario } from '../modal/Usuario';
+import { CadastroUsuario } from '../modal/CadastroUsuario';
 
 
 
@@ -12,12 +12,12 @@ import { Usuario } from '../modal/Usuario';
 export class AdministradorComponent implements OnInit {
 
   //vetor criado para puxar a lista de informações
-  public listaUser: Usuario[];
+  public listaUser: CadastroUsuario[];
 
   constructor(private srv: UsuarioService) { }
 
   ngOnInit() {
-      this.srv.recuperaTodos().subscribe((res: Usuario[])=>{
+      this.srv.recuperaTodos().subscribe((res: CadastroUsuario[])=>{
       this.listaUser = res;
       console.log(this.listaUser);
     });

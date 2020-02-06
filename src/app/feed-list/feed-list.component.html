@@ -36,34 +36,13 @@
         </div>
     
             <!--Feed de noticias e alimentação com API-->
-            
-        <div class="card post-1 mb-3 ml-3 mr-3" *ngIf="_feed != null">
-            <!--Cabeçalho do Fedd de noticias-->
-            <div class="card-header"><img src="{{_feed.linkimg}}" class="profile-post" alt=""> 
-                <strong>{{usuario.nome}}</strong>
-            </div>
-            <!--Noticias recuperadas da API-->
-            <div class="card-body">
-                <!--Vai ser usado quando tiver banco de dados para computar hora
-                <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>10 min ago</div>-->
-                <!--<blockquote class="blockquote mb-0">-->
-                    <p>{{_feed.texto}}</p>
-                <!--</blockquote>-->
-            </div>
-            <div class="card-footer">
-                <a href="#" class="card-link"><i class="fa fa-gittip"></i> Gostei</a>
-                <a href="#" class="card-link"><i class="fa fa-comment"></i> Comentário</a>
-                <a href="#" class=" btn btn-outline-purple"
-                [routerLink]="['/editar', _feed.idPostagem]">Editar</a>
-            </div>
-        </div>
-
+       
         <!--e o buscador estiver com o seu campo vazio, então mostrar todos-->
-        <div bg-light *ngIf="_feed == null">
+        <div bg-light *ngIf="feed != null">
             <div class="card post-1  mb-3 ml-3 mr-3" *ngFor="let item of feed">
                 <!--Cabeçalho do Fedd de noticias-->
                 <div class="card-header"><img src="{{item.linkImg}}" class="profile-post" alt=""> 
-                    <strong>{{usuario.nome}}</strong>
+                    <strong>{{item.cadastro.nome}}</strong>
                 </div>
                 <!--Noticias recuperadas da API-->
                 <div class="card-body">
@@ -76,8 +55,8 @@
                 <div class="card-footer">
                     <a href="#" class="card-link"><i class="fa fa-gittip"></i> Gostei</a>
                     <a href="#" class="card-link"><i class="fa fa-comment"></i> Comentário</a>
-                    <a href="#" class=" btn btn-outline-purple"
-                    [routerLink]="['/editar', item.idPostagem]">Editar</a>
+                    <!--<a href="#" class=" btn btn-outline-purple"
+                    [routerLink]="['/editar', item.idPostagem]">Editar</a>-->
                     <!--<a href="Feed" class="card-link"><i class="fa fa-mail-forward" data-toggle="modal" data-target=""></i> Editar</a>-->
                 </div>
 

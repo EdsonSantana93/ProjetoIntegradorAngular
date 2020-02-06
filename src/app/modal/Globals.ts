@@ -1,5 +1,5 @@
-import { Usuario } from './Usuario';
+import { CadastroUsuario } from './CadastroUsuario';
 
 export class Globals {
-    public static usuario: Usuario;
+    public static usuario: CadastroUsuario;
 }
