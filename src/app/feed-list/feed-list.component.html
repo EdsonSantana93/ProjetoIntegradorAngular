@@ -1,7 +1,4 @@
-
-
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
 
 <div class=" container-fluid bg">
     <div class="row pb-5">
@@ -13,22 +10,22 @@
                         alt="Card image cap" height="150" width="150"></div>
                 <div class="card-body">
                     <!--Nome do usuário-->
-                    <h5 class="card-title"><strong>{{usuario.nome}}</strong></h5>
+                    <h5 class="card-title d-flex justify-content-center"><strong>{{usuario.nome}}</strong></h5>
                     <!--Parte da descrição do perfil-->
                     <p class="card-text">{{usuario.descricao}}
                     </p>
+                    <button type="submit" class="btn btn-outline-purple" id="botaoPerfil" [routerLink]="'/perfil'">Meu Perfil</button>
                 </div>
             </div>
         </div>
 
-
+        <!--Campo de postagem-->
         <div class="col-md-6">
-            <!--Campo de postagem-->
             <div class="card-body mt-4">
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
                         <div class="form-group">
-                            <textarea class="form-control" id="message" rows="4"
+                            <textarea style="resize: none" class="form-control" id="message" rows="4"
                                 placeholder="No que você está pensando?" [(ngModel)]="publicacao">""</textarea>
                         </div>
                     </div>
@@ -42,26 +39,34 @@
 
             <div class="row" *ngFor="let item of feed">
                 <div class="col-md-4 d-flex align-items-center justify-content-center p-20">
-                    <img src="{{usuario.foto}}" alt="" class="img-fluid" id="postimg">
+                    <img src="{{item.cadastro.foto}}" alt="" class="img-fluid" id="postimg">
                 </div>
                 <div class="col-md-8 d-flex align-items-center justify-content-start p-0">
-                    <div class="balao "> {{item.texto}}
-                        <div class="card-footer d-flex align-items-center">
+                    <div class="balao">
+                        <strong class="d-flex justify-content-center tituloPost mt-2">{{item.cadastro.nome}}: </strong><br>
+                        <p class="corpoPost d-flex justify-content-center">{{item.texto}}</p>
+                       <!-- <div class="card-footer d-flex align-items-center">
                             <a href="#" class="card-link p-0 m-0"><i class="fa fa-gittip"></i> Gostei</a>
                             <a href="#" class="card-link"><i class="fa fa-save"></i> Salvar</a>
-                            <a href="#" class="card-link"><i class="fa fa-edit"></i> Responder</a> </div>
+                            <a href="#" class="card-link"><i class="fa fa-edit"></i> Responder</a> </div>-->
                     </div>
                 </div>
             </div>
         </div>
 
+        <!--Card que mostra os troféus do perfil do usuário conectado-->
         <div class="col-md-3">
             <div class="card events mt-5 mr-4">
                 <div class="card-header">
-                    <img class="trofeu" src="../../assets/image/trofeu.png" alt="" height="50" width="50">Eventos Que
-                    Participou
+                    <div class="row">
+                        <div class="col-md-3">
+                                <img class="trofeu" src="../../assets/image/trofeu.png" alt="" height="50" width="50">
+                        </div>
+                        <div class="col-md-9">
+                                <p id="conquistasTitulo">Minhas Conquistas</p>
+                        </div>
+                    </div>
                 </div>
-
             </div>
 
 
@@ -88,7 +93,7 @@
                     </div>
                 </div>
             </div>
-
+            
         </div>
     </div>
 </div>

@@ -17,6 +17,7 @@ export class PerfilComponent implements OnInit {
   public token: Token = new Token();
   public nome: string;
   public descricao: string;
+  public foto: string;
 
 
   constructor(private us: UsuarioService) { }

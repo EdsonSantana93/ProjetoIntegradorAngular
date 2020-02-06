@@ -1,6 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis&display=swap');
 
-
-
+@import url('https://fonts.googleapis.com/css?family=Cabin&display=swap');
 
 @-webkit-keyframes swing
 {
@@ -124,11 +124,6 @@ p{
     width: 281.25px;
 }
 
-
-
-
-
-
 .balao2{
     margin: 0 auto; 
     background: white;
@@ -164,24 +159,8 @@ p{
     position: relative;
     /*margin-bottom: 1em;*/
 }
-.balao:after{
-    /* content necessário para a criação de um elemento vazio */
-    content: "";
-    width: 0; 
-    height: 0;
-    /* position: absolute para manipularmos a posição da seta */
-    position: absolute;
-    /* Right com valor negativo para ele ficar para fora do balão de dialogo */
-    left: -32px;
-    /* É aqui o truque com as bordas */
-    /* 50px é a metade da altura do elemento, assim temos uma seta da mesma altura que nosso elemento */
-    border-top: 50px solid transparent;
-    border-bottom: 50px solid transparent;
-    border-right: 50px solid white; /* Defina 'right' e a seta apontará para a esquerda */
-    /* Borda de fora do elemento */
-    border-radius: 50%;
-    z-index: 0;
-}
+
+
 #postimg{
     border-radius: 50%;
     width: 130px;
@@ -202,6 +181,28 @@ p{
     z-index: 1;
     border-bottom-right-radius: 40px;
     border-bottom-left-radius: 40px ;
-    right: 1.5px;
-   
+    right: 1.5px;  
 }
+
+#botaoPerfil{
+    display: flex;
+    justify-content: center;
+}
+
+.corpoPost{
+    font-family: 'Dosis', sans-serif;
+}
+
+.tituloPost{
+    font-family: 'Cabin', sans-serif;
+}
+
+#conquistasTitulo{
+    font-size: 120%;
+    margin-top: 5%;
+}
+
+
+
+
+
