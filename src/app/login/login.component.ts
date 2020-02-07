@@ -184,11 +184,11 @@ export class LoginComponent implements OnInit {
       console.log(this.usuario)
       this.srv.insere(this.usuario).subscribe(
         (res)=>{
-          alert("Dados atualizados com sucesso")
+          alert("Dados cadastrados com sucesso")
         }, 
         (err)=>{
           console.log(err); 
-          alert("Falha na atualização dos dados"); 
+          alert("Falha no cadastro dos dados"); 
         });
     }
 }

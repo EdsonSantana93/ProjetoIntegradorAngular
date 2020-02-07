@@ -94,6 +94,10 @@ export class FeedListComponent implements OnInit {
 
   /*função de criar uma nova publicação ultilizando metodo post*/
 
+  onEnter(){
+    this.novaPubli();
+  }
+
   novaPubli() {
     if (this.publicacao != null || this.publicacao != "") {
       this.feedao = new Postagem();

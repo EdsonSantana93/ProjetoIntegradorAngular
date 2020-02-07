@@ -12,7 +12,7 @@ import { UsuarioService } from '../service/usuario.service';
 })
 export class NavbarComponent implements OnInit {
 
-
+  logado:boolean;
   private buscar: number;
   feedlist: Postagem = null;
   
@@ -32,9 +32,7 @@ export class NavbarComponent implements OnInit {
 
   constructor(private srv: UsuarioService) { }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
 
   // funcao para validar o formulario
