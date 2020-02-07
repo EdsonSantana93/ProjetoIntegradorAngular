@@ -12,7 +12,7 @@ h1{
 }
 
 h2{
-    color: #c004c0;
+    color: black;
 }
 
 img{
@@ -22,4 +22,9 @@ img{
 h2{
     font-family: 'Noto Serif', serif;
     font-size: 20px;
+}
+
+#imgerro
+{
+    margin-top: 5%;
 }
