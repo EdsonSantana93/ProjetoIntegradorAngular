@@ -52,6 +52,7 @@ export class LoginComponent implements OnInit {
             console.log(res);
             Globals.usuario = res;
             this.router.navigate(['Feed']);
+         
           });
         /*alert("Usuário logado com sucesso.")*/
 

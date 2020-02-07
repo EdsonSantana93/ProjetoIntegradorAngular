@@ -33,7 +33,7 @@ export class NavbarComponent implements OnInit {
   constructor(private srv: UsuarioService) { }
 
   ngOnInit() {
-
+    
   }
 
 
@@ -178,6 +178,11 @@ export class NavbarComponent implements OnInit {
           console.log(err); 
           alert("Falha na atualização dos dados"); 
         });
+    }
+
+    logout() {
+      localStorage.removeItem("eurekaToken");
+      
     }
 }
 
