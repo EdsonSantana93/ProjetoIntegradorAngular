@@ -1,89 +1,54 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 <div class=" container-fluid bg">
-<div class="row pb-5">
-     <!--Card lado esquerdo-->
-    <div class="col-md-3">
-        <div class="card mt-5 ml-4">
-            <!--Cabeçalho do card esquerdo com a foto de perfil-->
-            <div class="card-header card-esquerdo"><img class="profile-card" src="../../assets/image/perfil.jpg" alt="Card image cap" height="150"
-                width="150"></div>
-            <div class="card-body">
-                <!--Nome do usuário-->
-                <h5 class="card-title"><strong>{{usuario.nome}}</strong></h5>
-                <!--Parte da descrição do perfil-->
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos facere at accusantium? Eius voluptatibus molestiae, porro voluptatem magnam eos, tenetur officiis adipisci sunt repellat iusto, consequatur odit asperiores totam minus?Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero enim ut autem officia? Earum fugit ulla asperiores rem similique hic sed. Laborum nam architecto necessitatibus quibusdam quis aepe impedit sint.
-                </p>
-                <button type="submit" class="btn btn-outline-purple" id="botaoPerfil" [routerLink]="'/perfil'">Meu Perfil</button>
-            </div>
-        </div>
-    </div>
-
-     <!--Campo de postagem e carregamento de noticias-->
-    <div class="col-md-6">
-        <!--Campo de postagem-->
-        <div class="card-body mt-4">
-            <div class="tab-content" id="myTabContent">
-                <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
-                    <div class="form-group">
-                        <textarea class="form-control" id="message" rows="4"  placeholder="No que você está pensando?"[(ngModel)]="publicacao"></textarea>
-                    </div>
-                </div>
-            </div>
-            <div class="btn-toolbar justify-content-end mb-5">
-                <div class="btn-group">
-                    <button type="submit" (click)="novaPubli()" class=" btn btn-outline-purple">Publicar</button>
-                </div>
-            </div>
-        </div>
-    
-            <!--Feed de noticias e alimentação com API-->
-       
-        <!--e o buscador estiver com o seu campo vazio, então mostrar todos-->
-        <div bg-light *ngIf="feed != null">
-            <div class="card post-1  mb-3 ml-3 mr-3" *ngFor="let item of feed">
-                <!--Cabeçalho do Fedd de noticias-->
-                <div class="card-header"><img src="{{item.linkImg}}" class="profile-post" alt=""> 
-                    <strong>{{item.cadastro.nome}}</strong>
-                </div>
-                <!--Noticias recuperadas da API-->
+    <div class="row pb-5">
+        <!--Card lado esquerdo-->
+        <div class="col-md-3">
+            <div class="card mt-5 ml-4">
+                <!--Cabeçalho do card esquerdo com a foto de perfil-->
+                <div class="card-header card-esquerdo"><img class="profile-card" src="{{usuario.foto}}"
+                        alt="Card image cap" height="150" width="150"></div>
                 <div class="card-body">
-                    <!--Vai ser usado quando tiver banco de dados para computar hora
-                    <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>10 min ago</div>-->
-                    <!--<blockquote class="blockquote mb-0">-->
-                        <p>{{item.texto}}</p>
-                    <!--</blockquote>-->
+                    <!--Nome do usuário-->
+                    <h5 class="card-title d-flex justify-content-center"><strong>{{usuario.nome}}</strong></h5>
+                    <!--Parte da descrição do perfil-->
+                    <p class="card-text">{{usuario.descricao}}
+                    </p>
+                    <button type="submit" class="btn btn-outline-purple" id="botaoPerfil" [routerLink]="'/perfil'">Meu Perfil</button>
                 </div>
-                <div class="card-footer">
-                    <a href="#" class="card-link"><i class="fa fa-gittip"></i> Gostei</a>
-                    <a href="#" class="card-link"><i class="fa fa-comment"></i> Comentário</a>
-                    <!--<a href="#" class=" btn btn-outline-purple"
-                    [routerLink]="['/editar', item.idPostagem]">Editar</a>-->
-                    <!--<a href="Feed" class="card-link"><i class="fa fa-mail-forward" data-toggle="modal" data-target=""></i> Editar</a>-->
-                </div>
-
             </div>
-        </div>            
-     </div>
-     
-     <!--Card do lado direito-->
-     <div class="col-md-3">
-        <div class="card events mt-5 mr-4">
-                <div class="card-header">
-                        <img class="trofeu" src="../../assets/image/trofeu.png" alt="" height="50" width="50">Eventos Que Participou
-                </div>
-                <div class="card-body" id="cardEventos">
-                    <div class="container-fluid badges">
-                    <img src="../../assets/image/voluntario.jpg" alt="" height="30" width="30" title="Este(a) usuario(a) realizou trabalhos voluntarios"> 
-                    <img src="../../assets/image/chepeu.png" alt="" width="30" height="30" title=" Este(a) Usuario(a) ja ajudou com uma Pergunta!"> 
-                    <img src="../../assets/image/intercambiocheck.png" alt="" width="30" height="30" title="Este(a) Usuario(a) Ja fez um Intercambio">
-                    <img src="../../assets/image/music.png" alt="" height="30" width="30" title="Este(a) Usuario(a) Sabe tocar algum Instrumento">
-                    <img src="../../assets/image/museu.png" alt="" height="30" width="30" title="Este(a) Usuario(a) ja visitou um museu">
-                    <img src="../../assets/image/teatro..jpg" alt="" width="30" height="30" title="Este(a) Usuario(a) ja visitou o teatro">
-                     </div>
-                    <p class="card-text">Voce Ja visitou esses eventos Parabens, Click em "Ver mais" para aumentar sua taxa de "cultura".</p>
-                    <div class="btn-toolbar justify-content-end">
-                        <div class="btn-group">
-                    <button href="#" class=" btn btn-outline-purple" id="btnVMais">Ver Mais</button>
+        </div>
+
+        <!--Campo de postagem-->
+        <div class="col-md-6">
+            <div class="card-body mt-4">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+                        <div class="form-group">
+                            <textarea style="resize: none" class="form-control" id="message" rows="4"
+                                placeholder="No que você está pensando?" [(ngModel)]="publicacao">""</textarea>
+                        </div>
                     </div>
+                </div>
+                <div class="btn-toolbar justify-content-end mb-5">
+                    <div class="btn-group">
+                        <button type="submit" (click)="novaPubli()" class=" btn btn-outline-purple">Publicar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" *ngFor="let item of feed">
+                <div class="col-md-4 d-flex align-items-center justify-content-center p-20">
+                    <img src="{{item.cadastro.foto}}" alt="" class="img-fluid" id="postimg">
+                </div>
+                <div class="col-md-8 d-flex align-items-center justify-content-start p-0">
+                    <div class="balao">
+                        <strong class="d-flex justify-content-center tituloPost mt-2">{{item.cadastro.nome}}: </strong><br>
+                        <p class="corpoPost d-flex justify-content-center">{{item.texto}}</p>
+                       <!-- <div class="card-footer d-flex align-items-center">
+                            <a href="#" class="card-link p-0 m-0"><i class="fa fa-gittip"></i> Gostei</a>
+                            <a href="#" class="card-link"><i class="fa fa-save"></i> Salvar</a>
+                            <a href="#" class="card-link"><i class="fa fa-edit"></i> Responder</a> </div>-->
                     </div>
                 </div>
             </div>
@@ -94,33 +59,52 @@
                 <button class=" btn btn-outline-purple" type="submit" (click)="findId()" >Pesquisar</button>
             </div>
         </div>
-    </div> 
-</div>      
+
+        <!--Card que mostra os troféus do perfil do usuário conectado-->
+        <div class="col-md-3">
+            <div class="card events mt-5 mr-4">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-3">
+                                <img class="trofeu" src="../../assets/image/trofeu.png" alt="" height="50" width="50">
+                        </div>
+                        <div class="col-md-9">
+                                <p id="conquistasTitulo">Minhas Conquistas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card-body" id="cardEventos">
+                <div class="container-fluid badges">
+                    <img src="../../assets/image/voluntario.jpg" alt="" height="30" width="30"
+                        title="Este(a) usuario(a) realizou trabalhos voluntarios">
+                    <img src="../../assets/image/chepeu.png" alt="" width="30" height="30"
+                        title=" Este(a) Usuario(a) ja ajudou com uma Pergunta!">
+                    <img src="../../assets/image/intercambiocheck.png" alt="" width="30" height="30"
+                        title="Este(a) Usuario(a) Ja fez um Intercambio">
+                    <img src="../../assets/image/music.png" alt="" height="30" width="30"
+                        title="Este(a) Usuario(a) Sabe tocar algum Instrumento">
+                    <img src="../../assets/image/museu.png" alt="" height="30" width="30"
+                        title="Este(a) Usuario(a) ja visitou um museu">
+                    <img src="../../assets/image/teatro..jpg" alt="" width="30" height="30"
+                        title="Este(a) Usuario(a) ja visitou o teatro">
+                </div>
+                <p class="card-text mt-3">Click em "Ver mais" para acessar a galeria de troféus.</p>
+                <div class="btn-toolbar justify-content-end">
+                    <div class="btn-group">
+                        <button href="#" class=" btn btn-outline-purple" id="btnVMais"  [routerLink]="'/trofeus'">Ver Mais</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 <app-rodape></app-rodape>
-        
-        
-        
-        
-        
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

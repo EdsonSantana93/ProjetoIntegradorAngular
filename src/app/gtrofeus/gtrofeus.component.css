@@ -1,0 +1,85 @@
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif&display=swap');
+
+
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+
+.gtrofeus img{
+    width: 10%;
+    height: 10%;
+    margin-top: 3%;
+    margin-right: 3%;
+    margin-left: 3%;
+
+    
+    
+}
+
+.gtrofeus img:hover{
+    -webkit-transform: scale(1.4);
+        -ms-transform: scale(1.4);
+        transform: scale(1.4);
+}
+.gtrofeus  {
+    display: flex;
+    margin-left: 3%;
+   justify-content: space-around;
+  align-items: center;
+  text-align: center;
+    
+}
+#conect{
+    width: 14%;
+    height: 14%;
+}
+.flex-warp img{
+    flex-wrap: wrap;
+}
+#livro{
+    width: 11%;
+    height: 11%;
+}
+body{
+    
+    background-image: url(../../assets/image/new_project.png);
+    background-repeat: no-repeat;
+    background-size: auto;
+    
+    
+   }
+.descricao{
+     background-color:rgba(128, 128, 128, 0.1);
+     border-radius: 10%;
+     font-family: 'Noto Serif', serif;
+    
+
+}
+.card-title{
+    font-family: 'Noto Serif', serif;
+    font-size: 350%;
+}
+ #lamp1{
+     width: 50%;
+     height: 50%;
+     margin-left: 25%;
+     padding: 0%;
+ }
+ .geo{
+     /*background-image: url(../../assets/image/images.jfif);*/
+     height: 100%;
+     width: 100%;
+     border-radius: 10%;
+     
+     
+ }
+ #museu{
+     margin-left: 5%;
+ }
+
+
+
+

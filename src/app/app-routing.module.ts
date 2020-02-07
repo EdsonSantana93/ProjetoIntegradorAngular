@@ -10,6 +10,7 @@ import { LoginComponent} from './login/login.component';
 import { AjudaComponent } from './ajuda/ajuda.component';
 import { EditarComponent } from './editar/editar.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { GtrofeusComponent } from './gtrofeus/gtrofeus.component';
 
 const routes: Routes = [
   {path: "sobre", component: SobreComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: "editar/:id", component: EditarComponent},
   {path: "ajuda", component: AjudaComponent},
   {path: "perfil", component: PerfilComponent},
+  {path: "trofeus", component: GtrofeusComponent},
   {path: "**", component: NotFoundComponent}
 ];
 

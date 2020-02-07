@@ -17,6 +17,7 @@ import { LoginComponent } from './login/login.component';
 import { AjudaComponent } from './ajuda/ajuda.component';
 import { EditarComponent } from './editar/editar.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { GtrofeusComponent } from './gtrofeus/gtrofeus.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { PerfilComponent } from './perfil/perfil.component';
     AdministradorComponent,
     DetalheComponent,
     LoginComponent, 
-    AjudaComponent, EditarComponent, PerfilComponent
+    AjudaComponent, EditarComponent, PerfilComponent, GtrofeusComponent
   ],
   imports: [
     BrowserModule,

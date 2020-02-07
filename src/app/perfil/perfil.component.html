@@ -1,41 +1,43 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <div class="container-fluid">
     <!--Foto do perfil e capa-->
     <div class="row">
         <div class="card border-0 col-md-12 p-0" style="width: 18rem;">
             <div class="capaP">
-                <img class="card-img-top" src="../../assets/image/AnaB.jpg" id="ananinhaPerfil" alt="Card image cap">
+                <img class="card-img-top" src="{{usuario.foto}}" id="ananinhaPerfil" alt="Card image cap">
             </div>
         </div>
     </div>
 
     <div class="row">
-        
-                <div class="col-md-3 border-right">
-                        <div class="row mt-3">
-                            <div class="col-md-12 d-flex justify-content-center">
-                                <div class="card" style="width: 18rem;">
-                                    <div class="card-body p-0">
-                                    
-                                    
-                                        
-                                     <!--Modal-->
-                                     <!--Botão que irá chamar o modal (cinza)-->
-                                     
-                                    <button type="button" class="btn" data-toggle="modal" data-target="#editarperfil" id="btnEditar">
-                                     <img src="../../assets/image/editarPerfil.png" width="30px" alt="">
-                                    </button>
-                                        <h5 class="card-title text-center textoTitulo"><strong>{{usuario.nome}}</strong></h5>
-                                        <p class="card-text mt-2 mb-4 text-center">{{usuario.descricao}}</p>
-                                        
-                                    </div>
-                                </div>
-                            </div>                    
+
+        <div class="col-md-3 border-right">
+            <div class="row mt-3">
+                <div class="col-md-12 d-flex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body p-0">
+
+
+
+                            <!--Modal-->
+                            <!--Botão que irá chamar o modal (cinza)-->
+
+                            <button type="button" class="btn" data-toggle="modal" data-target="#editarperfil"
+                                id="btnEditar" [routerLink]="['/detalhe']">
+                                <img src="../../assets/image/editarPerfil.png" width="30px" alt="">
+                            </button>
+                            <h5 class="card-title text-center textoTitulo"><strong>{{usuario.nome}}</strong></h5>
+                            <p class="card-text mt-2 mb-4 text-center">{{usuario.descricao}}</p>
+
                         </div>
-            
-<!--Modal Editar Perfil-->
-<div class="modal fade" id="editarperfil" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    </div>
+                </div>
+            </div>
+
+            <!--Modal Editar Perfil-->
+            <!--<div class="modal fade" id="editarperfil" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -58,158 +60,160 @@
                     </div>
             </div>
         </div>
-    </div>
- <!--/Modal Editar Perfil-->   
+    </div>-->
+            <!--/Modal Editar Perfil-->
 
 
-                        <div class="row">
-                            <div class="col-md-12 d-flex justify-content-center">
-                                    <div class="card mt-3" style="width: 18rem;">
-                                                
-                                            <div class="card-body">
-                                            <h5 class="card-title text-center mt-2 mb-2 textoTitulo"><strong>Galeria de Troféus</strong></h5>
-                                        <!--icone troféu-->
-                                        <div class="row">
-                                            <img src="../../assets/image/chepeu.png" width="30px" class="minitrofeus">
-                                            <p class="d-flex align-items-center ml-2">Formação Superior!</p>
-                                        </div>
-                                        <!--icone troféu-->
-                                        <div class="row">
-                                            <img src="../../assets/image/intercambiocheck.png" width="30px" class="minitrofeus">
-                                            <p class="d-flex align-items-center ml-2">Aprendeu outro idioma!</p>
-                                        </div>
-                                        <!--icone troféu-->
-                                        <div class="row">
-                                            <img src="../../assets/image/museu.png" width="30px" class="minitrofeus">
-                                            <p class="d-flex align-items-center ml-2">Visitou um Museu!</p>
-                                        </div>
-                                        <!--icone troféu-->
-                                        <div class="row">
-                                            <img src="../../assets/image/livro-icon-png-3.png" width="30px" class="minitrofeus">
-                                            <p class="d-flex align-items-center ml-2">Leu mais de 3 livros no mês!</p>
-                                        </div>
-                                        <!--icone troféu-->
-                                        <div class="row">
-                                            <img src="../../assets/image/food.png" width="30px" class="minitrofeus">
-                                            <p class="d-flex align-items-center ml-2">Você ajuda com doações!</p>
-                                        </div>
-                                        <!--icone troféu-->
-                                        <div class="row">
-                                            <img src="../../assets/image/carro.png" width="30px" class="minitrofeus">   
-                                            <p class="d-flex align-items-center ml-2">Você oferece carona!</p>
-                                        </div>
-                                    </div>
-                                </div>
+            <div class="row">
+                <div class="col-md-12 d-flex justify-content-center">
+                    <div class="card mt-3" style="width: 18rem;">
+
+                        <div class="card-body">
+                            <h5 class="card-title text-center mt-2 mb-2 textoTitulo"><strong>Galeria de Troféus</strong>
+                            </h5>
+                            <!--icone troféu-->
+                            <div class="row">
+                                <img src="../../assets/image/chepeu.png" width="30px" class="minitrofeus">
+                                <p class="d-flex align-items-center ml-2">Formação Superior!</p>
                             </div>
-                                
+                            <!--icone troféu-->
+                            <div class="row">
+                                <img src="../../assets/image/intercambiocheck.png" width="30px" class="minitrofeus">
+                                <p class="d-flex align-items-center ml-2">Aprendeu outro idioma!</p>
+                            </div>
+                            <!--icone troféu-->
+                            <div class="row">
+                                <img src="../../assets/image/museu.png" width="30px" class="minitrofeus">
+                                <p class="d-flex align-items-center ml-2">Visitou um Museu!</p>
+                            </div>
+                            <!--icone troféu-->
+                            <div class="row">
+                                <img src="../../assets/image/livro-icon-png-3.png" width="30px" class="minitrofeus">
+                                <p class="d-flex align-items-center ml-2">Leu mais de 3 livros no mês!</p>
+                            </div>
+                            <!--icone troféu-->
+                            <div class="row">
+                                <img src="../../assets/image/food.png" width="30px" class="minitrofeus">
+                                <p class="d-flex align-items-center ml-2">Você ajuda com doações!</p>
+                            </div>
+                            <!--icone troféu-->
+                            <div class="row">
+                                <img src="../../assets/image/carro.png" width="30px" class="minitrofeus">
+                                <p class="d-flex align-items-center ml-2">Você oferece carona!</p>
+                            </div>
                         </div>
-                        
-                        
                     </div>
-       
-        
+                </div>
+
+            </div>
+
+
+        </div>
+
+
         <div class="col-md-9">
             <div class="row mt-3 ">
                 <div class="col-md-6 d-flex justify-content-center">
-                        <div class="card tm">
-                                <div class="card-body">
-                                  <h5 class="card-title mt-2 text-center textoTitulo"><strong>Suas Atividades</strong> </h5>
-                                <!--icone = Thiago -->
-                                <div class="row ml-2">
-                                    <img src="../../assets/image/notesicon.png" width="50px" class="eventosSalvos">
-                                    <p class="d-flex align-items-center ml-2">Você escreveu uma pulicação!</p>
-                                </div>
-                                <!--icone -->
-                                <div class="row ml-2">
-                                    <img src="../../assets/image/notesicon.png" width="50px" class="eventosSalvos">
-                                    <p class="d-flex align-items-center ml-2">Você escreveu uma pulicação!</p>
-                                </div>
-                                <!--icone -->
-                                <div class="row ml-2">
-                                    <img src="../../assets/image/likepurple.png" width="50px" class="eventosSalvos">
-                                    <p class="d-flex align-items-center ml-2">Você curtiu uma pulicação!</p>
-                                </div>
-                                <!--icone -->
-                                <div class="row ml-2">
-                                    <img src="../../assets/image/salvar.png" width="50px" class="eventosSalvos">
-                                    <p class="d-flex align-items-center ml-2">Você salvou um evento!</p>
-                                </div>
-                                <!--icone -->
-                                <div class="row ml-2">
-                                    <img src="../../assets/image/salvar.png" width="50px" class="eventosSalvos">
-                                    <p class="d-flex align-items-center ml-2">Você salvou um evento!</p>
-                                </div>
-                                <!--icone -->
-                                <div class="row ml-2">
-                                    <img src="../../assets/image/salvar.png" width="50px" class="eventosSalvos">
-                                    <p class="d-flex align-items-center ml-2">Você salvou um evento!</p>
-                                </div>
-                                <!--icone -->
-                                <div class="row ml-2 mb-1">
-                                    <img src="../../assets/image/confirma.png" width="50px" class="eventosSalvos">
-                                    <p class="d-flex align-items-center ml-2">Você compareu em um rolê!</p>
-                                </div>
-                                <!--icone -->
-                                <div class="row ml-2 mb-1">
-                                    <img src="../../assets/image/likepurple.png" width="50px" class="eventosSalvos">
-                                    <p class="d-flex align-items-center ml-2">Você curtiu uma pulicação!</p>
-                                </div>
-                                  
-                                </div>
-                              </div>        
+                    <div class="card tm">
+                        <div class="card-body">
+                            <h5 class="card-title mt-2 text-center textoTitulo"><strong>Suas Atividades</strong> </h5>
+                            <!--icone = Thiago -->
+                            <div class="row ml-2">
+                                <img src="../../assets/image/notesicon.png" width="50px" class="eventosSalvos">
+                                <p class="d-flex align-items-center ml-2">Você escreveu uma pulicação!</p>
+                            </div>
+                            <!--icone -->
+                            <div class="row ml-2">
+                                <img src="../../assets/image/notesicon.png" width="50px" class="eventosSalvos">
+                                <p class="d-flex align-items-center ml-2">Você escreveu uma pulicação!</p>
+                            </div>
+                            <!--icone -->
+                            <div class="row ml-2">
+                                <img src="../../assets/image/likepurple.png" width="50px" class="eventosSalvos">
+                                <p class="d-flex align-items-center ml-2">Você curtiu uma pulicação!</p>
+                            </div>
+                            <!--icone -->
+                            <div class="row ml-2">
+                                <img src="../../assets/image/salvar.png" width="50px" class="eventosSalvos">
+                                <p class="d-flex align-items-center ml-2">Você salvou um evento!</p>
+                            </div>
+                            <!--icone -->
+                            <div class="row ml-2">
+                                <img src="../../assets/image/salvar.png" width="50px" class="eventosSalvos">
+                                <p class="d-flex align-items-center ml-2">Você salvou um evento!</p>
+                            </div>
+                            <!--icone -->
+                            <div class="row ml-2">
+                                <img src="../../assets/image/salvar.png" width="50px" class="eventosSalvos">
+                                <p class="d-flex align-items-center ml-2">Você salvou um evento!</p>
+                            </div>
+                            <!--icone -->
+                            <div class="row ml-2 mb-1">
+                                <img src="../../assets/image/confirma.png" width="50px" class="eventosSalvos">
+                                <p class="d-flex align-items-center ml-2">Você compareu em um rolê!</p>
+                            </div>
+                            <!--icone -->
+                            <div class="row ml-2 mb-1">
+                                <img src="../../assets/image/likepurple.png" width="50px" class="eventosSalvos">
+                                <p class="d-flex align-items-center ml-2">Você curtiu uma pulicação!</p>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-6 d-flex justify-content-center">
-                        <div class="card tm">
-                                <div class="card-body">
-                                  <h5 class="card-title mt-2 text-center textoTitulo"><strong>Seus Rolês</strong></h5>
-                                  <!--icone -->
-                                  <div class="row ml-2">
-                                  <img src="../../assets/image/devicon.png" width="50px" class="eventosSalvos">
-                                  <p class="d-flex align-items-center ml-2">Meetup HTML5/CSS3/Javascript</p>
-                                </div>
-                                <!--icone -->
-                                <div class="row mt-1 ml-2">
-                                    <img src="../../assets/image/talkicon.png" width="50px" class="eventosSalvos">
-                                    <p class="d-flex align-items-center ml-2">Carreira: Desenvolvedor Front End</p>
-                                </div>
-                                <!--icone -->
-                                <div class="row mt-1 ml-2">
-                                    <img src="../../assets/image/centrosp.png" width="50px" class="eventosSalvos">
-                                    <p class="d-flex align-items-center ml-2">Rolê: Conhecendo o Centro de SP</p>
-                                </div>
-                                <!--icone -->
-                                <div class="row mt-1 ml-2">
-                                    <img src="../../assets/image/museu2.png" width="50px" class="eventosSalvos">
-                                    <p class="d-flex align-items-center ml-2">Rolê: Museu da Imagem e do Som</p>
-                                </div>
-                                <!--icone -->
-                                <div class="row mt-1 ml-2">
-                                    <img src="../../assets/image/blackwoman.png" width="50px" class="eventosSalvos">
-                                    <p class="d-flex align-items-center ml-2">Rolê: Mulheres pretas na tecnologia</p>
-                                </div>
-                                <!--icone -->
-                                <div class="row mt-1 ml-2">
-                                    <img src="../../assets/image/oratoria.png" width="50px" class="eventosSalvos">
-                                    <p class="d-flex align-items-center ml-2">Roda de Conversa: Liderança Feminina</p>
-                                </div>
-                                <!--icone -->
-                                <div class="row mt-1 ml-2">
-                                    <img src="../../assets/image/devwoman.png" width="50px" class="eventosSalvos">
-                                    <p class="d-flex align-items-center ml-2">Palestra: Mulheres na Tecnologia</p>
-                                </div>
-                                <!--icone -->
-                                <div class="row mt-1 ml-2 mb-2">
-                                    <img src="../../assets/image/book.png" width="50px" class="eventosSalvos">
-                                    <p class="d-flex align-items-center ml-2">Rolê: Roda de Leitura Para Crianças na Periferia</p>
-                                </div>
-                                
+                    <div class="card tm">
+                        <div class="card-body">
+                            <h5 class="card-title mt-2 text-center textoTitulo"><strong>Seus Rolês</strong></h5>
+                            <!--icone -->
+                            <div class="row ml-2">
+                                <img src="../../assets/image/devicon.png" width="50px" class="eventosSalvos">
+                                <p class="d-flex align-items-center ml-2">Meetup HTML5/CSS3/Javascript</p>
                             </div>
+                            <!--icone -->
+                            <div class="row mt-1 ml-2">
+                                <img src="../../assets/image/talkicon.png" width="50px" class="eventosSalvos">
+                                <p class="d-flex align-items-center ml-2">Carreira: Desenvolvedor Front End</p>
+                            </div>
+                            <!--icone -->
+                            <div class="row mt-1 ml-2">
+                                <img src="../../assets/image/centrosp.png" width="50px" class="eventosSalvos">
+                                <p class="d-flex align-items-center ml-2">Rolê: Conhecendo o Centro de SP</p>
+                            </div>
+                            <!--icone -->
+                            <div class="row mt-1 ml-2">
+                                <img src="../../assets/image/museu2.png" width="50px" class="eventosSalvos">
+                                <p class="d-flex align-items-center ml-2">Rolê: Museu da Imagem e do Som</p>
+                            </div>
+                            <!--icone -->
+                            <div class="row mt-1 ml-2">
+                                <img src="../../assets/image/blackwoman.png" width="50px" class="eventosSalvos">
+                                <p class="d-flex align-items-center ml-2">Rolê: Mulheres pretas na tecnologia</p>
+                            </div>
+                            <!--icone -->
+                            <div class="row mt-1 ml-2">
+                                <img src="../../assets/image/oratoria.png" width="50px" class="eventosSalvos">
+                                <p class="d-flex align-items-center ml-2">Roda de Conversa: Liderança Feminina</p>
+                            </div>
+                            <!--icone -->
+                            <div class="row mt-1 ml-2">
+                                <img src="../../assets/image/devwoman.png" width="50px" class="eventosSalvos">
+                                <p class="d-flex align-items-center ml-2">Palestra: Mulheres na Tecnologia</p>
+                            </div>
+                            <!--icone -->
+                            <div class="row mt-1 ml-2 mb-2">
+                                <img src="../../assets/image/book.png" width="50px" class="eventosSalvos">
+                                <p class="d-flex align-items-center ml-2">Rolê: Roda de Leitura Para Crianças na
+                                    Periferia</p>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    
+
                 </div>
                 <div class="col-md-6">
 
@@ -219,4 +223,3 @@
 
     </div>
 </div>
-

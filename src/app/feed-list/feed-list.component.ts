@@ -17,7 +17,7 @@ import { Token } from '../modal/token';
   providers: [Globals]
 })
 export class FeedListComponent implements OnInit {
-  usuario: CadastroUsuario;
+  usuario: CadastroUsuario =new CadastroUsuario();
   buscar: number;
   feedao: Postagem = new Postagem();
   feed: Postagem[];
