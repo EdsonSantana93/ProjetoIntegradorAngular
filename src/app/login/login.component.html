@@ -19,13 +19,13 @@
             <div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                <input (keydown.enter)="login()" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                   [(ngModel)]="usuario.email" placeholder="Email">
       
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Senha</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="usuario.senha"
+                <input (keydown.enter)="login()" type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="usuario.senha"
                   placeholder="Senha">
               </div>
               
@@ -54,34 +54,34 @@
                         <div class="form-group">
                           <!-- Input nome -->
                           <label for="nome">Nome Completo</label>
-                          <input type="text" class="form-control" id="nome" [(ngModel)]="usuario.nome"
+                          <input (keydown.enter)="validar()" type="text" class="form-control" id="nome" [(ngModel)]="usuario.nome"
                             [ngModelOptions]="{standalone: true}" aria-describedby="nome" placeholder="Digite seu nome..."
                             autofocus required>
                           <span class="erro" *ngIf='erroNome'>{{erroNome}}<br></span><br>
       
                           <!-- Input telefone -->
                           <label for="telefone">Telefone</label>
-                          <input type="number" class="form-control" id="telefone" [(ngModel)]="usuario.telefone"
+                          <input (keydown.enter)="validar()" type="number" class="form-control" id="telefone" [(ngModel)]="usuario.telefone"
                             [ngModelOptions]="{standalone: true}" aria-describedby="telefone"
                             placeholder="Digite seu telefone..." required>
                           <span class="erro" *ngIf='erroTelefone'>{{erroTelefone}}<br></span><br>
                           
                           <!--Input email-->
                           <label for="email">E-mail</label>
-                          <input type="email" class="form-control" id="email" [(ngModel)]="usuario.email"
+                          <input (keydown.enter)="validar()" type="email" class="form-control" id="email" [(ngModel)]="usuario.email"
                             [ngModelOptions]="{standalone: true}" aria-describedby="emailHelp"
                             placeholder="Digite seu e-mail..." required>
                           <span class="erro" *ngIf='erroEmail'>{{erroEmail}}<br></span><br>
       
                           <label for="senha">Senha</label>
-                          <input type="password" class="form-control" id="senha" [(ngModel)]="usuario.senha"
+                          <input (keydown.enter)="validar()" type="password" class="form-control" id="senha" [(ngModel)]="usuario.senha"
                             [ngModelOptions]="{standalone: true}" placeholder="Digite sua Senha..." (keyup) = "mostrarStatus()" required>
                           <span class="forte" *ngIf='senhaForte'>{{senhaForte}}<br></span>
                           <span class="fraca" *ngIf='senhaFraca'>{{senhaFraca}}<br></span>
                           <span class="erro" *ngIf='erroSenha'>{{erroSenha}}<br></span><br>
       
                           <label for="confirmacao">Confirme a Senha</label>
-                          <input type="password" class="form-control" id="confirmacao" [(ngModel)]="confirmacao"
+                          <input (keydown.enter)="validar()" type="password" class="form-control" id="confirmacao" [(ngModel)]="confirmacao"
                             [ngModelOptions]="{standalone: true}" placeholder="Confirme sua Senha" required>
                           <span class="erro" *ngIf='erroConfirmacao'>{{erroConfirmacao}}<br></span>
       

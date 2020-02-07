@@ -12,7 +12,7 @@ import { UsuarioService } from '../service/usuario.service';
 })
 export class NavbarComponent implements OnInit {
 
-
+  logado:boolean;
   private buscar: number;
   feedlist: Postagem = null;
   

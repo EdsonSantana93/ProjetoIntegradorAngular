@@ -52,6 +52,12 @@
                     </div>
                 </div>
             </div>
+    
+            <div class="form-inline my-3">
+                <input class="form-control mr-sm-2" type="search" placeholder="Pesquise" [(ngModel)]="buscar"
+                    aria-label="Search">
+                <button class=" btn btn-outline-purple" type="submit" (click)="findId()" >Pesquisar</button>
+            </div>
         </div>
 
         <!--Card que mostra os troféus do perfil do usuário conectado-->
