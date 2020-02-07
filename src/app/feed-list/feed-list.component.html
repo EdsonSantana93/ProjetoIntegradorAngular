@@ -17,7 +17,52 @@
                     <button type="submit" class="btn btn-outline-purple" id="botaoPerfil" [routerLink]="'/perfil'">Meu Perfil</button>
                 </div>
             </div>
+
+            <!--Teste troféus-->
+             <!--Card que mostra os troféus do perfil do usuário conectado-->
+        <div class="col-md-3 ml-2">
+                <div class="card events mt-5 ">
+                    <div class="card-header trofeuheader">
+                        <div class="row">
+                            <div class="col-md-3">
+                                    <img class="trofeu" src="../../assets/image/trofeu.png" alt="" height="50" width="50">
+                            </div>
+                            
+                                    <p id="conquistasTitulo">Minhas Conquistas</p>
+                            
+                        </div>
+                    </div>
+                </div>
+    
+    
+                <div class="card-body" id="cardEventos">
+                    <div class="container-fluid badges">
+                        <img src="../../assets/image/voluntario.jpg" alt="" height="30" width="30"
+                            title="Este(a) usuario(a) realizou trabalhos voluntarios">
+                        <img src="../../assets/image/chepeu.png" alt="" width="30" height="30"
+                            title=" Este(a) Usuario(a) ja ajudou com uma Pergunta!">
+                        <img src="../../assets/image/intercambiocheck.png" alt="" width="30" height="30"
+                            title="Este(a) Usuario(a) Ja fez um Intercambio">
+                        <img src="../../assets/image/music.png" alt="" height="30" width="30"
+                            title="Este(a) Usuario(a) Sabe tocar algum Instrumento">
+                        <img src="../../assets/image/museu.png" alt="" height="30" width="30"
+                            title="Este(a) Usuario(a) ja visitou um museu">
+                        <img src="../../assets/image/teatro..jpg" alt="" width="30" height="30"
+                            title="Este(a) Usuario(a) ja visitou o teatro">
+                    </div>
+                    <p class="card-text mt-3">Click em "Ver mais" para acessar a galeria de troféus.</p>
+                    <div class="btn-toolbar justify-content-end">
+                        <div class="btn-group">
+                            <button href="#" class=" btn btn-outline-purple" id="btnVMais"  [routerLink]="'/trofeus'">Ver Mais</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!--Teste trofeus-->
+
         </div>
+        
 
         <!--Campo de postagem-->
         <div class="col-md-6">
@@ -53,53 +98,10 @@
                 </div>
             </div>
     
-            <div class="form-inline my-3">
-                <input class="form-control mr-sm-2" type="search" placeholder="Pesquise" [(ngModel)]="buscar"
-                    aria-label="Search">
-                <button class=" btn btn-outline-purple" type="submit" (click)="findId()" >Pesquisar</button>
-            </div>
-        </div>
-
-        <!--Card que mostra os troféus do perfil do usuário conectado-->
-        <div class="col-md-3">
-            <div class="card events mt-5 mr-4">
-                <div class="card-header">
-                    <div class="row">
-                        <div class="col-md-3">
-                                <img class="trofeu" src="../../assets/image/trofeu.png" alt="" height="50" width="50">
-                        </div>
-                        <div class="col-md-9">
-                                <p id="conquistasTitulo">Minhas Conquistas</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="card-body" id="cardEventos">
-                <div class="container-fluid badges">
-                    <img src="../../assets/image/voluntario.jpg" alt="" height="30" width="30"
-                        title="Este(a) usuario(a) realizou trabalhos voluntarios">
-                    <img src="../../assets/image/chepeu.png" alt="" width="30" height="30"
-                        title=" Este(a) Usuario(a) ja ajudou com uma Pergunta!">
-                    <img src="../../assets/image/intercambiocheck.png" alt="" width="30" height="30"
-                        title="Este(a) Usuario(a) Ja fez um Intercambio">
-                    <img src="../../assets/image/music.png" alt="" height="30" width="30"
-                        title="Este(a) Usuario(a) Sabe tocar algum Instrumento">
-                    <img src="../../assets/image/museu.png" alt="" height="30" width="30"
-                        title="Este(a) Usuario(a) ja visitou um museu">
-                    <img src="../../assets/image/teatro..jpg" alt="" width="30" height="30"
-                        title="Este(a) Usuario(a) ja visitou o teatro">
-                </div>
-                <p class="card-text mt-3">Click em "Ver mais" para acessar a galeria de troféus.</p>
-                <div class="btn-toolbar justify-content-end">
-                    <div class="btn-group">
-                        <button href="#" class=" btn btn-outline-purple" id="btnVMais"  [routerLink]="'/trofeus'">Ver Mais</button>
-                    </div>
-                </div>
-            </div>
             
         </div>
+
+       
     </div>
 </div>
 

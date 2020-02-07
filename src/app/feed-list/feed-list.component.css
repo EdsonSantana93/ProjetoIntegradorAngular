@@ -93,11 +93,13 @@ p{
 }
 
 .bg{
-    background: url(../../assets/image/fundo-cinza.png) no-repeat center top fixed;
+   /* background: url(../../assets/image/fundo-cinza.png) no-repeat center top fixed;
     -webkit-background-size: cover;
     -moz-background-siz: cover;
     -o-bakground-size: cover;
-    background-size: cover;
+    background-size: cover;*/
+
+    background-color: #dce0e4ef;
 }
 .badges img:hover {
    
@@ -122,6 +124,11 @@ p{
 #cardEventos{
     background-color: white;
     width: 281.25px;
+}
+
+.trofeuheader{
+    width: 281.25px;
+    background-color:#f8f9fa;
 }
 
 .balao2{
@@ -154,6 +161,10 @@ p{
     text-align: center;
     vertical-align: middle;
     background-color:white;
+
+    -webkit-box-shadow: 2px 1px 3px 2px rgba(122,41,122,0.28);
+-moz-box-shadow: 2px 1px 3px 2px rgba(122,41,122,0.28);
+box-shadow: 2px 1px 3px 2px rgba(122,41,122,0.28);
   
     /* Position relative para a seta não exceder os limites do balão, já que vamos usar position absolute nele */
     position: relative;
@@ -201,7 +212,15 @@ p{
     font-size: 120%;
     margin-top: 7%;
     font-family: 'Cabin', sans-serif;
+    color: black;
+    margin-left: 2%;
 
+
+}
+
+.trofeu
+{
+    margin-top: 15%;
 }
 
 
