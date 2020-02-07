@@ -54,34 +54,34 @@
                         <div class="form-group">
                           <!-- Input nome -->
                           <label for="nome">Nome Completo</label>
-                          <input (keydown.enter)="validar()" type="text" class="form-control" id="nome" [(ngModel)]="usuario.nome"
+                          <input onfocus="this.value=''" (keydown.enter)="validar()" type="text" class="form-control" id="nome" [(ngModel)]="usuario.nome"
                             [ngModelOptions]="{standalone: true}" aria-describedby="nome" placeholder="Digite seu nome..."
                             autofocus required>
                           <span class="erro" *ngIf='erroNome'>{{erroNome}}<br></span><br>
       
                           <!-- Input telefone -->
                           <label for="telefone">Telefone</label>
-                          <input (keydown.enter)="validar()" type="number" class="form-control" id="telefone" [(ngModel)]="usuario.telefone"
+                          <input onfocus="this.value=''" (keydown.enter)="validar()" type="number" class="form-control" id="telefone" [(ngModel)]="usuario.telefone"
                             [ngModelOptions]="{standalone: true}" aria-describedby="telefone"
                             placeholder="Digite seu telefone..." required>
                           <span class="erro" *ngIf='erroTelefone'>{{erroTelefone}}<br></span><br>
                           
                           <!--Input email-->
                           <label for="email">E-mail</label>
-                          <input (keydown.enter)="validar()" type="email" class="form-control" id="email" [(ngModel)]="usuario.email"
+                          <input onloadstart="this.value=''" (keydown.enter)="validar()" type="email" class="form-control" id="email" [(ngModel)]="usuario.email"
                             [ngModelOptions]="{standalone: true}" aria-describedby="emailHelp"
                             placeholder="Digite seu e-mail..." required>
                           <span class="erro" *ngIf='erroEmail'>{{erroEmail}}<br></span><br>
       
                           <label for="senha">Senha</label>
-                          <input (keydown.enter)="validar()" type="password" class="form-control" id="senha" [(ngModel)]="usuario.senha"
+                          <input onload="this.value=''" (keydown.enter)="validar()" type="password" class="form-control" id="senha" [(ngModel)]="usuario.senha"
                             [ngModelOptions]="{standalone: true}" placeholder="Digite sua Senha..." (keyup) = "mostrarStatus()" required>
                           <span class="forte" *ngIf='senhaForte'>{{senhaForte}}<br></span>
                           <span class="fraca" *ngIf='senhaFraca'>{{senhaFraca}}<br></span>
                           <span class="erro" *ngIf='erroSenha'>{{erroSenha}}<br></span><br>
       
                           <label for="confirmacao">Confirme a Senha</label>
-                          <input (keydown.enter)="validar()" type="password" class="form-control" id="confirmacao" [(ngModel)]="confirmacao"
+                          <input onload="this.value=''" (keydown.enter)="validar()" type="password" class="form-control" id="confirmacao" [(ngModel)]="confirmacao"
                             [ngModelOptions]="{standalone: true}" placeholder="Confirme sua Senha" required>
                           <span class="erro" *ngIf='erroConfirmacao'>{{erroConfirmacao}}<br></span>
       

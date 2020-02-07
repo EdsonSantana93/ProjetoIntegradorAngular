@@ -26,6 +26,7 @@ export class FeedListComponent implements OnInit {
   _feed: Postagem;
 
 
+
   constructor(private FeedService: FeedService, private router: Router, private srv: UsuarioService) { }
 
   ngOnInit() {
@@ -79,25 +80,22 @@ export class FeedListComponent implements OnInit {
       })
     }
   }
-
+/*
   enviarAlteracoes(feed: Postagem) {
 
-    /*
+    
     this.FeedService.editar(this.i).subscribe((res) => {
       alert("Postagem atualizada");
     },
       (erro) => {
         alert("Não foi possivel atualizar a postagem");
       });
-      */
+      
   }
-
+*/
   /*função de criar uma nova publicação ultilizando metodo post*/
 
-  onEnter(){
-    this.novaPubli();
-  }
-
+  
   novaPubli() {
     if (this.publicacao != null || this.publicacao != "") {
       this.feedao = new Postagem();
@@ -107,9 +105,12 @@ export class FeedListComponent implements OnInit {
       //this.feedao.usuario = this.usuario;
       // this.feedao.usuario.idUsuario = 1;
       console.log(this.feedao);
+      
       this.FeedService.novaPubli(this.feedao).subscribe(
         res => {
           this.findAll();
+          this.publicacao = "";
+          
         },
         err => {
           console.log(err);

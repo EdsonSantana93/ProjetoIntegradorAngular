@@ -4,6 +4,7 @@ import { CadastroUsuario } from '../modal/CadastroUsuario';
 import { Globals } from "../modal/Globals";
 import { UsuarioService } from '../service/usuario.service'
 import { Token } from '../modal/token';
+import { Form } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +19,7 @@ export class LoginComponent implements OnInit {
   
   public usuario: CadastroUsuario = new CadastroUsuario();
 
+  nome : string;
   /*private nome: string;
   private email: string;
   private telefone: number;
@@ -31,6 +33,7 @@ export class LoginComponent implements OnInit {
   private erroStatus: string = null;
   private senhaForte: string = null;
   private senhaFraca: string = null;
+  
 
   constructor(private srv: UsuarioService, private router: Router) { }
 
@@ -182,10 +185,15 @@ export class LoginComponent implements OnInit {
     }
 
    enviarDados(){
-      console.log(this.usuario)
+      console.log(this.usuario);
       this.srv.insere(this.usuario).subscribe(
         (res)=>{
-          alert("Dados cadastrados com sucesso")
+          this.usuario.nome = "";
+          this.usuario.email = "";
+          this.usuario.senha = "";
+          this.confirmacao = "";
+          this.usuario.telefone = "";
+          alert("Dados cadastrados com sucesso");
         }, 
         (err)=>{
           console.log(err); 
