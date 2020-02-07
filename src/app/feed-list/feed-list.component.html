@@ -2,10 +2,10 @@
 
 <div class=" container-fluid bg">
     <div class="row pb-5">
-        <!--Card lado esquerdo-->
+        <!--Card com infos do usuário-->
         <div class="col-md-3">
             <div class="card mt-5 ml-4">
-                <!--Cabeçalho do card esquerdo com a foto de perfil-->
+                <!--Cabeçalho do card com a foto de perfil-->
                 <div class="card-header card-esquerdo"><img class="profile-card" src="{{usuario.foto}}"
                         alt="Card image cap" height="150" width="150"></div>
                 <div class="card-body">
@@ -18,7 +18,7 @@
                 </div>
             </div>
 
-            <!--Teste troféus-->
+             <!--Card troféus-->
              <!--Card que mostra os troféus do perfil do usuário conectado-->
         <div class="col-md-3 ml-2">
                 <div class="card events mt-5 ">
@@ -27,40 +27,35 @@
                             <div class="col-md-3">
                                     <img class="trofeu" src="../../assets/image/trofeu.png" alt="" height="50" width="50">
                             </div>
-                            
                                     <p id="conquistasTitulo">Minhas Conquistas</p>
                             
                         </div>
                     </div>
                 </div>
-    
-    
                 <div class="card-body" id="cardEventos">
                     <div class="container-fluid badges">
                         <img src="../../assets/image/voluntario.jpg" alt="" height="30" width="30"
-                            title="Este(a) usuario(a) realizou trabalhos voluntarios">
+                            title="Realizou trabalhos voluntários">
                         <img src="../../assets/image/chepeu.png" alt="" width="30" height="30"
-                            title=" Este(a) Usuario(a) ja ajudou com uma Pergunta!">
+                            title=" Já respondeu uma pergunta">
                         <img src="../../assets/image/intercambiocheck.png" alt="" width="30" height="30"
-                            title="Este(a) Usuario(a) Ja fez um Intercambio">
+                            title="Já realizou um intercâmbio">
                         <img src="../../assets/image/music.png" alt="" height="30" width="30"
-                            title="Este(a) Usuario(a) Sabe tocar algum Instrumento">
+                            title="Sabe tocar algum instrumento">
                         <img src="../../assets/image/museu.png" alt="" height="30" width="30"
-                            title="Este(a) Usuario(a) ja visitou um museu">
+                            title="Já visitou um museu">
                         <img src="../../assets/image/teatro..jpg" alt="" width="30" height="30"
-                            title="Este(a) Usuario(a) ja visitou o teatro">
+                            title="Já visitou o teatro">
                     </div>
-                    <p class="card-text mt-3">Click em "Ver mais" para acessar a galeria de troféus.</p>
+                    <p class="card-text mt-3">Click em "Ver Mais" para acessar a galeria de troféus.</p>
                     <div class="btn-toolbar justify-content-end">
                         <div class="btn-group">
                             <button href="#" class=" btn btn-outline-purple" id="btnVMais"  [routerLink]="'/trofeus'">Ver Mais</button>
                         </div>
                     </div>
-                </div>
-                
+                </div> 
             </div>
-            <!--Teste trofeus-->
-
+             <!--Card troféus-->
         </div>
         
 
@@ -97,8 +92,36 @@
                     </div>
                 </div>
             </div>
-    
-            
+        </div>
+        <!--Eventos-->
+        <div class="col-md-3 mt-5">
+                <div class="card" style="width: 18rem;">
+                    <!--Evento 1-->
+                        <div class="card-body">
+                          <h5 class="card-title mt-2"> <strong>HTML5/CSS3/Javascript</strong> </h5>
+                          <p class="card-text"><strong>Local: </strong> Rua Vergueiro, 1421, 12º Andar </p>
+                          <p><strong>Data: </strong>10/03/2020</p>
+                        </div>
+                      </div>
+
+                      <!--Evento 2-->
+                      <div class="card mt-2" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title mt-2"> <strong>Carreira: Desenvolvedor Front End</strong> </h5>
+                          <p class="card-text"><strong>Local: </strong> Rua Tuiuti, 1400, 10º Andar </p>
+                          <p><strong>Data: </strong>22/03/2020</p>
+                        </div>
+                      </div>
+
+                      <!--Evento 3-->
+                      <div class="card mt-2" style="width: 18rem;">
+                            <div class="card-body">
+                              <h5 class="card-title mt-2"> <strong>Rolê: Mulheres pretas na tecnologia</strong> </h5>
+                              <p class="card-text"><strong>Local: </strong> CCJ - Centro Cultural da Juventude Ruth Cardoso </p>
+                            <p>Av. Dep. Emílio Carlos, 3641 - Vila dos Andrades </p>
+                              <p><strong>Data: </strong>04/08/2020</p>
+                            </div>
+                          </div>
         </div>
 
        
