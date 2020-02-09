@@ -93,14 +93,9 @@ p{
 }
 
 .bg{
-   /* background: url(../../assets/image/fundo-cinza.png) no-repeat center top fixed;
-    -webkit-background-size: cover;
-    -moz-background-siz: cover;
-    -o-bakground-size: cover;
-    background-size: cover;*/
-
     background-color: #dce0e4ef;
 }
+
 .badges img:hover {
    
     -webkit-animation: swing 1s ease;
@@ -131,47 +126,21 @@ p{
     background-color:#f8f9fa;
 }
 
-.balao2{
-    margin: 0 auto; 
-    background: white;
-    font-family: 'open sans';
-    font-size: 30%;
-    line-height: 1.6em;  
-    border-radius: 15px;
-    width: 300px;
-    height: auto;
-    color: black;
-    padding: 20px;
-    position: relative;
-    margin-top: 30px;
-    border: 1px solid black
-}
-
-.balao {
-    font-family: 'open sans';
-    
-    /*margin-bottom: 30%; 
-    margin-left: 20%;*/
-
-    background: #000;
+.post{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif sans-serif,;
+    font-size: large;
     border-radius: 30px 30px 30px 30px;
-    width: 400px;
-    height: 100px;
     color: black;
     text-align: center;
-    vertical-align: middle;
-    background-color:white;
-
-    -webkit-box-shadow: 2px 1px 3px 2px rgba(122,41,122,0.28);
--moz-box-shadow: 2px 1px 3px 2px rgba(122,41,122,0.28);
-box-shadow: 2px 1px 3px 2px rgba(122,41,122,0.28);
-  
-    /* Position relative para a seta não exceder os limites do balão, já que vamos usar position absolute nele */
-    position: relative;
-    /*margin-bottom: 1em;*/
+    box-shadow: 2px 1px 3px 2px rgba(122,41,122,0.28);
+    width: 95%;
 }
 
-
+.footer{
+    text-align: end;
+    font-size: 14px;
+    font-family: "open sans";
+}
 #postimg{
     border-radius: 50%;
     width: 130px;
@@ -222,8 +191,4 @@ box-shadow: 2px 1px 3px 2px rgba(122,41,122,0.28);
 {
     margin-top: 15%;
 }
-
-
-
-
 

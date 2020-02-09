@@ -29,8 +29,8 @@
                                 <span class="erro" *ngIf='erroTelefone'>{{erroTelefone}}<br></span><br>
 
                             <!--Mensagem-->
-                            <label for="caixatxt"><strong>Mensagem</strong></label>
-                            <textarea [(ngModel)]="faleConosco.msg" id="msg" [ngModelOptions]="{standalone: true}"
+                            <label for="msg"><strong>Mensagem</strong></label>
+                            <textarea [(ngModel)]="faleConosco.msg" style="resize: none" id="msg" [ngModelOptions]="{standalone: true}"
                                 rows="10" cols="77" maxlength="500" placeholder="Digite sua mensagem..."
                                 required></textarea>
                                 <span class="erro" *ngIf="erroMensagem">{{erroMensagem}}<br></span><br>

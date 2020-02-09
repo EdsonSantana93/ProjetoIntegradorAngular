@@ -78,18 +78,17 @@
             </div>
 
             <div class="row" *ngFor="let item of feed">
-                <div class="col-md-4 d-flex align-items-center justify-content-center p-20">
-                    <img src="{{item.cadastro.foto}}" alt="" class="img-fluid" id="postimg">
+                <div class="col-md-4 pl-5">
+                    <img src="{{item.cadastro.foto}}" alt="Foto de {{item.cadastro.nome}}" id="postimg">
                 </div>
-                <div class="col-md-8 d-flex align-items-center justify-content-start p-0">
-                    <div class="balao">
-                        <strong class="d-flex justify-content-center tituloPost mt-2">{{item.cadastro.nome}}: </strong><br>
-                        <p class="corpoPost d-flex justify-content-center">{{item.texto}}</p>
-                       <!-- <div class="card-footer d-flex align-items-center">
-                            <a href="#" class="card-link p-0 m-0"><i class="fa fa-gittip"></i> Gostei</a>
-                            <a href="#" class="card-link"><i class="fa fa-save"></i> Salvar</a>
-                            <a href="#" class="card-link"><i class="fa fa-edit"></i> Responder</a> </div>-->
-                    </div>
+                <div class="col-md-8 mb-5">
+                    <div class="card post">
+                        <div class="card-body pr-4 mb-5 mt-3">
+                            <strong class="d-flex justify-content-center tituloPost mt-2">{{item.cadastro.nome}}: </strong><br>
+                            <p class="card-text">{{item.texto}}</p>
+                            <footer class="footer"><strong>Postado em {{item.datainclusao}}</strong></footer>
+                        </div>
+                      </div>
                 </div>
             </div>
     
