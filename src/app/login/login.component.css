@@ -115,7 +115,3 @@ input[type=number] {
 #eureka{
   color: #ffdb58;
 }
-
-input:hover, textarea:hover{
-  background-color: rgba(122, 41, 122, 0.2);
-}
